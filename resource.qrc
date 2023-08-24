@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="assets">
+    <file>assets/emr_light.png</file>
+    <file>assets/map_4f.jpg</file>
+  </qresource>
+</RCC>
