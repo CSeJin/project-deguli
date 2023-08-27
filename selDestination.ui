@@ -57,7 +57,7 @@
     </property>
     <layout class="QHBoxLayout" name="layout_title">
      <item>
-      <widget class="QPushButton" name="pushButton_6">
+      <widget class="QPushButton" name="btn_home">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
@@ -87,7 +87,7 @@
        <property name="styleSheet">
         <string notr="true">margin-left: 20px;
 background-color: #cfe3ac;
-padding: 10px 0;</string>
+padding: 5px 0;</string>
        </property>
        <property name="text">
         <string>HOME</string>
@@ -99,7 +99,7 @@ padding: 10px 0;</string>
        <property name="font">
         <font>
          <family>Malgun Gothic</family>
-         <pointsize>30</pointsize>
+         <pointsize>25</pointsize>
          <weight>75</weight>
          <bold>true</bold>
         </font>
@@ -222,7 +222,7 @@ padding: 10px 0;</string>
          </property>
          <widget class="QWidget" name="tab_1f">
           <attribute name="title">
-           <string>      1층      </string>
+           <string>   1층   </string>
           </attribute>
           <widget class="QWidget" name="horizontalLayoutWidget_9">
            <property name="geometry">
@@ -255,7 +255,7 @@ padding: 10px 0;</string>
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-image: url(:/assets/assets/map_4f.jpg);
+               <string notr="true">background-image: url(&quot;:/assets/assets/map_4f.jpg&quot;);
 margin: 0 20px;</string>
               </property>
               <property name="text">
@@ -294,7 +294,7 @@ margin: 0 20px;</string>
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>438</width>
+                 <width>143</width>
                  <height>420</height>
                 </rect>
                </property>
@@ -316,7 +316,7 @@ margin: 0 20px;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -353,7 +353,7 @@ border: none;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -381,7 +381,7 @@ border: none;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -409,7 +409,7 @@ border: none;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -437,7 +437,7 @@ border: none;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -465,7 +465,7 @@ border: none;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -493,7 +493,7 @@ border: none;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -527,7 +527,7 @@ border: none;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -547,7 +547,7 @@ border: none;</string>
          </widget>
          <widget class="QWidget" name="tab_2f">
           <attribute name="title">
-           <string>      2층      </string>
+           <string>   2층   </string>
           </attribute>
           <widget class="QWidget" name="horizontalLayoutWidget_4">
            <property name="geometry">
@@ -619,7 +619,7 @@ margin: 0 20px;</string>
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>438</width>
+                 <width>143</width>
                  <height>420</height>
                 </rect>
                </property>
@@ -641,7 +641,7 @@ margin: 0 20px;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -678,7 +678,7 @@ border: none;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -706,7 +706,7 @@ border: none;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -734,7 +734,7 @@ border: none;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -762,7 +762,7 @@ border: none;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -790,7 +790,7 @@ border: none;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -818,7 +818,7 @@ border: none;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -852,7 +852,7 @@ border: none;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -872,7 +872,7 @@ border: none;</string>
          </widget>
          <widget class="QWidget" name="tab_3f">
           <attribute name="title">
-           <string>      3층      </string>
+           <string>   3층   </string>
           </attribute>
           <widget class="QWidget" name="horizontalLayoutWidget_5">
            <property name="geometry">
@@ -943,7 +943,7 @@ margin: 0 20px;</string>
                <property name="geometry">
                 <rect>
                  <x>0</x>
-                 <y>-29</y>
+                 <y>0</y>
                  <width>438</width>
                  <height>420</height>
                 </rect>
@@ -966,7 +966,7 @@ margin: 0 20px;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -1003,7 +1003,7 @@ border: none;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -1031,7 +1031,7 @@ border: none;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -1059,7 +1059,7 @@ border: none;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -1087,7 +1087,7 @@ border: none;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -1115,7 +1115,7 @@ border: none;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -1143,7 +1143,7 @@ border: none;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -1177,7 +1177,7 @@ border: none;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -1197,7 +1197,7 @@ border: none;</string>
          </widget>
          <widget class="QWidget" name="tab_4f">
           <attribute name="title">
-           <string>      4층      </string>
+           <string>   4층   </string>
           </attribute>
           <widget class="QWidget" name="horizontalLayoutWidget_6">
            <property name="geometry">
@@ -1269,7 +1269,7 @@ margin: 0 20px;</string>
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>438</width>
+                 <width>143</width>
                  <height>420</height>
                 </rect>
                </property>
@@ -1291,7 +1291,7 @@ margin: 0 20px;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -1328,7 +1328,7 @@ border: none;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -1356,7 +1356,7 @@ border: none;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -1384,7 +1384,7 @@ border: none;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -1412,7 +1412,7 @@ border: none;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -1440,7 +1440,7 @@ border: none;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -1468,7 +1468,7 @@ border: none;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -1502,7 +1502,7 @@ border: none;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -1522,7 +1522,7 @@ border: none;</string>
          </widget>
          <widget class="QWidget" name="tab_5f">
           <attribute name="title">
-           <string>      5층      </string>
+           <string>   5층   </string>
           </attribute>
           <widget class="QWidget" name="horizontalLayoutWidget_7">
            <property name="geometry">
@@ -1594,7 +1594,7 @@ margin: 0 20px;</string>
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>438</width>
+                 <width>143</width>
                  <height>420</height>
                 </rect>
                </property>
@@ -1616,7 +1616,7 @@ margin: 0 20px;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -1653,7 +1653,7 @@ border: none;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -1681,7 +1681,7 @@ border: none;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -1709,7 +1709,7 @@ border: none;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -1737,7 +1737,7 @@ border: none;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -1765,7 +1765,7 @@ border: none;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -1793,7 +1793,7 @@ border: none;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -1827,7 +1827,7 @@ border: none;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -1847,7 +1847,7 @@ border: none;</string>
          </widget>
          <widget class="QWidget" name="tab_6f">
           <attribute name="title">
-           <string>      6층      </string>
+           <string>   6층   </string>
           </attribute>
           <widget class="QWidget" name="horizontalLayoutWidget_8">
            <property name="geometry">
@@ -1919,7 +1919,7 @@ margin: 0 20px;</string>
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>438</width>
+                 <width>143</width>
                  <height>420</height>
                 </rect>
                </property>
@@ -1941,7 +1941,7 @@ margin: 0 20px;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -1978,7 +1978,7 @@ border: none;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -2006,7 +2006,7 @@ border: none;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -2034,7 +2034,7 @@ border: none;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -2062,7 +2062,7 @@ border: none;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -2090,7 +2090,7 @@ border: none;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -2118,7 +2118,7 @@ border: none;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -2152,7 +2152,7 @@ border: none;</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">padding: 10px;
+                   <string notr="true">padding: 5px;
 padding-left: 20px;
 background-color: #cfe3ac;
 text-align: left;
@@ -2196,9 +2196,9 @@ border: none;</string>
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>520</y>
+      <y>510</y>
       <width>1021</width>
-      <height>81</height>
+      <height>91</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="layout_bottom">
@@ -2237,8 +2237,8 @@ margin-right: 30px;</string>
        </property>
       </widget>
      </item>
-     <item alignment="Qt::AlignHCenter">
-      <widget class="QPushButton" name="start_btn">
+     <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+      <widget class="QPushButton" name="btn_start">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
@@ -2268,7 +2268,7 @@ margin-right: 30px;</string>
       </widget>
      </item>
      <item alignment="Qt::AlignRight|Qt::AlignVCenter">
-      <widget class="QPushButton" name="emr_call_btn">
+      <widget class="QPushButton" name="btn_emrCall">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
@@ -2277,7 +2277,7 @@ margin-right: 30px;</string>
        </property>
        <property name="minimumSize">
         <size>
-         <width>170</width>
+         <width>180</width>
          <height>60</height>
         </size>
        </property>
@@ -2292,6 +2292,7 @@ margin-right: 30px;</string>
        <property name="styleSheet">
         <string notr="true">background-color: #ed6339;
 color: white;
+padding: 5px 10px;
 margin-right: 30px;</string>
        </property>
        <property name="text">

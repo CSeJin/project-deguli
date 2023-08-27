@@ -57,7 +57,7 @@
     </property>
     <layout class="QHBoxLayout" name="layout_title">
      <item>
-      <widget class="QPushButton" name="pushButton_6">
+      <widget class="QPushButton" name="btn_home">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
@@ -87,7 +87,7 @@
        <property name="styleSheet">
         <string notr="true">margin-left: 20px;
 background-color: #cfe3ac;
-padding: 10px 0;</string>
+padding: 5px 0;</string>
        </property>
        <property name="text">
         <string>HOME</string>
@@ -99,7 +99,7 @@ padding: 10px 0;</string>
        <property name="font">
         <font>
          <family>Malgun Gothic</family>
-         <pointsize>30</pointsize>
+         <pointsize>25</pointsize>
          <weight>75</weight>
          <bold>true</bold>
         </font>
@@ -351,7 +351,7 @@ padding: 10px 0;
     </property>
     <layout class="QHBoxLayout" name="layout_bottom">
      <item alignment="Qt::AlignRight|Qt::AlignVCenter">
-      <widget class="QPushButton" name="emr_call_btn">
+      <widget class="QPushButton" name="btn_emrCall">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
@@ -375,6 +375,7 @@ padding: 10px 0;
        <property name="styleSheet">
         <string notr="true">background-color: #ed6339;
 color: white;
+padding: 5px 10px;
 margin-right: 30px;</string>
        </property>
        <property name="text">

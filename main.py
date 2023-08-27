@@ -27,10 +27,23 @@ class WindowClass(QMainWindow) :
         self.ui_mainPage.btn_selDes.clicked.connect(self.show_selDestination)
         self.ui_mainPage.btn_manDriving.clicked.connect(self.show_manualDriving)
         self.ui_mainPage.btn_emrCall.clicked.connect(self.show_emrCall)
+        # 홈 버튼 연결
+        self.ui_selDestination.btn_home.clicked.connect(self.show_mainPage)
+        self.ui_manualDriving.btn_home.clicked.connect(self.show_mainPage)
+        self.ui_emrCall.btn_home.clicked.connect(self.show_mainPage)
+        # 긴급 호출 버튼 연결
+        self.ui_selDestination.btn_emrCall.clicked.connect(self.show_emrCall)
+        self.ui_manualDriving.btn_emrCall.clicked.connect(self.show_emrCall)
+
 
         # 초기 화면 설정
         self.setCentralWidget(self.stacked_widget)
 
+    def show_mainPage(self):
+        # selDestination 페이지로 전환
+        print("!")
+        self.stacked_widget.setCurrentIndex(0)
+        self.current_page_index = 0
     def show_selDestination(self):
         # selDestination 페이지로 전환
         print("!")
