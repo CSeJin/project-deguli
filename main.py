@@ -1,78 +1,61 @@
 import sys
+from PyQt5.QtWidgets import *
+from PyQt5 import uic
 
-from PyQt5 import Qt
-from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QFont
-from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QPushButton, QVBoxLayout, QHBoxLayout, QWidget
-
-
-# 제목
-class Title(QLabel):
-    def __init__(self, text, parent=None):
-        super().__init__(text, parent)
-        # self.styleSheet("""
-        #                 font-size: 30px;
-        #                 font-weight: bold;
-        #                 text-align: center;
-        # """)
-
-
-# 버튼
-class MainButton(QPushButton):
-    def __init__(self, text, parent=None):
-        super().__init__(text, parent)
-
-
-class EmrButton(QPushButton):
-    def __init__(self, text, parent=None):
-        super().__init__(text, parent)
-
-
-# =========== main ============ #
-class Main(QMainWindow):
-    def __init__(self):
+#화면을 띄우는데 사용되는 Class 선언
+class WindowClass(QMainWindow) :
+    def __init__(self) :
         super().__init__()
-        self.set_style()
-        self.init_ui()
 
-    def set_style(self):
-        with open("main-style.ui", 'r') as f:
-            self.setStyleSheet(f.read())
+        # UI 파일 로드
+        self.ui_mainPage = uic.loadUi("mainPage.ui")
+        self.ui_selDestination = uic.loadUi("selDestination.ui")
+        self.ui_manualDriving = uic.loadUi("manualDriving.ui")
+        self.ui_emrCall = uic.loadUi("emrCall.ui")
 
-    def init_ui(self):
-        main_widget = QWidget()  # 메인 위젯 생성
-        main_layout = QVBoxLayout(main_widget)
+        # UI 페이지 전환을 위한 QStackedWidget 생성
+        self.stacked_widget = QStackedWidget(self)
+        self.stacked_widget.addWidget(self.ui_mainPage)
+        self.stacked_widget.addWidget(self.ui_selDestination)
+        self.stacked_widget.addWidget(self.ui_manualDriving)
+        self.stacked_widget.addWidget(self.ui_emrCall)
 
-        # 위젯 배치용 레이아웃
-        layout_top = QVBoxLayout()
-        layout_btn = QVBoxLayout()
+        # 현재 페이지 인덱스 기록
+        self.current_page_index = 0
 
-        # top-bar
-        title = Title("홈")
-        title.setAlignment(Qt.AlignHCenter)
-        layout_top.addWidget(title)
+        # 버튼에 페이지 연결
+        self.ui_mainPage.btn_selDes.clicked.connect(self.show_selDestination)
+        self.ui_mainPage.btn_manDriving.clicked.connect(self.show_manualDriving)
+        self.ui_mainPage.btn_emrCall.clicked.connect(self.show_emrCall)
 
-        # 버튼
-        selDesBtn = MainButton("목적지 설정")
-        manualDriving = MainButton("수동주행")
-        emrCall = EmrButton("긴급호출")
+        # 초기 화면 설정
+        self.setCentralWidget(self.stacked_widget)
 
-        layout_btn.addWidget(selDesBtn)
-        layout_btn.addWidget(manualDriving)
-        layout_btn.addWidget(emrCall)
+    def show_selDestination(self):
+        # selDestination 페이지로 전환
+        print("!")
+        self.stacked_widget.setCurrentIndex(1)
+        self.current_page_index = 1
 
-        main_layout.addLayout(layout_top)
-        layout_top.addStretch(1)
-        main_layout.addLayout(layout_btn)
-        layout_btn.addStretch(1)
+    def show_manualDriving(self):
+        # selDestination 페이지로 전환
+        self.stacked_widget.setCurrentIndex(2)
+        self.current_page_index = 2
 
-        self.setCentralWidget(main_widget)  # 중앙 위젯 설정
-        self.resize(1024, 600)
-        self.show()
+    def show_emrCall(self):
+        # selDestination 페이지로 전환
+        self.stacked_widget.setCurrentIndex(3)
+        self.current_page_index = 3
 
-
-if __name__ == '__main__':
+if __name__ == "__main__" :
+    #QApplication : 프로그램을 실행시켜주는 클래스
     app = QApplication(sys.argv)
 
-    main = Main()
-    sys.exit(app.exec_())
+    #WindowClass의 인스턴스 생성
+    myWindow = WindowClass()
+
+    #프로그램 화면을 보여주는 코드
+    myWindow.show()
+
+    #프로그램을 이벤트루프로 진입시키는(프로그램을 작동시키는) 코드
+    app.exec_()
