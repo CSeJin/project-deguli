@@ -1,11 +1,12 @@
 import sys
-import manualDriving.py
+from manualDriving import move_straight, turn_left, move_back, turn_right, stop_run
 from PyQt5.QtWidgets import *
 from PyQt5 import uic
 
-#화면을 띄우는데 사용되는 Class 선언
-class WindowClass(QMainWindow) :
-    def __init__(self) :
+
+# 화면을 띄우는데 사용되는 Class 선언
+class WindowClass(QMainWindow):
+    def __init__(self):
         super().__init__()
 
         # UI 파일 로드
@@ -35,7 +36,12 @@ class WindowClass(QMainWindow) :
         # 긴급 호출 버튼 연결
         self.ui_selDestination.btn_emrCall.clicked.connect(self.show_emrCall)
         self.ui_manualDriving.btn_emrCall.clicked.connect(self.show_emrCall)
-
+        # 수동주행
+        self.ui_manualDriving.btn_up.clicked.connect(move_straight)
+        self.ui_manualDriving.btn_left.clicked.connect(turn_left)
+        self.ui_manualDriving.btn_down.clicked.connect(move_back)
+        self.ui_manualDriving.btn_right.clicked.connect(turn_right)
+        self.ui_manualDriving.btn_stop.clicked.connect(stop_run)
 
         # 초기 화면 설정
         self.setCentralWidget(self.stacked_widget)
@@ -45,6 +51,7 @@ class WindowClass(QMainWindow) :
         print(self.ui_selDestination.btn_home.text())
         self.stacked_widget.setCurrentIndex(0)
         self.current_page_index = 0
+
     def show_selDestination(self):
         # selDestination 페이지로 전환
         print("!")
@@ -61,15 +68,16 @@ class WindowClass(QMainWindow) :
         self.stacked_widget.setCurrentIndex(3)
         self.current_page_index = 3
 
-if __name__ == "__main__" :
-    #QApplication : 프로그램을 실행시켜주는 클래스
+
+if __name__ == "__main__":
+    # QApplication : 프로그램을 실행시켜주는 클래스
     app = QApplication(sys.argv)
 
-    #WindowClass의 인스턴스 생성
+    # WindowClass의 인스턴스 생성
     myWindow = WindowClass()
 
-    #프로그램 화면을 보여주는 코드
+    # 프로그램 화면을 보여주는 코드
     myWindow.show()
 
-    #프로그램을 이벤트루프로 진입시키는(프로그램을 작동시키는) 코드
+    # 프로그램을 이벤트루프로 진입시키는(프로그램을 작동시키는) 코드
     app.exec_()

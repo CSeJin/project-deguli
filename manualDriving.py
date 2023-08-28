@@ -1,23 +1,31 @@
 import os
 
+cmd = "python $HOME/application/talker.py"
 
-def move(self, objectName):
+
+def move_straight(self):
     # talker.py 파일 연결
-    cmd = "python $HOME/application/talker.py"
+    cmd_direction = cmd + " w"
+    print(cmd_direction)
 
-    if objectName == "btn_up":
-        cmd += "w"
-    elif objectName == "btn_left":
-        cmd += "a"
-    elif objectName == "btn_down":
-        cmd += "x"
-    elif objectName == "btn_right":
-        cmd += "d"
-    elif objectName == "btn_stop":
-        cmd += "s"
-    else:
-        print("전달 인자 없음")
-        return
+def turn_left(self):
+    # talker.py 파일 연결
+    cmd_direction = cmd + " a"
+    print(cmd_direction)
 
-    print(cmd)
-    os.system(cmd)
+def move_back(self):
+    # talker.py 파일 연결
+    cmd_direction = cmd + " x"
+    print(cmd_direction)
+
+def turn_right(self):
+    # talker.py 파일 연결
+    cmd_direction = cmd + " d"
+    print(cmd_direction)
+
+def stop_run(self):
+    # talker.py 파일 연결
+    cmd_direction = cmd + " s"
+    print(cmd_direction)
+
+
