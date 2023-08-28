@@ -239,7 +239,7 @@ padding: 10px 0;
               </size>
              </property>
              <property name="styleSheet">
-              <string notr="true">background: url(:/assets/assets/arrow_up.png);
+              <string notr="true">background: url(./assets/arrow_up.png);
 </string>
              </property>
              <property name="text">
@@ -262,7 +262,7 @@ padding: 10px 0;
               </size>
              </property>
              <property name="styleSheet">
-              <string notr="true">background: url(:/assets/assets/arrow_right.png);
+              <string notr="true">background: url(./assets/arrow_right.png);
 </string>
              </property>
              <property name="text">
@@ -285,7 +285,7 @@ padding: 10px 0;
               </size>
              </property>
              <property name="styleSheet">
-              <string notr="true">background: url(:/assets/assets/arrow_left.png);
+              <string notr="true">background: url(./assets/arrow_left.png);
 </string>
              </property>
              <property name="text">
@@ -308,7 +308,7 @@ padding: 10px 0;
               </size>
              </property>
              <property name="styleSheet">
-              <string notr="true">background: url(:/assets/assets/arrow_down.png);
+              <string notr="true">background: url(./assets/arrow_down.png);
 </string>
              </property>
              <property name="text">

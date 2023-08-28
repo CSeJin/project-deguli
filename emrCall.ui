@@ -207,7 +207,7 @@ padding: 10px 0;</string>
           <enum>Qt::LeftToRight</enum>
          </property>
          <property name="styleSheet">
-          <string notr="true">background: url(:/assets/assets/emr_light.png);
+          <string notr="true">background: url(./assets/emr_light.png);
 background-size: cover;</string>
          </property>
          <property name="text">

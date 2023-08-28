@@ -255,7 +255,7 @@ padding: 10px 0;</string>
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-image: url(&quot;:/assets/assets/map_4f.jpg&quot;);
+               <string notr="true">background-image: url(&quot;./assets/map_4f.jpg&quot;);
 margin: 0 20px;</string>
               </property>
               <property name="text">
@@ -294,7 +294,7 @@ margin: 0 20px;</string>
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>143</width>
+                 <width>438</width>
                  <height>420</height>
                 </rect>
                </property>
@@ -580,7 +580,7 @@ border: none;</string>
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-image: url(:/assets/assets/map_2f.jpg);
+               <string notr="true">background-image: url(./assets/map_2f.jpg);
 margin: 0 20px;</string>
               </property>
               <property name="text">
@@ -619,7 +619,7 @@ margin: 0 20px;</string>
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>143</width>
+                 <width>438</width>
                  <height>420</height>
                 </rect>
                </property>
@@ -895,7 +895,7 @@ border: none;</string>
               <property name="minimumSize">
                <size>
                 <width>440</width>
-                <height>330</height>
+                <height>300</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -905,7 +905,7 @@ border: none;</string>
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-image: url(:/assets/assets/map_3f.jpg);
+               <string notr="true">background-image: url(./assets/map_3f.jpg);
 margin: 0 20px;</string>
               </property>
               <property name="text">
@@ -924,7 +924,7 @@ margin: 0 20px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>330</height>
+                <height>300</height>
                </size>
               </property>
               <property name="verticalScrollBarPolicy">
@@ -1230,7 +1230,7 @@ border: none;</string>
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-image: url(:/assets/assets/map_4f.jpg);
+               <string notr="true">background-image: url(./assets/map_4f.jpg);
 margin: 0 20px;</string>
               </property>
               <property name="text">
@@ -1269,7 +1269,7 @@ margin: 0 20px;</string>
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>143</width>
+                 <width>438</width>
                  <height>420</height>
                 </rect>
                </property>
@@ -1555,7 +1555,7 @@ border: none;</string>
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-image: url(:/assets/assets/map_5f.jpg);
+               <string notr="true">background-image: url(./assets/map_5f.jpg);
 margin: 0 20px;</string>
               </property>
               <property name="text">
@@ -1594,7 +1594,7 @@ margin: 0 20px;</string>
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>143</width>
+                 <width>438</width>
                  <height>420</height>
                 </rect>
                </property>
@@ -1880,7 +1880,7 @@ border: none;</string>
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-image: url(:/assets/assets/map_6f.jpg);
+               <string notr="true">background-image: url(./assets/map_6f.jpg);
 margin: 0 20px;</string>
               </property>
               <property name="text">
@@ -1919,7 +1919,7 @@ margin: 0 20px;</string>
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>143</width>
+                 <width>438</width>
                  <height>420</height>
                 </rect>
                </property>
