@@ -1,4 +1,5 @@
 import sys
+import manualDriving.py
 from PyQt5.QtWidgets import *
 from PyQt5 import uic
 
@@ -41,7 +42,7 @@ class WindowClass(QMainWindow) :
 
     def show_mainPage(self):
         # selDestination 페이지로 전환
-        print("!")
+        print(self.ui_selDestination.btn_home.text())
         self.stacked_widget.setCurrentIndex(0)
         self.current_page_index = 0
     def show_selDestination(self):
