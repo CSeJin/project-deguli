@@ -1,5 +1,6 @@
 import sys
 from manualDriving import move_straight, turn_left, move_back, turn_right, stop_run
+from selDestination import assign_des, start_driving
 from PyQt5.QtWidgets import *
 from PyQt5 import uic
 
@@ -33,6 +34,9 @@ class WindowClass(QMainWindow):
         self.ui_selDestination.btn_home.clicked.connect(self.show_mainPage)
         self.ui_manualDriving.btn_home.clicked.connect(self.show_mainPage)
         self.ui_emrCall.btn_home.clicked.connect(self.show_mainPage)
+        # 목적지 설정
+        self.ui_selDestination.btn1_1f.clicked.connect(self.call_assign_des)
+        self.ui_selDestination.btn_start.clicked.connect(start_driving)
         # 긴급 호출 버튼 연결
         self.ui_selDestination.btn_emrCall.clicked.connect(self.show_emrCall)
         self.ui_manualDriving.btn_emrCall.clicked.connect(self.show_emrCall)
@@ -54,19 +58,25 @@ class WindowClass(QMainWindow):
 
     def show_selDestination(self):
         # selDestination 페이지로 전환
-        print("!")
+        print("목적지 설정")
         self.stacked_widget.setCurrentIndex(1)
         self.current_page_index = 1
 
     def show_manualDriving(self):
         # selDestination 페이지로 전환
+        print("수동주행")
         self.stacked_widget.setCurrentIndex(2)
         self.current_page_index = 2
 
     def show_emrCall(self):
         # selDestination 페이지로 전환
+        print("긴급호출")
         self.stacked_widget.setCurrentIndex(3)
         self.current_page_index = 3
+
+    def call_assign_des(self):
+        print(self.ui_selDestination.btn1_1f.text())
+        assign_des(self.ui_selDestination.btn1_1f)
 
 
 if __name__ == "__main__":
