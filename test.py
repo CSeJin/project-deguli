@@ -1,3 +1,6 @@
-from sys import argv
+import os, sys
 
-print(argv[1])
+aaa = sys.argv[1]
+print(aaa)
+# terminal_command = "python ./main.py"
+# os.system(terminal_command)
