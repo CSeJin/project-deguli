@@ -14,6 +14,9 @@ from PyQt5.QtWidgets import QApplication, QMainWindow
 
 
 class Ui_EmrCall(QMainWindow):
+    # 변수 정의
+    btn_home = None
+        
     def __init__(self):
         super().__init__()
         self.setupUi(self)
@@ -44,25 +47,25 @@ class Ui_EmrCall(QMainWindow):
         self.layout_title = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
         self.layout_title.setContentsMargins(0, 0, 0, 0)
         self.layout_title.setObjectName("layout_title")
-        self.btn_home = QtWidgets.QPushButton(self.horizontalLayoutWidget)
+        Ui_EmrCall.btn_home = QtWidgets.QPushButton(self.horizontalLayoutWidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.btn_home.sizePolicy().hasHeightForWidth())
-        self.btn_home.setSizePolicy(sizePolicy)
-        self.btn_home.setMinimumSize(QtCore.QSize(180, 0))
-        self.btn_home.setSizeIncrement(QtCore.QSize(0, 0))
+        sizePolicy.setHeightForWidth(Ui_EmrCall.btn_home.sizePolicy().hasHeightForWidth())
+        Ui_EmrCall.btn_home.setSizePolicy(sizePolicy)
+        Ui_EmrCall.btn_home.setMinimumSize(QtCore.QSize(180, 0))
+        Ui_EmrCall.btn_home.setSizeIncrement(QtCore.QSize(0, 0))
         font = QtGui.QFont()
         font.setFamily("Malgun Gothic")
         font.setPointSize(20)
         font.setBold(True)
         font.setWeight(75)
-        self.btn_home.setFont(font)
-        self.btn_home.setStyleSheet("margin-left: 20px;\n"
+        Ui_EmrCall.btn_home.setFont(font)
+        Ui_EmrCall.btn_home.setStyleSheet("margin-left: 20px;\n"
                                     "background-color: #cfe3ac;\n"
                                     "padding: 5px 0;")
-        self.btn_home.setObjectName("btn_home")
-        self.layout_title.addWidget(self.btn_home)
+        Ui_EmrCall.btn_home.setObjectName("btn_home")
+        self.layout_title.addWidget(Ui_EmrCall.btn_home)
         self.title = QtWidgets.QLabel(self.horizontalLayoutWidget)
         font = QtGui.QFont()
         font.setFamily("Malgun Gothic")
@@ -152,20 +155,6 @@ class Ui_EmrCall(QMainWindow):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.btn_home.setText(_translate("MainWindow", "HOME"))
+        Ui_EmrCall.btn_home.setText(_translate("MainWindow", "HOME"))
         self.title.setText(_translate("MainWindow", "긴급호출"))
         self.emr_label.setText(_translate("MainWindow", "관리자 호출 중"))
-
-
-if __name__ == "__main__":
-    # QApplication : 프로그램을 실행시켜주는 클래스
-    app = QApplication(sys.argv)
-
-    # WindowClass의 인스턴스 생성
-    myWindow = Ui_EmrCall()
-
-    # 프로그램 화면을 보여주는 코드
-    myWindow.show()
-
-    # 프로그램을 이벤트루프로 진입시키는(프로그램을 작동시키는) 코드
-    app.exec_()

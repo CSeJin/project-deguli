@@ -14,12 +14,17 @@ from PyQt5.QtWidgets import QApplication, QMainWindow
 
 
 class Ui_MainPage(QMainWindow):
+    # 변수 정의
+    btn_selDes = None
+    btn_manDriving = None
+    btn_emrCall = None
+    
     def __init__(self):
         super().__init__()
         self.setupUi(self)
 
     def setupUi(self, MainWindow):
-        MainWindow.setObjectName("MainWindow")
+        MainWindow.setObjectName("MainWindow_mainPage")
         MainWindow.resize(1024, 600)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
@@ -65,69 +70,69 @@ class Ui_MainPage(QMainWindow):
         self.layout_contents.addItem(spacerItem)
         self.layout_btns = QtWidgets.QVBoxLayout()
         self.layout_btns.setObjectName("layout_btns")
-        self.btn_selDes = QtWidgets.QPushButton(self.verticalLayoutWidget)
-        self.btn_selDes.setEnabled(True)
+        Ui_MainPage.btn_selDes = QtWidgets.QPushButton(self.verticalLayoutWidget)
+        Ui_MainPage.btn_selDes.setEnabled(True)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.btn_selDes.sizePolicy().hasHeightForWidth())
-        self.btn_selDes.setSizePolicy(sizePolicy)
-        self.btn_selDes.setMinimumSize(QtCore.QSize(400, 100))
-        self.btn_selDes.setMaximumSize(QtCore.QSize(400, 75))
+        sizePolicy.setHeightForWidth(Ui_MainPage.btn_selDes.sizePolicy().hasHeightForWidth())
+        Ui_MainPage.btn_selDes.setSizePolicy(sizePolicy)
+        Ui_MainPage.btn_selDes.setMinimumSize(QtCore.QSize(400, 100))
+        Ui_MainPage.btn_selDes.setMaximumSize(QtCore.QSize(400, 75))
         font = QtGui.QFont()
         font.setFamily("Malgun Gothic")
         font.setPointSize(20)
         font.setBold(True)
         font.setWeight(75)
-        self.btn_selDes.setFont(font)
-        self.btn_selDes.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.btn_selDes.setStyleSheet("background-color: #cfe3ac;\n"
-"margin: 5px;\n"
-"padding: 10px;")
-        self.btn_selDes.setObjectName("btn_selDes")
-        self.layout_btns.addWidget(self.btn_selDes, 0, QtCore.Qt.AlignVCenter)
-        self.btn_manDriving = QtWidgets.QPushButton(self.verticalLayoutWidget)
-        self.btn_manDriving.setEnabled(True)
+        Ui_MainPage.btn_selDes.setFont(font)
+        Ui_MainPage.btn_selDes.setLayoutDirection(QtCore.Qt.LeftToRight)
+        Ui_MainPage.btn_selDes.setStyleSheet("background-color: #cfe3ac;\n"
+                                      "margin: 5px;\n"
+                                      "padding: 10px;")
+        Ui_MainPage.btn_selDes.setObjectName("btn_selDes")
+        self.layout_btns.addWidget(Ui_MainPage.btn_selDes, 0, QtCore.Qt.AlignVCenter)
+        Ui_MainPage.btn_manDriving = QtWidgets.QPushButton(self.verticalLayoutWidget)
+        Ui_MainPage.btn_manDriving.setEnabled(True)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.btn_manDriving.sizePolicy().hasHeightForWidth())
-        self.btn_manDriving.setSizePolicy(sizePolicy)
-        self.btn_manDriving.setMinimumSize(QtCore.QSize(400, 100))
-        self.btn_manDriving.setMaximumSize(QtCore.QSize(400, 75))
+        sizePolicy.setHeightForWidth(Ui_MainPage.btn_manDriving.sizePolicy().hasHeightForWidth())
+        Ui_MainPage.btn_manDriving.setSizePolicy(sizePolicy)
+        Ui_MainPage.btn_manDriving.setMinimumSize(QtCore.QSize(400, 100))
+        Ui_MainPage.btn_manDriving.setMaximumSize(QtCore.QSize(400, 75))
         font = QtGui.QFont()
         font.setFamily("Malgun Gothic")
         font.setPointSize(20)
         font.setBold(True)
         font.setWeight(75)
-        self.btn_manDriving.setFont(font)
-        self.btn_manDriving.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.btn_manDriving.setStyleSheet("background-color: #cfe3ac;\n"
-"margin: 5px;\n"
-"padding: 10px;")
-        self.btn_manDriving.setObjectName("btn_manDriving")
-        self.layout_btns.addWidget(self.btn_manDriving, 0, QtCore.Qt.AlignVCenter)
-        self.btn_emrCall = QtWidgets.QPushButton(self.verticalLayoutWidget)
-        self.btn_emrCall.setEnabled(True)
+        Ui_MainPage.btn_manDriving.setFont(font)
+        Ui_MainPage.btn_manDriving.setLayoutDirection(QtCore.Qt.LeftToRight)
+        Ui_MainPage.btn_manDriving.setStyleSheet("background-color: #cfe3ac;\n"
+                                          "margin: 5px;\n"
+                                          "padding: 10px;")
+        Ui_MainPage.btn_manDriving.setObjectName("btn_manDriving")
+        self.layout_btns.addWidget(Ui_MainPage.btn_manDriving, 0, QtCore.Qt.AlignVCenter)
+        Ui_MainPage.btn_emrCall = QtWidgets.QPushButton(self.verticalLayoutWidget)
+        Ui_MainPage.btn_emrCall.setEnabled(True)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.btn_emrCall.sizePolicy().hasHeightForWidth())
-        self.btn_emrCall.setSizePolicy(sizePolicy)
-        self.btn_emrCall.setMinimumSize(QtCore.QSize(400, 100))
-        self.btn_emrCall.setMaximumSize(QtCore.QSize(400, 75))
+        sizePolicy.setHeightForWidth(Ui_MainPage.btn_emrCall.sizePolicy().hasHeightForWidth())
+        Ui_MainPage.btn_emrCall.setSizePolicy(sizePolicy)
+        Ui_MainPage.btn_emrCall.setMinimumSize(QtCore.QSize(400, 100))
+        Ui_MainPage.btn_emrCall.setMaximumSize(QtCore.QSize(400, 75))
         font = QtGui.QFont()
         font.setFamily("Malgun Gothic")
         font.setPointSize(20)
         font.setBold(True)
         font.setWeight(75)
-        self.btn_emrCall.setFont(font)
-        self.btn_emrCall.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.btn_emrCall.setStyleSheet("background-color: #cfe3ac;\n"
-"margin: 5px;\n"
-"padding: 10px;")
-        self.btn_emrCall.setObjectName("btn_emrCall")
-        self.layout_btns.addWidget(self.btn_emrCall, 0, QtCore.Qt.AlignVCenter)
+        Ui_MainPage.btn_emrCall.setFont(font)
+        Ui_MainPage.btn_emrCall.setLayoutDirection(QtCore.Qt.LeftToRight)
+        Ui_MainPage.btn_emrCall.setStyleSheet("background-color: #cfe3ac;\n"
+                                       "margin: 5px;\n"
+                                       "padding: 10px;")
+        Ui_MainPage.btn_emrCall.setObjectName("btn_emrCall")
+        self.layout_btns.addWidget(Ui_MainPage.btn_emrCall, 0, QtCore.Qt.AlignVCenter)
         self.layout_contents.addLayout(self.layout_btns)
         spacerItem1 = QtWidgets.QSpacerItem(300, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
         self.layout_contents.addItem(spacerItem1)
@@ -146,19 +151,20 @@ class Ui_MainPage(QMainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.title.setText(_translate("MainWindow", "홈"))
-        self.btn_selDes.setText(_translate("MainWindow", "목적지 설정"))
-        self.btn_manDriving.setText(_translate("MainWindow", "수동주행"))
-        self.btn_emrCall.setText(_translate("MainWindow", "긴급호출"))
+        Ui_MainPage.btn_selDes.setText(_translate("MainWindow", "목적지 설정"))
+        Ui_MainPage.btn_manDriving.setText(_translate("MainWindow", "수동주행"))
+        Ui_MainPage.btn_emrCall.setText(_translate("MainWindow", "긴급호출"))
 
-if __name__ == "__main__":
-    # QApplication : 프로그램을 실행시켜주는 클래스
-    app = QApplication(sys.argv)
 
-    # WindowClass의 인스턴스 생성
-    myWindow = Ui_MainPage()
-
-    # 프로그램 화면을 보여주는 코드
-    myWindow.show()
-
-    # 프로그램을 이벤트루프로 진입시키는(프로그램을 작동시키는) 코드
-    app.exec_()
+# if __name__ == "__main__":
+#     # QApplication : 프로그램을 실행시켜주는 클래스
+#     app = QApplication(sys.argv)
+#
+#     # WindowClass의 인스턴스 생성
+#     myWindow = Ui_MainPage()
+#
+#     # 프로그램 화면을 보여주는 코드
+#     myWindow.show()
+#
+#     # 프로그램을 이벤트루프로 진입시키는(프로그램을 작동시키는) 코드
+#     app.exec_()

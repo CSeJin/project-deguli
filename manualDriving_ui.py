@@ -14,6 +14,15 @@ from PyQt5.QtWidgets import QApplication, QMainWindow
 
 
 class Ui_ManualDriving(QMainWindow):
+    # 변수 정의
+    btn_home = None
+    btn_up = None
+    btn_left = None
+    btn_down = None
+    btn_right = None
+    btn_stop = None
+    btn_emrCall = None
+
     def __init__(self):
         super().__init__()
         self.setupUi(self)
@@ -44,25 +53,25 @@ class Ui_ManualDriving(QMainWindow):
         self.layout_title = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
         self.layout_title.setContentsMargins(0, 0, 0, 0)
         self.layout_title.setObjectName("layout_title")
-        self.btn_home = QtWidgets.QPushButton(self.horizontalLayoutWidget)
+        Ui_ManualDriving.btn_home = QtWidgets.QPushButton(self.horizontalLayoutWidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.btn_home.sizePolicy().hasHeightForWidth())
-        self.btn_home.setSizePolicy(sizePolicy)
-        self.btn_home.setMinimumSize(QtCore.QSize(180, 0))
-        self.btn_home.setSizeIncrement(QtCore.QSize(0, 0))
+        sizePolicy.setHeightForWidth(Ui_ManualDriving.btn_home.sizePolicy().hasHeightForWidth())
+        Ui_ManualDriving.btn_home.setSizePolicy(sizePolicy)
+        Ui_ManualDriving.btn_home.setMinimumSize(QtCore.QSize(180, 0))
+        Ui_ManualDriving.btn_home.setSizeIncrement(QtCore.QSize(0, 0))
         font = QtGui.QFont()
         font.setFamily("Malgun Gothic")
         font.setPointSize(20)
         font.setBold(True)
         font.setWeight(75)
-        self.btn_home.setFont(font)
-        self.btn_home.setStyleSheet("margin-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"padding: 5px 0;")
-        self.btn_home.setObjectName("btn_home")
-        self.layout_title.addWidget(self.btn_home)
+        Ui_ManualDriving.btn_home.setFont(font)
+        Ui_ManualDriving.btn_home.setStyleSheet("margin-left: 20px;\n"
+                                    "background-color: #cfe3ac;\n"
+                                    "padding: 5px 0;")
+        Ui_ManualDriving.btn_home.setObjectName("btn_home")
+        self.layout_title.addWidget(Ui_ManualDriving.btn_home)
         self.title = QtWidgets.QLabel(self.horizontalLayoutWidget)
         font = QtGui.QFont()
         font.setFamily("Malgun Gothic")
@@ -89,9 +98,9 @@ class Ui_ManualDriving(QMainWindow):
         font.setWeight(75)
         self.pushButton_7.setFont(font)
         self.pushButton_7.setStyleSheet("margin-left: 20px;\n"
-"background-color: white;\n"
-"padding: 10px 0;\n"
-"")
+                                        "background-color: white;\n"
+                                        "padding: 10px 0;\n"
+                                        "")
         self.pushButton_7.setText("")
         self.pushButton_7.setFlat(True)
         self.pushButton_7.setObjectName("pushButton_7")
@@ -111,70 +120,70 @@ class Ui_ManualDriving(QMainWindow):
         self.verticalLayout.setObjectName("verticalLayout")
         self.gridLayout = QtWidgets.QGridLayout()
         self.gridLayout.setObjectName("gridLayout")
-        self.btn_stop = QtWidgets.QPushButton(self.verticalLayoutWidget)
+        Ui_ManualDriving.btn_stop = QtWidgets.QPushButton(self.verticalLayoutWidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.btn_stop.sizePolicy().hasHeightForWidth())
-        self.btn_stop.setSizePolicy(sizePolicy)
-        self.btn_stop.setMinimumSize(QtCore.QSize(100, 100))
+        sizePolicy.setHeightForWidth(Ui_ManualDriving.btn_stop.sizePolicy().hasHeightForWidth())
+        Ui_ManualDriving.btn_stop.setSizePolicy(sizePolicy)
+        Ui_ManualDriving.btn_stop.setMinimumSize(QtCore.QSize(100, 100))
         font = QtGui.QFont()
         font.setFamily("Malgun Gothic")
         font.setPointSize(20)
         font.setBold(True)
         font.setWeight(75)
-        self.btn_stop.setFont(font)
-        self.btn_stop.setStyleSheet("background-color: #cfe3ac;")
-        self.btn_stop.setObjectName("btn_stop")
-        self.gridLayout.addWidget(self.btn_stop, 1, 1, 1, 1)
-        self.btn_up = QtWidgets.QPushButton(self.verticalLayoutWidget)
+        Ui_ManualDriving.btn_stop.setFont(font)
+        Ui_ManualDriving.btn_stop.setStyleSheet("background-color: #cfe3ac;")
+        Ui_ManualDriving.btn_stop.setObjectName("btn_stop")
+        self.gridLayout.addWidget(Ui_ManualDriving.btn_stop, 1, 1, 1, 1)
+        Ui_ManualDriving.btn_up = QtWidgets.QPushButton(self.verticalLayoutWidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.btn_up.sizePolicy().hasHeightForWidth())
-        self.btn_up.setSizePolicy(sizePolicy)
-        self.btn_up.setMinimumSize(QtCore.QSize(100, 100))
-        self.btn_up.setStyleSheet("background: url(./assets/arrow_up.png);\n"
-"")
-        self.btn_up.setText("")
-        self.btn_up.setObjectName("btn_up")
-        self.gridLayout.addWidget(self.btn_up, 0, 1, 1, 1)
-        self.btn_right = QtWidgets.QPushButton(self.verticalLayoutWidget)
+        sizePolicy.setHeightForWidth(Ui_ManualDriving.btn_up.sizePolicy().hasHeightForWidth())
+        Ui_ManualDriving.btn_up.setSizePolicy(sizePolicy)
+        Ui_ManualDriving.btn_up.setMinimumSize(QtCore.QSize(100, 100))
+        Ui_ManualDriving.btn_up.setStyleSheet("background: url(./assets/arrow_up.png);\n"
+                                  "")
+        Ui_ManualDriving.btn_up.setText("")
+        Ui_ManualDriving.btn_up.setObjectName("btn_up")
+        self.gridLayout.addWidget(Ui_ManualDriving.btn_up, 0, 1, 1, 1)
+        Ui_ManualDriving.btn_right = QtWidgets.QPushButton(self.verticalLayoutWidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.btn_right.sizePolicy().hasHeightForWidth())
-        self.btn_right.setSizePolicy(sizePolicy)
-        self.btn_right.setMinimumSize(QtCore.QSize(100, 100))
-        self.btn_right.setStyleSheet("background: url(./assets/arrow_right.png);\n"
-"")
-        self.btn_right.setText("")
-        self.btn_right.setObjectName("btn_right")
-        self.gridLayout.addWidget(self.btn_right, 1, 2, 1, 1)
-        self.btn_left = QtWidgets.QPushButton(self.verticalLayoutWidget)
+        sizePolicy.setHeightForWidth(Ui_ManualDriving.btn_right.sizePolicy().hasHeightForWidth())
+        Ui_ManualDriving.btn_right.setSizePolicy(sizePolicy)
+        Ui_ManualDriving.btn_right.setMinimumSize(QtCore.QSize(100, 100))
+        Ui_ManualDriving.btn_right.setStyleSheet("background: url(./assets/arrow_right.png);\n"
+                                     "")
+        Ui_ManualDriving.btn_right.setText("")
+        Ui_ManualDriving.btn_right.setObjectName("btn_right")
+        self.gridLayout.addWidget(Ui_ManualDriving.btn_right, 1, 2, 1, 1)
+        Ui_ManualDriving.btn_left = QtWidgets.QPushButton(self.verticalLayoutWidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.btn_left.sizePolicy().hasHeightForWidth())
-        self.btn_left.setSizePolicy(sizePolicy)
-        self.btn_left.setMinimumSize(QtCore.QSize(100, 100))
-        self.btn_left.setStyleSheet("background: url(./assets/arrow_left.png);\n"
-"")
-        self.btn_left.setText("")
-        self.btn_left.setObjectName("btn_left")
-        self.gridLayout.addWidget(self.btn_left, 1, 0, 1, 1)
-        self.btn_down = QtWidgets.QPushButton(self.verticalLayoutWidget)
+        sizePolicy.setHeightForWidth(Ui_ManualDriving.btn_left.sizePolicy().hasHeightForWidth())
+        Ui_ManualDriving.btn_left.setSizePolicy(sizePolicy)
+        Ui_ManualDriving.btn_left.setMinimumSize(QtCore.QSize(100, 100))
+        Ui_ManualDriving.btn_left.setStyleSheet("background: url(./assets/arrow_left.png);\n"
+                                    "")
+        Ui_ManualDriving.btn_left.setText("")
+        Ui_ManualDriving.btn_left.setObjectName("btn_left")
+        self.gridLayout.addWidget(Ui_ManualDriving.btn_left, 1, 0, 1, 1)
+        Ui_ManualDriving.btn_down = QtWidgets.QPushButton(self.verticalLayoutWidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.btn_down.sizePolicy().hasHeightForWidth())
-        self.btn_down.setSizePolicy(sizePolicy)
-        self.btn_down.setMinimumSize(QtCore.QSize(100, 100))
-        self.btn_down.setStyleSheet("background: url(./assets/arrow_down.png);\n"
-"")
-        self.btn_down.setText("")
-        self.btn_down.setObjectName("btn_down")
-        self.gridLayout.addWidget(self.btn_down, 2, 1, 1, 1)
+        sizePolicy.setHeightForWidth(Ui_ManualDriving.btn_down.sizePolicy().hasHeightForWidth())
+        Ui_ManualDriving.btn_down.setSizePolicy(sizePolicy)
+        Ui_ManualDriving.btn_down.setMinimumSize(QtCore.QSize(100, 100))
+        Ui_ManualDriving.btn_down.setStyleSheet("background: url(./assets/arrow_down.png);\n"
+                                    "")
+        Ui_ManualDriving.btn_down.setText("")
+        Ui_ManualDriving.btn_down.setObjectName("btn_down")
+        self.gridLayout.addWidget(Ui_ManualDriving.btn_down, 2, 1, 1, 1)
         self.verticalLayout.addLayout(self.gridLayout)
         self.layout_contents_inside.addLayout(self.verticalLayout)
         self.layout_contents.addLayout(self.layout_contents_inside)
@@ -186,25 +195,25 @@ class Ui_ManualDriving(QMainWindow):
         self.layout_bottom = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_2)
         self.layout_bottom.setContentsMargins(0, 0, 0, 0)
         self.layout_bottom.setObjectName("layout_bottom")
-        self.btn_emrCall = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
+        Ui_ManualDriving.btn_emrCall = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.btn_emrCall.sizePolicy().hasHeightForWidth())
-        self.btn_emrCall.setSizePolicy(sizePolicy)
-        self.btn_emrCall.setMinimumSize(QtCore.QSize(170, 60))
+        sizePolicy.setHeightForWidth(Ui_ManualDriving.btn_emrCall.sizePolicy().hasHeightForWidth())
+        Ui_ManualDriving.btn_emrCall.setSizePolicy(sizePolicy)
+        Ui_ManualDriving.btn_emrCall.setMinimumSize(QtCore.QSize(170, 60))
         font = QtGui.QFont()
         font.setFamily("Malgun Gothic")
         font.setPointSize(20)
         font.setBold(True)
         font.setWeight(75)
-        self.btn_emrCall.setFont(font)
-        self.btn_emrCall.setStyleSheet("background-color: #ed6339;\n"
-"color: white;\n"
-"padding: 5px 10px;\n"
-"margin-right: 30px;")
-        self.btn_emrCall.setObjectName("btn_emrCall")
-        self.layout_bottom.addWidget(self.btn_emrCall, 0, QtCore.Qt.AlignRight|QtCore.Qt.AlignVCenter)
+        Ui_ManualDriving.btn_emrCall.setFont(font)
+        Ui_ManualDriving.btn_emrCall.setStyleSheet("background-color: #ed6339;\n"
+                                       "color: white;\n"
+                                       "padding: 5px 10px;\n"
+                                       "margin-right: 30px;")
+        Ui_ManualDriving.btn_emrCall.setObjectName("btn_emrCall")
+        self.layout_bottom.addWidget(Ui_ManualDriving.btn_emrCall, 0, QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -213,20 +222,7 @@ class Ui_ManualDriving(QMainWindow):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.btn_home.setText(_translate("MainWindow", "HOME"))
+        Ui_ManualDriving.btn_home.setText(_translate("MainWindow", "HOME"))
         self.title.setText(_translate("MainWindow", "수동 주행"))
-        self.btn_stop.setText(_translate("MainWindow", "정지"))
-        self.btn_emrCall.setText(_translate("MainWindow", "긴급호출"))
-
-if __name__ == "__main__":
-    # QApplication : 프로그램을 실행시켜주는 클래스
-    app = QApplication(sys.argv)
-
-    # WindowClass의 인스턴스 생성
-    myWindow = Ui_ManualDriving()
-
-    # 프로그램 화면을 보여주는 코드
-    myWindow.show()
-
-    # 프로그램을 이벤트루프로 진입시키는(프로그램을 작동시키는) 코드
-    app.exec_()
+        Ui_ManualDriving.btn_stop.setText(_translate("MainWindow", "정지"))
+        Ui_ManualDriving.btn_emrCall.setText(_translate("MainWindow", "긴급호출"))

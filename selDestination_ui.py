@@ -14,9 +14,118 @@ from PyQt5.QtWidgets import QApplication, QMainWindow
 
 
 class Ui_selDestination(QMainWindow):
+    # 변수 정의
+    btn_home = None
+    tabs = None
+    btn_emrCall = None
+    btn_start = None
+    btn_list =[]
+    #1층
+    btn1_1f = None
+    btn2_1f = None
+    btn3_1f = None
+    btn4_1f = None
+    btn5_1f = None
+    btn6_1f = None
+    btn7_1f = None
+    btn8_1f = None
+    btn_list.append(btn1_1f)
+    btn_list.append(btn2_1f)
+    btn_list.append(btn3_1f)
+    btn_list.append(btn4_1f)
+    btn_list.append(btn5_1f)
+    btn_list.append(btn6_1f)
+    btn_list.append(btn7_1f)
+    btn_list.append(btn8_1f)
+    #2층
+    btn1_2f = None
+    btn2_2f = None
+    btn3_2f = None
+    btn4_2f = None
+    btn5_2f = None
+    btn6_2f = None
+    btn7_2f = None
+    btn8_2f = None
+    btn_list.append(btn1_2f)
+    btn_list.append(btn2_2f)
+    btn_list.append(btn3_2f)
+    btn_list.append(btn4_2f)
+    btn_list.append(btn5_2f)
+    btn_list.append(btn6_2f)
+    btn_list.append(btn7_2f)
+    btn_list.append(btn8_2f)
+    #3층
+    btn1_3f = None
+    btn2_3f = None
+    btn3_3f = None
+    btn4_3f = None
+    btn5_3f = None
+    btn6_3f = None
+    btn7_3f = None
+    btn8_3f = None
+    btn_list.append(btn1_3f)
+    btn_list.append(btn2_3f)
+    btn_list.append(btn3_3f)
+    btn_list.append(btn4_3f)
+    btn_list.append(btn5_3f)
+    btn_list.append(btn6_3f)
+    btn_list.append(btn7_3f)
+    btn_list.append(btn8_3f)
+    #4층
+    btn1_4f = None
+    btn2_4f = None
+    btn3_4f = None
+    btn4_4f = None
+    btn5_4f = None
+    btn6_4f = None
+    btn7_4f = None
+    btn8_4f = None
+    btn_list.append(btn1_4f)
+    btn_list.append(btn2_4f)
+    btn_list.append(btn3_4f)
+    btn_list.append(btn4_4f)
+    btn_list.append(btn5_4f)
+    btn_list.append(btn6_4f)
+    btn_list.append(btn7_4f)
+    btn_list.append(btn8_4f)
+    #5층
+    btn1_5f = None
+    btn2_5f = None
+    btn3_5f = None
+    btn4_5f = None
+    btn5_5f = None
+    btn6_5f = None
+    btn7_5f = None
+    btn8_5f = None
+    btn_list.append(btn1_5f)
+    btn_list.append(btn2_5f)
+    btn_list.append(btn3_5f)
+    btn_list.append(btn4_5f)
+    btn_list.append(btn5_5f)
+    btn_list.append(btn6_5f)
+    btn_list.append(btn7_5f)
+    btn_list.append(btn8_5f)
+    #6층
+    btn1_6f = None
+    btn2_6f = None
+    btn3_6f = None
+    btn4_6f = None
+    btn5_6f = None
+    btn6_6f = None
+    btn7_6f = None
+    btn8_6f = None
+    btn_list.append(btn1_6f)
+    btn_list.append(btn2_6f)
+    btn_list.append(btn3_6f)
+    btn_list.append(btn4_6f)
+    btn_list.append(btn5_6f)
+    btn_list.append(btn6_6f)
+    btn_list.append(btn7_6f)
+    btn_list.append(btn8_6f)
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1024, 600)
@@ -43,25 +152,25 @@ class Ui_selDestination(QMainWindow):
         self.layout_title = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
         self.layout_title.setContentsMargins(0, 0, 0, 0)
         self.layout_title.setObjectName("layout_title")
-        self.btn_home = QtWidgets.QPushButton(self.horizontalLayoutWidget)
+        Ui_selDestination.btn_home = QtWidgets.QPushButton(self.horizontalLayoutWidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.btn_home.sizePolicy().hasHeightForWidth())
-        self.btn_home.setSizePolicy(sizePolicy)
-        self.btn_home.setMinimumSize(QtCore.QSize(210, 0))
-        self.btn_home.setSizeIncrement(QtCore.QSize(0, 0))
+        sizePolicy.setHeightForWidth(Ui_selDestination.btn_home.sizePolicy().hasHeightForWidth())
+        Ui_selDestination.btn_home.setSizePolicy(sizePolicy)
+        Ui_selDestination.btn_home.setMinimumSize(QtCore.QSize(210, 0))
+        Ui_selDestination.btn_home.setSizeIncrement(QtCore.QSize(0, 0))
         font = QtGui.QFont()
         font.setFamily("Malgun Gothic")
         font.setPointSize(20)
         font.setBold(True)
         font.setWeight(75)
-        self.btn_home.setFont(font)
-        self.btn_home.setStyleSheet("margin-left: 50px;\n"
-"background-color: #cfe3ac;\n"
-"padding: 5px 0;")
-        self.btn_home.setObjectName("btn_home")
-        self.layout_title.addWidget(self.btn_home)
+        Ui_selDestination.btn_home.setFont(font)
+        Ui_selDestination.btn_home.setStyleSheet("margin-left: 50px;\n"
+                                                 "background-color: #cfe3ac;\n"
+                                                 "padding: 5px 0;")
+        Ui_selDestination.btn_home.setObjectName("btn_home")
+        self.layout_title.addWidget(Ui_selDestination.btn_home)
         self.title = QtWidgets.QLabel(self.horizontalLayoutWidget)
         font = QtGui.QFont()
         font.setFamily("Malgun Gothic")
@@ -106,20 +215,20 @@ class Ui_selDestination(QMainWindow):
         self.layout_contents_inside = QtWidgets.QVBoxLayout()
         self.layout_contents_inside.setSizeConstraint(QtWidgets.QLayout.SetMinimumSize)
         self.layout_contents_inside.setObjectName("layout_contents_inside")
-        self.tabs = QtWidgets.QTabWidget(self.verticalLayoutWidget)
+        Ui_selDestination.tabs = QtWidgets.QTabWidget(self.verticalLayoutWidget)
         font = QtGui.QFont()
         font.setFamily("Malgun Gothic")
         font.setPointSize(15)
         font.setBold(True)
         font.setWeight(75)
-        self.tabs.setFont(font)
-        self.tabs.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.tabs.setStyleSheet("")
-        self.tabs.setTabPosition(QtWidgets.QTabWidget.North)
-        self.tabs.setTabShape(QtWidgets.QTabWidget.Rounded)
-        self.tabs.setElideMode(QtCore.Qt.ElideNone)
-        self.tabs.setTabBarAutoHide(False)
-        self.tabs.setObjectName("tabs")
+        Ui_selDestination.tabs.setFont(font)
+        Ui_selDestination.tabs.setLayoutDirection(QtCore.Qt.LeftToRight)
+        Ui_selDestination.tabs.setStyleSheet("")
+        Ui_selDestination.tabs.setTabPosition(QtWidgets.QTabWidget.North)
+        Ui_selDestination.tabs.setTabShape(QtWidgets.QTabWidget.Rounded)
+        Ui_selDestination.tabs.setElideMode(QtCore.Qt.ElideNone)
+        Ui_selDestination.tabs.setTabBarAutoHide(False)
+        Ui_selDestination.tabs.setObjectName("tabs")
         self.tab_1f = QtWidgets.QWidget()
         self.tab_1f.setObjectName("tab_1f")
         self.horizontalLayoutWidget_9 = QtWidgets.QWidget(self.tab_1f)
@@ -137,7 +246,7 @@ class Ui_selDestination(QMainWindow):
         self.map_1f.setMinimumSize(QtCore.QSize(440, 330))
         self.map_1f.setMaximumSize(QtCore.QSize(350, 16777215))
         self.map_1f.setStyleSheet("background-image: url(\"./assets/map_4f.jpg\");\n"
-"margin: 0 20px;")
+                                  "margin: 0 20px;")
         self.map_1f.setText("")
         self.map_1f.setObjectName("map_1f")
         self.tab1_contents.addWidget(self.map_1f)
@@ -151,144 +260,144 @@ class Ui_selDestination(QMainWindow):
         self.list_1f.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOn)
         self.list_1f.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.list_1f.setWidgetResizable(True)
-        self.list_1f.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.list_1f.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
         self.list_1f.setObjectName("list_1f")
         self.scrollAreaWidgetContents_8 = QtWidgets.QWidget()
         self.scrollAreaWidgetContents_8.setGeometry(QtCore.QRect(0, 0, 438, 420))
         self.scrollAreaWidgetContents_8.setObjectName("scrollAreaWidgetContents_8")
         self.verticalLayout_9 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents_8)
         self.verticalLayout_9.setObjectName("verticalLayout_9")
-        self.btn1_1f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_8)
-        self.btn1_1f.setMinimumSize(QtCore.QSize(0, 45))
+        Ui_selDestination.btn1_1f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_8)
+        Ui_selDestination.btn1_1f.setMinimumSize(QtCore.QSize(0, 45))
         font = QtGui.QFont()
         font.setFamily("Malgun Gothic")
         font.setPointSize(15)
         font.setBold(True)
         font.setWeight(75)
-        self.btn1_1f.setFont(font)
-        self.btn1_1f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
-        self.btn1_1f.setAutoDefault(False)
-        self.btn1_1f.setDefault(False)
-        self.btn1_1f.setFlat(False)
-        self.btn1_1f.setObjectName("btn1_1f")
-        self.verticalLayout_9.addWidget(self.btn1_1f)
-        self.btn2_1f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_8)
-        self.btn2_1f.setMinimumSize(QtCore.QSize(0, 45))
+        Ui_selDestination.btn1_1f.setFont(font)
+        Ui_selDestination.btn1_1f.setStyleSheet("padding: 5px;\n"
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
+        Ui_selDestination.btn1_1f.setAutoDefault(False)
+        Ui_selDestination.btn1_1f.setDefault(False)
+        Ui_selDestination.btn1_1f.setFlat(False)
+        Ui_selDestination.btn1_1f.setObjectName("btn1_1f")
+        self.verticalLayout_9.addWidget(Ui_selDestination.btn1_1f)
+        Ui_selDestination.btn2_1f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_8)
+        Ui_selDestination.btn2_1f.setMinimumSize(QtCore.QSize(0, 45))
         font = QtGui.QFont()
         font.setFamily("Malgun Gothic")
         font.setPointSize(15)
         font.setBold(True)
         font.setWeight(75)
-        self.btn2_1f.setFont(font)
-        self.btn2_1f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
-        self.btn2_1f.setObjectName("btn2_1f")
-        self.verticalLayout_9.addWidget(self.btn2_1f)
-        self.btn3_1f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_8)
-        self.btn3_1f.setMinimumSize(QtCore.QSize(0, 45))
+        Ui_selDestination.btn2_1f.setFont(font)
+        Ui_selDestination.btn2_1f.setStyleSheet("padding: 5px;\n"
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
+        Ui_selDestination.btn2_1f.setObjectName("btn2_1f")
+        self.verticalLayout_9.addWidget(Ui_selDestination.btn2_1f)
+        Ui_selDestination.btn3_1f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_8)
+        Ui_selDestination.btn3_1f.setMinimumSize(QtCore.QSize(0, 45))
         font = QtGui.QFont()
         font.setFamily("Malgun Gothic")
         font.setPointSize(15)
         font.setBold(True)
         font.setWeight(75)
-        self.btn3_1f.setFont(font)
-        self.btn3_1f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
-        self.btn3_1f.setObjectName("btn3_1f")
-        self.verticalLayout_9.addWidget(self.btn3_1f)
-        self.btn4_1f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_8)
-        self.btn4_1f.setMinimumSize(QtCore.QSize(0, 45))
+        Ui_selDestination.btn3_1f.setFont(font)
+        Ui_selDestination.btn3_1f.setStyleSheet("padding: 5px;\n"
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
+        Ui_selDestination.btn3_1f.setObjectName("btn3_1f")
+        self.verticalLayout_9.addWidget(Ui_selDestination.btn3_1f)
+        Ui_selDestination.btn4_1f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_8)
+        Ui_selDestination.btn4_1f.setMinimumSize(QtCore.QSize(0, 45))
         font = QtGui.QFont()
         font.setFamily("Malgun Gothic")
         font.setPointSize(15)
         font.setBold(True)
         font.setWeight(75)
-        self.btn4_1f.setFont(font)
-        self.btn4_1f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
-        self.btn4_1f.setObjectName("btn4_1f")
-        self.verticalLayout_9.addWidget(self.btn4_1f)
-        self.btn5_1f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_8)
-        self.btn5_1f.setMinimumSize(QtCore.QSize(0, 45))
+        Ui_selDestination.btn4_1f.setFont(font)
+        Ui_selDestination.btn4_1f.setStyleSheet("padding: 5px;\n"
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
+        Ui_selDestination.btn4_1f.setObjectName("btn4_1f")
+        self.verticalLayout_9.addWidget(Ui_selDestination.btn4_1f)
+        Ui_selDestination.btn5_1f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_8)
+        Ui_selDestination.btn5_1f.setMinimumSize(QtCore.QSize(0, 45))
         font = QtGui.QFont()
         font.setFamily("Malgun Gothic")
         font.setPointSize(15)
         font.setBold(True)
         font.setWeight(75)
-        self.btn5_1f.setFont(font)
-        self.btn5_1f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
-        self.btn5_1f.setObjectName("btn5_1f")
-        self.verticalLayout_9.addWidget(self.btn5_1f)
-        self.btn6_1f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_8)
-        self.btn6_1f.setMinimumSize(QtCore.QSize(0, 45))
+        Ui_selDestination.btn5_1f.setFont(font)
+        Ui_selDestination.btn5_1f.setStyleSheet("padding: 5px;\n"
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
+        Ui_selDestination.btn5_1f.setObjectName("btn5_1f")
+        self.verticalLayout_9.addWidget(Ui_selDestination.btn5_1f)
+        Ui_selDestination.btn6_1f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_8)
+        Ui_selDestination.btn6_1f.setMinimumSize(QtCore.QSize(0, 45))
         font = QtGui.QFont()
         font.setFamily("Malgun Gothic")
         font.setPointSize(15)
         font.setBold(True)
         font.setWeight(75)
-        self.btn6_1f.setFont(font)
-        self.btn6_1f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
-        self.btn6_1f.setObjectName("btn6_1f")
-        self.verticalLayout_9.addWidget(self.btn6_1f)
-        self.btn7_1f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_8)
-        self.btn7_1f.setMinimumSize(QtCore.QSize(0, 45))
+        Ui_selDestination.btn6_1f.setFont(font)
+        Ui_selDestination.btn6_1f.setStyleSheet("padding: 5px;\n"
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
+        Ui_selDestination.btn6_1f.setObjectName("btn6_1f")
+        self.verticalLayout_9.addWidget(Ui_selDestination.btn6_1f)
+        Ui_selDestination.btn7_1f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_8)
+        Ui_selDestination.btn7_1f.setMinimumSize(QtCore.QSize(0, 45))
         font = QtGui.QFont()
         font.setFamily("Malgun Gothic")
         font.setPointSize(15)
         font.setBold(True)
         font.setWeight(75)
-        self.btn7_1f.setFont(font)
-        self.btn7_1f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
-        self.btn7_1f.setObjectName("btn7_1f")
-        self.verticalLayout_9.addWidget(self.btn7_1f)
-        self.btn8_1f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_8)
+        Ui_selDestination.btn7_1f.setFont(font)
+        Ui_selDestination.btn7_1f.setStyleSheet("padding: 5px;\n"
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
+        Ui_selDestination.btn7_1f.setObjectName("btn7_1f")
+        self.verticalLayout_9.addWidget(Ui_selDestination.btn7_1f)
+        Ui_selDestination.btn8_1f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_8)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.btn8_1f.sizePolicy().hasHeightForWidth())
-        self.btn8_1f.setSizePolicy(sizePolicy)
-        self.btn8_1f.setMinimumSize(QtCore.QSize(0, 45))
+        sizePolicy.setHeightForWidth(Ui_selDestination.btn8_1f.sizePolicy().hasHeightForWidth())
+        Ui_selDestination.btn8_1f.setSizePolicy(sizePolicy)
+        Ui_selDestination.btn8_1f.setMinimumSize(QtCore.QSize(0, 45))
         font = QtGui.QFont()
         font.setFamily("Malgun Gothic")
         font.setPointSize(15)
         font.setBold(True)
         font.setWeight(75)
-        self.btn8_1f.setFont(font)
-        self.btn8_1f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
-        self.btn8_1f.setObjectName("btn8_1f")
-        self.verticalLayout_9.addWidget(self.btn8_1f)
+        Ui_selDestination.btn8_1f.setFont(font)
+        Ui_selDestination.btn8_1f.setStyleSheet("padding: 5px;\n"
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
+        Ui_selDestination.btn8_1f.setObjectName("btn8_1f")
+        self.verticalLayout_9.addWidget(Ui_selDestination.btn8_1f)
         self.list_1f.setWidget(self.scrollAreaWidgetContents_8)
         self.tab1_contents.addWidget(self.list_1f)
-        self.tabs.addTab(self.tab_1f, "")
+        Ui_selDestination.tabs.addTab(self.tab_1f, "")
         self.tab_2f = QtWidgets.QWidget()
         self.tab_2f.setObjectName("tab_2f")
         self.horizontalLayoutWidget_4 = QtWidgets.QWidget(self.tab_2f)
@@ -306,7 +415,7 @@ class Ui_selDestination(QMainWindow):
         self.map_2f.setMinimumSize(QtCore.QSize(440, 330))
         self.map_2f.setMaximumSize(QtCore.QSize(350, 16777215))
         self.map_2f.setStyleSheet("background-image: url(./assets/map_2f.jpg);\n"
-"margin: 0 20px;")
+                                  "margin: 0 20px;")
         self.map_2f.setText("")
         self.map_2f.setObjectName("map_2f")
         self.tab2_contents.addWidget(self.map_2f)
@@ -320,7 +429,7 @@ class Ui_selDestination(QMainWindow):
         self.scrollArea_4.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOn)
         self.scrollArea_4.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.scrollArea_4.setWidgetResizable(True)
-        self.scrollArea_4.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.scrollArea_4.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
         self.scrollArea_4.setObjectName("scrollArea_4")
         self.list_2f = QtWidgets.QWidget()
         self.list_2f.setGeometry(QtCore.QRect(0, 0, 438, 420))
@@ -336,10 +445,10 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         self.btn1_2f.setFont(font)
         self.btn1_2f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
         self.btn1_2f.setAutoDefault(False)
         self.btn1_2f.setDefault(False)
         self.btn1_2f.setFlat(False)
@@ -354,10 +463,10 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         self.btn2_2f.setFont(font)
         self.btn2_2f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
         self.btn2_2f.setObjectName("btn2_2f")
         self.verticalLayout_4.addWidget(self.btn2_2f)
         self.btn3_2f = QtWidgets.QPushButton(self.list_2f)
@@ -369,10 +478,10 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         self.btn3_2f.setFont(font)
         self.btn3_2f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
         self.btn3_2f.setObjectName("btn3_2f")
         self.verticalLayout_4.addWidget(self.btn3_2f)
         self.btn4_2f = QtWidgets.QPushButton(self.list_2f)
@@ -384,10 +493,10 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         self.btn4_2f.setFont(font)
         self.btn4_2f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
         self.btn4_2f.setObjectName("btn4_2f")
         self.verticalLayout_4.addWidget(self.btn4_2f)
         self.btn5_2f = QtWidgets.QPushButton(self.list_2f)
@@ -399,10 +508,10 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         self.btn5_2f.setFont(font)
         self.btn5_2f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
         self.btn5_2f.setObjectName("btn5_2f")
         self.verticalLayout_4.addWidget(self.btn5_2f)
         self.btn6_2f = QtWidgets.QPushButton(self.list_2f)
@@ -414,10 +523,10 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         self.btn6_2f.setFont(font)
         self.btn6_2f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
         self.btn6_2f.setObjectName("btn6_2f")
         self.verticalLayout_4.addWidget(self.btn6_2f)
         self.btn7_2f = QtWidgets.QPushButton(self.list_2f)
@@ -429,10 +538,10 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         self.btn7_2f.setFont(font)
         self.btn7_2f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
         self.btn7_2f.setObjectName("btn7_2f")
         self.verticalLayout_4.addWidget(self.btn7_2f)
         self.btn8_2f = QtWidgets.QPushButton(self.list_2f)
@@ -449,15 +558,15 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         self.btn8_2f.setFont(font)
         self.btn8_2f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
         self.btn8_2f.setObjectName("btn8_2f")
         self.verticalLayout_4.addWidget(self.btn8_2f)
         self.scrollArea_4.setWidget(self.list_2f)
         self.tab2_contents.addWidget(self.scrollArea_4)
-        self.tabs.addTab(self.tab_2f, "")
+        Ui_selDestination.tabs.addTab(self.tab_2f, "")
         self.tab_3f = QtWidgets.QWidget()
         self.tab_3f.setObjectName("tab_3f")
         self.horizontalLayoutWidget_5 = QtWidgets.QWidget(self.tab_3f)
@@ -475,7 +584,7 @@ class Ui_selDestination(QMainWindow):
         self.map_3f.setMinimumSize(QtCore.QSize(440, 300))
         self.map_3f.setMaximumSize(QtCore.QSize(350, 16777215))
         self.map_3f.setStyleSheet("background-image: url(./assets/map_3f.jpg);\n"
-"margin: 0 20px;")
+                                  "margin: 0 20px;")
         self.map_3f.setText("")
         self.map_3f.setObjectName("map_3f")
         self.tab3_contents.addWidget(self.map_3f)
@@ -489,7 +598,7 @@ class Ui_selDestination(QMainWindow):
         self.list_3f.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOn)
         self.list_3f.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.list_3f.setWidgetResizable(True)
-        self.list_3f.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.list_3f.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
         self.list_3f.setObjectName("list_3f")
         self.scrollAreaWidgetContents_4 = QtWidgets.QWidget()
         self.scrollAreaWidgetContents_4.setGeometry(QtCore.QRect(0, 0, 438, 420))
@@ -505,10 +614,10 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         self.btn1_3f.setFont(font)
         self.btn1_3f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
         self.btn1_3f.setAutoDefault(False)
         self.btn1_3f.setDefault(False)
         self.btn1_3f.setFlat(False)
@@ -523,10 +632,10 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         self.btn2_3f.setFont(font)
         self.btn2_3f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
         self.btn2_3f.setObjectName("btn2_3f")
         self.verticalLayout_5.addWidget(self.btn2_3f)
         self.btn3_3f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_4)
@@ -538,10 +647,10 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         self.btn3_3f.setFont(font)
         self.btn3_3f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
         self.btn3_3f.setObjectName("btn3_3f")
         self.verticalLayout_5.addWidget(self.btn3_3f)
         self.btn4_3f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_4)
@@ -553,10 +662,10 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         self.btn4_3f.setFont(font)
         self.btn4_3f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
         self.btn4_3f.setObjectName("btn4_3f")
         self.verticalLayout_5.addWidget(self.btn4_3f)
         self.btn5_3f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_4)
@@ -568,10 +677,10 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         self.btn5_3f.setFont(font)
         self.btn5_3f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
         self.btn5_3f.setObjectName("btn5_3f")
         self.verticalLayout_5.addWidget(self.btn5_3f)
         self.btn6_3f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_4)
@@ -583,10 +692,10 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         self.btn6_3f.setFont(font)
         self.btn6_3f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
         self.btn6_3f.setObjectName("btn6_3f")
         self.verticalLayout_5.addWidget(self.btn6_3f)
         self.btn7_3f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_4)
@@ -598,10 +707,10 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         self.btn7_3f.setFont(font)
         self.btn7_3f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
         self.btn7_3f.setObjectName("btn7_3f")
         self.verticalLayout_5.addWidget(self.btn7_3f)
         self.btn8_3f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_4)
@@ -618,15 +727,15 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         self.btn8_3f.setFont(font)
         self.btn8_3f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
         self.btn8_3f.setObjectName("btn8_3f")
         self.verticalLayout_5.addWidget(self.btn8_3f)
         self.list_3f.setWidget(self.scrollAreaWidgetContents_4)
         self.tab3_contents.addWidget(self.list_3f)
-        self.tabs.addTab(self.tab_3f, "")
+        Ui_selDestination.tabs.addTab(self.tab_3f, "")
         self.tab_4f = QtWidgets.QWidget()
         self.tab_4f.setObjectName("tab_4f")
         self.horizontalLayoutWidget_6 = QtWidgets.QWidget(self.tab_4f)
@@ -644,7 +753,7 @@ class Ui_selDestination(QMainWindow):
         self.map_4f.setMinimumSize(QtCore.QSize(440, 330))
         self.map_4f.setMaximumSize(QtCore.QSize(350, 16777215))
         self.map_4f.setStyleSheet("background-image: url(./assets/map_4f.jpg);\n"
-"margin: 0 20px;")
+                                  "margin: 0 20px;")
         self.map_4f.setText("")
         self.map_4f.setObjectName("map_4f")
         self.tab4_contents.addWidget(self.map_4f)
@@ -658,7 +767,7 @@ class Ui_selDestination(QMainWindow):
         self.list_4f.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOn)
         self.list_4f.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.list_4f.setWidgetResizable(True)
-        self.list_4f.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.list_4f.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
         self.list_4f.setObjectName("list_4f")
         self.scrollAreaWidgetContents_5 = QtWidgets.QWidget()
         self.scrollAreaWidgetContents_5.setGeometry(QtCore.QRect(0, 0, 438, 420))
@@ -674,10 +783,10 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         self.btn1_4f.setFont(font)
         self.btn1_4f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
         self.btn1_4f.setAutoDefault(False)
         self.btn1_4f.setDefault(False)
         self.btn1_4f.setFlat(False)
@@ -692,10 +801,10 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         self.btn2_4f.setFont(font)
         self.btn2_4f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
         self.btn2_4f.setObjectName("btn2_4f")
         self.verticalLayout_6.addWidget(self.btn2_4f)
         self.btn3_4f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_5)
@@ -707,10 +816,10 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         self.btn3_4f.setFont(font)
         self.btn3_4f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
         self.btn3_4f.setObjectName("btn3_4f")
         self.verticalLayout_6.addWidget(self.btn3_4f)
         self.btn4_4f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_5)
@@ -722,10 +831,10 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         self.btn4_4f.setFont(font)
         self.btn4_4f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
         self.btn4_4f.setObjectName("btn4_4f")
         self.verticalLayout_6.addWidget(self.btn4_4f)
         self.btn5_4f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_5)
@@ -737,10 +846,10 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         self.btn5_4f.setFont(font)
         self.btn5_4f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
         self.btn5_4f.setObjectName("btn5_4f")
         self.verticalLayout_6.addWidget(self.btn5_4f)
         self.btn6_4f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_5)
@@ -752,10 +861,10 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         self.btn6_4f.setFont(font)
         self.btn6_4f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
         self.btn6_4f.setObjectName("btn6_4f")
         self.verticalLayout_6.addWidget(self.btn6_4f)
         self.btn7_4f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_5)
@@ -767,10 +876,10 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         self.btn7_4f.setFont(font)
         self.btn7_4f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
         self.btn7_4f.setObjectName("btn7_4f")
         self.verticalLayout_6.addWidget(self.btn7_4f)
         self.btn8_4f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_5)
@@ -787,15 +896,15 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         self.btn8_4f.setFont(font)
         self.btn8_4f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
         self.btn8_4f.setObjectName("btn8_4f")
         self.verticalLayout_6.addWidget(self.btn8_4f)
         self.list_4f.setWidget(self.scrollAreaWidgetContents_5)
         self.tab4_contents.addWidget(self.list_4f)
-        self.tabs.addTab(self.tab_4f, "")
+        Ui_selDestination.tabs.addTab(self.tab_4f, "")
         self.tab_5f = QtWidgets.QWidget()
         self.tab_5f.setObjectName("tab_5f")
         self.horizontalLayoutWidget_7 = QtWidgets.QWidget(self.tab_5f)
@@ -813,7 +922,7 @@ class Ui_selDestination(QMainWindow):
         self.map_5f.setMinimumSize(QtCore.QSize(440, 330))
         self.map_5f.setMaximumSize(QtCore.QSize(350, 16777215))
         self.map_5f.setStyleSheet("background-image: url(./assets/map_5f.jpg);\n"
-"margin: 0 20px;")
+                                  "margin: 0 20px;")
         self.map_5f.setText("")
         self.map_5f.setObjectName("map_5f")
         self.tab5_contents.addWidget(self.map_5f)
@@ -827,7 +936,7 @@ class Ui_selDestination(QMainWindow):
         self.list_5f.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOn)
         self.list_5f.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.list_5f.setWidgetResizable(True)
-        self.list_5f.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.list_5f.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
         self.list_5f.setObjectName("list_5f")
         self.scrollAreaWidgetContents_6 = QtWidgets.QWidget()
         self.scrollAreaWidgetContents_6.setGeometry(QtCore.QRect(0, 0, 438, 420))
@@ -843,10 +952,10 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         self.btn1_5f.setFont(font)
         self.btn1_5f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
         self.btn1_5f.setAutoDefault(False)
         self.btn1_5f.setDefault(False)
         self.btn1_5f.setFlat(False)
@@ -861,10 +970,10 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         self.btn2_5f.setFont(font)
         self.btn2_5f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
         self.btn2_5f.setObjectName("btn2_5f")
         self.verticalLayout_7.addWidget(self.btn2_5f)
         self.btn3_5f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_6)
@@ -876,10 +985,10 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         self.btn3_5f.setFont(font)
         self.btn3_5f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
         self.btn3_5f.setObjectName("btn3_5f")
         self.verticalLayout_7.addWidget(self.btn3_5f)
         self.btn4_5f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_6)
@@ -891,10 +1000,10 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         self.btn4_5f.setFont(font)
         self.btn4_5f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
         self.btn4_5f.setObjectName("btn4_5f")
         self.verticalLayout_7.addWidget(self.btn4_5f)
         self.btn5_5f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_6)
@@ -906,10 +1015,10 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         self.btn5_5f.setFont(font)
         self.btn5_5f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
         self.btn5_5f.setObjectName("btn5_5f")
         self.verticalLayout_7.addWidget(self.btn5_5f)
         self.btn6_5f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_6)
@@ -921,10 +1030,10 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         self.btn6_5f.setFont(font)
         self.btn6_5f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
         self.btn6_5f.setObjectName("btn6_5f")
         self.verticalLayout_7.addWidget(self.btn6_5f)
         self.btn7_5f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_6)
@@ -936,10 +1045,10 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         self.btn7_5f.setFont(font)
         self.btn7_5f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
         self.btn7_5f.setObjectName("btn7_5f")
         self.verticalLayout_7.addWidget(self.btn7_5f)
         self.btn8_5f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_6)
@@ -956,15 +1065,15 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         self.btn8_5f.setFont(font)
         self.btn8_5f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
         self.btn8_5f.setObjectName("btn8_5f")
         self.verticalLayout_7.addWidget(self.btn8_5f)
         self.list_5f.setWidget(self.scrollAreaWidgetContents_6)
         self.tab5_contents.addWidget(self.list_5f)
-        self.tabs.addTab(self.tab_5f, "")
+        Ui_selDestination.tabs.addTab(self.tab_5f, "")
         self.tab_6f = QtWidgets.QWidget()
         self.tab_6f.setObjectName("tab_6f")
         self.horizontalLayoutWidget_8 = QtWidgets.QWidget(self.tab_6f)
@@ -982,7 +1091,7 @@ class Ui_selDestination(QMainWindow):
         self.map_6f.setMinimumSize(QtCore.QSize(440, 330))
         self.map_6f.setMaximumSize(QtCore.QSize(350, 16777215))
         self.map_6f.setStyleSheet("background-image: url(./assets/map_6f.jpg);\n"
-"margin: 0 20px;")
+                                  "margin: 0 20px;")
         self.map_6f.setText("")
         self.map_6f.setObjectName("map_6f")
         self.tab6_contents.addWidget(self.map_6f)
@@ -996,7 +1105,7 @@ class Ui_selDestination(QMainWindow):
         self.list_6f.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOn)
         self.list_6f.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.list_6f.setWidgetResizable(True)
-        self.list_6f.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.list_6f.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
         self.list_6f.setObjectName("list_6f")
         self.scrollAreaWidgetContents_7 = QtWidgets.QWidget()
         self.scrollAreaWidgetContents_7.setGeometry(QtCore.QRect(0, 0, 438, 420))
@@ -1012,10 +1121,10 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         self.btn1_6f.setFont(font)
         self.btn1_6f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
         self.btn1_6f.setAutoDefault(False)
         self.btn1_6f.setDefault(False)
         self.btn1_6f.setFlat(False)
@@ -1030,10 +1139,10 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         self.btn2_6f.setFont(font)
         self.btn2_6f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
         self.btn2_6f.setObjectName("btn2_6f")
         self.verticalLayout_8.addWidget(self.btn2_6f)
         self.btn3_6f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_7)
@@ -1045,10 +1154,10 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         self.btn3_6f.setFont(font)
         self.btn3_6f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
         self.btn3_6f.setObjectName("btn3_6f")
         self.verticalLayout_8.addWidget(self.btn3_6f)
         self.btn4_6f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_7)
@@ -1060,10 +1169,10 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         self.btn4_6f.setFont(font)
         self.btn4_6f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
         self.btn4_6f.setObjectName("btn4_6f")
         self.verticalLayout_8.addWidget(self.btn4_6f)
         self.btn5_6f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_7)
@@ -1075,10 +1184,10 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         self.btn5_6f.setFont(font)
         self.btn5_6f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
         self.btn5_6f.setObjectName("btn5_6f")
         self.verticalLayout_8.addWidget(self.btn5_6f)
         self.btn6_6f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_7)
@@ -1090,10 +1199,10 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         self.btn6_6f.setFont(font)
         self.btn6_6f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
         self.btn6_6f.setObjectName("btn6_6f")
         self.verticalLayout_8.addWidget(self.btn6_6f)
         self.btn7_6f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_7)
@@ -1105,10 +1214,10 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         self.btn7_6f.setFont(font)
         self.btn7_6f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
         self.btn7_6f.setObjectName("btn7_6f")
         self.verticalLayout_8.addWidget(self.btn7_6f)
         self.btn8_6f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_7)
@@ -1125,16 +1234,16 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         self.btn8_6f.setFont(font)
         self.btn8_6f.setStyleSheet("padding: 5px;\n"
-"padding-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"text-align: left;\n"
-"border: none;")
+                                   "padding-left: 20px;\n"
+                                   "background-color: #cfe3ac;\n"
+                                   "text-align: left;\n"
+                                   "border: none;")
         self.btn8_6f.setObjectName("btn8_6f")
         self.verticalLayout_8.addWidget(self.btn8_6f)
         self.list_6f.setWidget(self.scrollAreaWidgetContents_7)
         self.tab6_contents.addWidget(self.list_6f)
-        self.tabs.addTab(self.tab_6f, "")
-        self.layout_contents_inside.addWidget(self.tabs)
+        Ui_selDestination.tabs.addTab(self.tab_6f, "")
+        self.layout_contents_inside.addWidget(Ui_selDestination.tabs)
         self.layout_contents.addLayout(self.layout_contents_inside)
         spacerItem1 = QtWidgets.QSpacerItem(50, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
         self.layout_contents.addItem(spacerItem1)
@@ -1158,67 +1267,67 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         self.emr_call_btn_3.setFont(font)
         self.emr_call_btn_3.setStyleSheet("background-color: #ed6339;\n"
-"color: white;\n"
-"margin-right: 30px;")
+                                          "color: white;\n"
+                                          "margin-right: 30px;")
         self.emr_call_btn_3.setText("")
         self.emr_call_btn_3.setFlat(True)
         self.emr_call_btn_3.setObjectName("emr_call_btn_3")
         self.layout_bottom.addWidget(self.emr_call_btn_3, 0, QtCore.Qt.AlignLeft)
-        self.btn_start = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
+        Ui_selDestination.btn_start = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.btn_start.sizePolicy().hasHeightForWidth())
-        self.btn_start.setSizePolicy(sizePolicy)
-        self.btn_start.setMinimumSize(QtCore.QSize(250, 60))
+        sizePolicy.setHeightForWidth(Ui_selDestination.btn_start.sizePolicy().hasHeightForWidth())
+        Ui_selDestination.btn_start.setSizePolicy(sizePolicy)
+        Ui_selDestination.btn_start.setMinimumSize(QtCore.QSize(250, 60))
         font = QtGui.QFont()
         font.setFamily("Malgun Gothic")
         font.setPointSize(20)
         font.setBold(True)
         font.setWeight(75)
-        self.btn_start.setFont(font)
-        self.btn_start.setStyleSheet("background-color: #a1c464;")
-        self.btn_start.setObjectName("btn_start")
-        self.layout_bottom.addWidget(self.btn_start, 0, QtCore.Qt.AlignHCenter|QtCore.Qt.AlignVCenter)
-        self.btn_emrCall = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
+        Ui_selDestination.btn_start.setFont(font)
+        Ui_selDestination.btn_start.setStyleSheet("background-color: #a1c464;")
+        Ui_selDestination.btn_start.setObjectName("btn_start")
+        self.layout_bottom.addWidget(Ui_selDestination.btn_start, 0, QtCore.Qt.AlignHCenter | QtCore.Qt.AlignVCenter)
+        Ui_selDestination.btn_emrCall = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.btn_emrCall.sizePolicy().hasHeightForWidth())
-        self.btn_emrCall.setSizePolicy(sizePolicy)
-        self.btn_emrCall.setMinimumSize(QtCore.QSize(180, 60))
+        sizePolicy.setHeightForWidth(Ui_selDestination.btn_emrCall.sizePolicy().hasHeightForWidth())
+        Ui_selDestination.btn_emrCall.setSizePolicy(sizePolicy)
+        Ui_selDestination.btn_emrCall.setMinimumSize(QtCore.QSize(180, 60))
         font = QtGui.QFont()
         font.setFamily("Malgun Gothic")
         font.setPointSize(20)
         font.setBold(True)
         font.setWeight(75)
-        self.btn_emrCall.setFont(font)
-        self.btn_emrCall.setStyleSheet("background-color: #ed6339;\n"
-"color: white;\n"
-"padding: 5px 10px;\n"
-"margin-right: 30px;")
-        self.btn_emrCall.setObjectName("btn_emrCall")
-        self.layout_bottom.addWidget(self.btn_emrCall, 0, QtCore.Qt.AlignRight|QtCore.Qt.AlignVCenter)
+        Ui_selDestination.btn_emrCall.setFont(font)
+        Ui_selDestination.btn_emrCall.setStyleSheet("background-color: #ed6339;\n"
+                                                    "color: white;\n"
+                                                    "padding: 5px 10px;\n"
+                                                    "margin-right: 30px;")
+        Ui_selDestination.btn_emrCall.setObjectName("btn_emrCall")
+        self.layout_bottom.addWidget(Ui_selDestination.btn_emrCall, 0, QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter)
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.tabs.setCurrentIndex(2)
+        Ui_selDestination.tabs.setCurrentIndex(2)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.btn_home.setText(_translate("MainWindow", "HOME"))
+        Ui_selDestination.btn_home.setText(_translate("MainWindow", "HOME"))
         self.title.setText(_translate("MainWindow", "목적지 설정"))
-        self.btn1_1f.setText(_translate("MainWindow", "CT촬영실"))
-        self.btn2_1f.setText(_translate("MainWindow", "비뇨기과"))
-        self.btn3_1f.setText(_translate("MainWindow", "비상계단"))
-        self.btn4_1f.setText(_translate("MainWindow", "이비인후과"))
-        self.btn5_1f.setText(_translate("MainWindow", "접수처"))
-        self.btn6_1f.setText(_translate("MainWindow", "치과"))
-        self.btn7_1f.setText(_translate("MainWindow", "화장실"))
-        self.btn8_1f.setText(_translate("MainWindow", "핵의학과"))
-        self.tabs.setTabText(self.tabs.indexOf(self.tab_1f), _translate("MainWindow", "     1층     "))
+        Ui_selDestination.btn1_1f.setText(_translate("MainWindow", "CT촬영실"))
+        Ui_selDestination.btn2_1f.setText(_translate("MainWindow", "비뇨기과"))
+        Ui_selDestination.btn3_1f.setText(_translate("MainWindow", "비상계단"))
+        Ui_selDestination.btn4_1f.setText(_translate("MainWindow", "이비인후과"))
+        Ui_selDestination.btn5_1f.setText(_translate("MainWindow", "접수처"))
+        Ui_selDestination.btn6_1f.setText(_translate("MainWindow", "치과"))
+        Ui_selDestination.btn7_1f.setText(_translate("MainWindow", "화장실"))
+        Ui_selDestination.btn8_1f.setText(_translate("MainWindow", "핵의학과"))
+        Ui_selDestination.tabs.setTabText(Ui_selDestination.tabs.indexOf(self.tab_1f), _translate("MainWindow", "     1층     "))
         self.btn1_2f.setText(_translate("MainWindow", "CT촬영실"))
         self.btn2_2f.setText(_translate("MainWindow", "비뇨기과"))
         self.btn3_2f.setText(_translate("MainWindow", "비상계단"))
@@ -1227,7 +1336,7 @@ class Ui_selDestination(QMainWindow):
         self.btn6_2f.setText(_translate("MainWindow", "치과"))
         self.btn7_2f.setText(_translate("MainWindow", "화장실"))
         self.btn8_2f.setText(_translate("MainWindow", "핵의학과"))
-        self.tabs.setTabText(self.tabs.indexOf(self.tab_2f), _translate("MainWindow", "     2층     "))
+        Ui_selDestination.tabs.setTabText(Ui_selDestination.tabs.indexOf(self.tab_2f), _translate("MainWindow", "     2층     "))
         self.btn1_3f.setText(_translate("MainWindow", "CT촬영실"))
         self.btn2_3f.setText(_translate("MainWindow", "비뇨기과"))
         self.btn3_3f.setText(_translate("MainWindow", "비상계단"))
@@ -1236,7 +1345,7 @@ class Ui_selDestination(QMainWindow):
         self.btn6_3f.setText(_translate("MainWindow", "치과"))
         self.btn7_3f.setText(_translate("MainWindow", "화장실"))
         self.btn8_3f.setText(_translate("MainWindow", "핵의학과"))
-        self.tabs.setTabText(self.tabs.indexOf(self.tab_3f), _translate("MainWindow", "     3층     "))
+        Ui_selDestination.tabs.setTabText(Ui_selDestination.tabs.indexOf(self.tab_3f), _translate("MainWindow", "     3층     "))
         self.btn1_4f.setText(_translate("MainWindow", "CT촬영실"))
         self.btn2_4f.setText(_translate("MainWindow", "비뇨기과"))
         self.btn3_4f.setText(_translate("MainWindow", "비상계단"))
@@ -1245,7 +1354,7 @@ class Ui_selDestination(QMainWindow):
         self.btn6_4f.setText(_translate("MainWindow", "치과"))
         self.btn7_4f.setText(_translate("MainWindow", "화장실"))
         self.btn8_4f.setText(_translate("MainWindow", "핵의학과"))
-        self.tabs.setTabText(self.tabs.indexOf(self.tab_4f), _translate("MainWindow", "     4층     "))
+        Ui_selDestination.tabs.setTabText(Ui_selDestination.tabs.indexOf(self.tab_4f), _translate("MainWindow", "     4층     "))
         self.btn1_5f.setText(_translate("MainWindow", "CT촬영실"))
         self.btn2_5f.setText(_translate("MainWindow", "비뇨기과"))
         self.btn3_5f.setText(_translate("MainWindow", "비상계단"))
@@ -1254,7 +1363,7 @@ class Ui_selDestination(QMainWindow):
         self.btn6_5f.setText(_translate("MainWindow", "치과"))
         self.btn7_5f.setText(_translate("MainWindow", "화장실"))
         self.btn8_5f.setText(_translate("MainWindow", "핵의학과"))
-        self.tabs.setTabText(self.tabs.indexOf(self.tab_5f), _translate("MainWindow", "     5층     "))
+        Ui_selDestination.tabs.setTabText(Ui_selDestination.tabs.indexOf(self.tab_5f), _translate("MainWindow", "     5층     "))
         self.btn1_6f.setText(_translate("MainWindow", "CT촬영실"))
         self.btn2_6f.setText(_translate("MainWindow", "비뇨기과"))
         self.btn3_6f.setText(_translate("MainWindow", "비상계단"))
@@ -1263,9 +1372,10 @@ class Ui_selDestination(QMainWindow):
         self.btn6_6f.setText(_translate("MainWindow", "치과"))
         self.btn7_6f.setText(_translate("MainWindow", "화장실"))
         self.btn8_6f.setText(_translate("MainWindow", "핵의학과"))
-        self.tabs.setTabText(self.tabs.indexOf(self.tab_6f), _translate("MainWindow", "     6층     "))
-        self.btn_start.setText(_translate("MainWindow", "주행시작"))
-        self.btn_emrCall.setText(_translate("MainWindow", "긴급호출"))
+        Ui_selDestination.tabs.setTabText(Ui_selDestination.tabs.indexOf(self.tab_6f), _translate("MainWindow", "     6층     "))
+        Ui_selDestination.btn_start.setText(_translate("MainWindow", "주행시작"))
+        Ui_selDestination.btn_emrCall.setText(_translate("MainWindow", "긴급호출"))
+
 
 if __name__ == "__main__":
     # QApplication : 프로그램을 실행시켜주는 클래스
