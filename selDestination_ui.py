@@ -10,7 +10,7 @@ import sys
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5.QtWidgets import QMainWindow
 
 
 class Ui_selDestination(QMainWindow):
@@ -19,109 +19,75 @@ class Ui_selDestination(QMainWindow):
     tabs = None
     btn_emrCall = None
     btn_start = None
-    btn_list =[]
-    #1층
-    btn1_1f = None
-    btn2_1f = None
-    btn3_1f = None
-    btn4_1f = None
-    btn5_1f = None
-    btn6_1f = None
-    btn7_1f = None
-    btn8_1f = None
-    btn_list.append(btn1_1f)
-    btn_list.append(btn2_1f)
-    btn_list.append(btn3_1f)
-    btn_list.append(btn4_1f)
-    btn_list.append(btn5_1f)
-    btn_list.append(btn6_1f)
-    btn_list.append(btn7_1f)
-    btn_list.append(btn8_1f)
-    #2층
-    btn1_2f = None
-    btn2_2f = None
-    btn3_2f = None
-    btn4_2f = None
-    btn5_2f = None
-    btn6_2f = None
-    btn7_2f = None
-    btn8_2f = None
-    btn_list.append(btn1_2f)
-    btn_list.append(btn2_2f)
-    btn_list.append(btn3_2f)
-    btn_list.append(btn4_2f)
-    btn_list.append(btn5_2f)
-    btn_list.append(btn6_2f)
-    btn_list.append(btn7_2f)
-    btn_list.append(btn8_2f)
-    #3층
-    btn1_3f = None
-    btn2_3f = None
-    btn3_3f = None
-    btn4_3f = None
-    btn5_3f = None
-    btn6_3f = None
-    btn7_3f = None
-    btn8_3f = None
-    btn_list.append(btn1_3f)
-    btn_list.append(btn2_3f)
-    btn_list.append(btn3_3f)
-    btn_list.append(btn4_3f)
-    btn_list.append(btn5_3f)
-    btn_list.append(btn6_3f)
-    btn_list.append(btn7_3f)
-    btn_list.append(btn8_3f)
-    #4층
-    btn1_4f = None
-    btn2_4f = None
-    btn3_4f = None
-    btn4_4f = None
-    btn5_4f = None
-    btn6_4f = None
-    btn7_4f = None
-    btn8_4f = None
-    btn_list.append(btn1_4f)
-    btn_list.append(btn2_4f)
-    btn_list.append(btn3_4f)
-    btn_list.append(btn4_4f)
-    btn_list.append(btn5_4f)
-    btn_list.append(btn6_4f)
-    btn_list.append(btn7_4f)
-    btn_list.append(btn8_4f)
-    #5층
-    btn1_5f = None
-    btn2_5f = None
-    btn3_5f = None
-    btn4_5f = None
-    btn5_5f = None
-    btn6_5f = None
-    btn7_5f = None
-    btn8_5f = None
-    btn_list.append(btn1_5f)
-    btn_list.append(btn2_5f)
-    btn_list.append(btn3_5f)
-    btn_list.append(btn4_5f)
-    btn_list.append(btn5_5f)
-    btn_list.append(btn6_5f)
-    btn_list.append(btn7_5f)
-    btn_list.append(btn8_5f)
-    #6층
-    btn1_6f = None
-    btn2_6f = None
-    btn3_6f = None
-    btn4_6f = None
-    btn5_6f = None
-    btn6_6f = None
-    btn7_6f = None
-    btn8_6f = None
-    btn_list.append(btn1_6f)
-    btn_list.append(btn2_6f)
-    btn_list.append(btn3_6f)
-    btn_list.append(btn4_6f)
-    btn_list.append(btn5_6f)
-    btn_list.append(btn6_6f)
-    btn_list.append(btn7_6f)
-    btn_list.append(btn8_6f)
+    # 1층
+    # btn1_1f = None
+    # btn2_1f = None
+    # btn3_1f = None
+    # btn4_1f = None
+    # btn5_1f = None
+    # btn6_1f = None
+    # btn7_1f = None
+    # btn8_1f = None
+    # # 2층
+    # btn1_2f = None
+    # btn2_2f = None
+    # btn3_2f = None
+    # btn4_2f = None
+    # btn5_2f = None
+    # btn6_2f = None
+    # btn7_2f = None
+    # btn8_2f = None
+    # # 3층
+    # btn1_3f = None
+    # btn2_3f = None
+    # btn3_3f = None
+    # btn4_3f = None
+    # btn5_3f = None
+    # btn6_3f = None
+    # btn7_3f = None
+    # btn8_3f = None
+    # # 4층
+    # btn1_4f = None
+    # btn2_4f = None
+    # btn3_4f = None
+    # btn4_4f = None
+    # btn5_4f = None
+    # btn6_4f = None
+    # btn7_4f = None
+    # btn8_4f = None
+    # # 5층
+    # btn1_5f = None
+    # btn2_5f = None
+    # btn3_5f = None
+    # btn4_5f = None
+    # btn5_5f = None
+    # btn6_5f = None
+    # btn7_5f = None
+    # btn8_5f = None
+    # # 6층
+    # btn1_6f = None
+    # btn2_6f = None
+    # btn3_6f = None
+    # btn4_6f = None
+    # btn5_6f = None
+    # btn6_6f = None
+    # btn7_6f = None
+    # btn8_6f = None
+
+    # 버튼 객체를 리스트에 extend
+    # btn_list = [self.btn1_1f, self.btn2_1f, self.btn3_1f, self.btn4_1f, self.btn5_1f, self.btn6_1f, self.btn7_1f,
+    #             self.btn8_1f,
+    #             self.btn1_2f, self.btn2_2f, self.btn3_2f, self.btn4_2f, self.btn5_2f, self.btn6_2f, self.btn7_2f,
+    #             self.btn8_2f,
+    #             self.btn1_3f, self.btn2_3f, self.btn3_3f, self.btn4_3f, self.btn5_3f, self.btn6_3f, self.btn7_3f,
+    #             self.btn8_3f,
+    #             self.btn1_4f, self.btn2_4f, self.btn3_4f, self.btn4_4f, self.btn5_4f, self.btn6_4f, self.btn7_4f,
+    #             self.btn8_4f,
+    #             self.btn1_5f, self.btn2_5f, self.btn3_5f, self.btn4_5f, self.btn5_5f, self.btn6_5f, self.btn7_5f,
+    #             self.btn8_5f,
+    #             self.btn1_6f, self.btn2_6f, self.btn3_6f, self.btn4_6f, self.btn5_6f, self.btn6_6f, self.btn7_6f,
+    #             self.btn8_6f]
+
     def __init__(self):
         super().__init__()
         self.setupUi(self)
@@ -276,10 +242,10 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         Ui_selDestination.btn1_1f.setFont(font)
         Ui_selDestination.btn1_1f.setStyleSheet("padding: 5px;\n"
-                                   "padding-left: 20px;\n"
-                                   "background-color: #cfe3ac;\n"
-                                   "text-align: left;\n"
-                                   "border: none;")
+                                                "padding-left: 20px;\n"
+                                                "background-color: #cfe3ac;\n"
+                                                "text-align: left;\n"
+                                                "border: none;")
         Ui_selDestination.btn1_1f.setAutoDefault(False)
         Ui_selDestination.btn1_1f.setDefault(False)
         Ui_selDestination.btn1_1f.setFlat(False)
@@ -294,10 +260,10 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         Ui_selDestination.btn2_1f.setFont(font)
         Ui_selDestination.btn2_1f.setStyleSheet("padding: 5px;\n"
-                                   "padding-left: 20px;\n"
-                                   "background-color: #cfe3ac;\n"
-                                   "text-align: left;\n"
-                                   "border: none;")
+                                                "padding-left: 20px;\n"
+                                                "background-color: #cfe3ac;\n"
+                                                "text-align: left;\n"
+                                                "border: none;")
         Ui_selDestination.btn2_1f.setObjectName("btn2_1f")
         self.verticalLayout_9.addWidget(Ui_selDestination.btn2_1f)
         Ui_selDestination.btn3_1f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_8)
@@ -309,10 +275,10 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         Ui_selDestination.btn3_1f.setFont(font)
         Ui_selDestination.btn3_1f.setStyleSheet("padding: 5px;\n"
-                                   "padding-left: 20px;\n"
-                                   "background-color: #cfe3ac;\n"
-                                   "text-align: left;\n"
-                                   "border: none;")
+                                                "padding-left: 20px;\n"
+                                                "background-color: #cfe3ac;\n"
+                                                "text-align: left;\n"
+                                                "border: none;")
         Ui_selDestination.btn3_1f.setObjectName("btn3_1f")
         self.verticalLayout_9.addWidget(Ui_selDestination.btn3_1f)
         Ui_selDestination.btn4_1f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_8)
@@ -324,10 +290,10 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         Ui_selDestination.btn4_1f.setFont(font)
         Ui_selDestination.btn4_1f.setStyleSheet("padding: 5px;\n"
-                                   "padding-left: 20px;\n"
-                                   "background-color: #cfe3ac;\n"
-                                   "text-align: left;\n"
-                                   "border: none;")
+                                                "padding-left: 20px;\n"
+                                                "background-color: #cfe3ac;\n"
+                                                "text-align: left;\n"
+                                                "border: none;")
         Ui_selDestination.btn4_1f.setObjectName("btn4_1f")
         self.verticalLayout_9.addWidget(Ui_selDestination.btn4_1f)
         Ui_selDestination.btn5_1f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_8)
@@ -339,10 +305,10 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         Ui_selDestination.btn5_1f.setFont(font)
         Ui_selDestination.btn5_1f.setStyleSheet("padding: 5px;\n"
-                                   "padding-left: 20px;\n"
-                                   "background-color: #cfe3ac;\n"
-                                   "text-align: left;\n"
-                                   "border: none;")
+                                                "padding-left: 20px;\n"
+                                                "background-color: #cfe3ac;\n"
+                                                "text-align: left;\n"
+                                                "border: none;")
         Ui_selDestination.btn5_1f.setObjectName("btn5_1f")
         self.verticalLayout_9.addWidget(Ui_selDestination.btn5_1f)
         Ui_selDestination.btn6_1f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_8)
@@ -354,10 +320,10 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         Ui_selDestination.btn6_1f.setFont(font)
         Ui_selDestination.btn6_1f.setStyleSheet("padding: 5px;\n"
-                                   "padding-left: 20px;\n"
-                                   "background-color: #cfe3ac;\n"
-                                   "text-align: left;\n"
-                                   "border: none;")
+                                                "padding-left: 20px;\n"
+                                                "background-color: #cfe3ac;\n"
+                                                "text-align: left;\n"
+                                                "border: none;")
         Ui_selDestination.btn6_1f.setObjectName("btn6_1f")
         self.verticalLayout_9.addWidget(Ui_selDestination.btn6_1f)
         Ui_selDestination.btn7_1f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_8)
@@ -369,10 +335,10 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         Ui_selDestination.btn7_1f.setFont(font)
         Ui_selDestination.btn7_1f.setStyleSheet("padding: 5px;\n"
-                                   "padding-left: 20px;\n"
-                                   "background-color: #cfe3ac;\n"
-                                   "text-align: left;\n"
-                                   "border: none;")
+                                                "padding-left: 20px;\n"
+                                                "background-color: #cfe3ac;\n"
+                                                "text-align: left;\n"
+                                                "border: none;")
         Ui_selDestination.btn7_1f.setObjectName("btn7_1f")
         self.verticalLayout_9.addWidget(Ui_selDestination.btn7_1f)
         Ui_selDestination.btn8_1f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_8)
@@ -389,10 +355,10 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         Ui_selDestination.btn8_1f.setFont(font)
         Ui_selDestination.btn8_1f.setStyleSheet("padding: 5px;\n"
-                                   "padding-left: 20px;\n"
-                                   "background-color: #cfe3ac;\n"
-                                   "text-align: left;\n"
-                                   "border: none;")
+                                                "padding-left: 20px;\n"
+                                                "background-color: #cfe3ac;\n"
+                                                "text-align: left;\n"
+                                                "border: none;")
         Ui_selDestination.btn8_1f.setObjectName("btn8_1f")
         self.verticalLayout_9.addWidget(Ui_selDestination.btn8_1f)
         self.list_1f.setWidget(self.scrollAreaWidgetContents_8)
@@ -1327,7 +1293,8 @@ class Ui_selDestination(QMainWindow):
         Ui_selDestination.btn6_1f.setText(_translate("MainWindow", "치과"))
         Ui_selDestination.btn7_1f.setText(_translate("MainWindow", "화장실"))
         Ui_selDestination.btn8_1f.setText(_translate("MainWindow", "핵의학과"))
-        Ui_selDestination.tabs.setTabText(Ui_selDestination.tabs.indexOf(self.tab_1f), _translate("MainWindow", "     1층     "))
+        Ui_selDestination.tabs.setTabText(Ui_selDestination.tabs.indexOf(self.tab_1f),
+                                          _translate("MainWindow", "     1층     "))
         self.btn1_2f.setText(_translate("MainWindow", "CT촬영실"))
         self.btn2_2f.setText(_translate("MainWindow", "비뇨기과"))
         self.btn3_2f.setText(_translate("MainWindow", "비상계단"))
@@ -1336,7 +1303,8 @@ class Ui_selDestination(QMainWindow):
         self.btn6_2f.setText(_translate("MainWindow", "치과"))
         self.btn7_2f.setText(_translate("MainWindow", "화장실"))
         self.btn8_2f.setText(_translate("MainWindow", "핵의학과"))
-        Ui_selDestination.tabs.setTabText(Ui_selDestination.tabs.indexOf(self.tab_2f), _translate("MainWindow", "     2층     "))
+        Ui_selDestination.tabs.setTabText(Ui_selDestination.tabs.indexOf(self.tab_2f),
+                                          _translate("MainWindow", "     2층     "))
         self.btn1_3f.setText(_translate("MainWindow", "CT촬영실"))
         self.btn2_3f.setText(_translate("MainWindow", "비뇨기과"))
         self.btn3_3f.setText(_translate("MainWindow", "비상계단"))
@@ -1345,7 +1313,8 @@ class Ui_selDestination(QMainWindow):
         self.btn6_3f.setText(_translate("MainWindow", "치과"))
         self.btn7_3f.setText(_translate("MainWindow", "화장실"))
         self.btn8_3f.setText(_translate("MainWindow", "핵의학과"))
-        Ui_selDestination.tabs.setTabText(Ui_selDestination.tabs.indexOf(self.tab_3f), _translate("MainWindow", "     3층     "))
+        Ui_selDestination.tabs.setTabText(Ui_selDestination.tabs.indexOf(self.tab_3f),
+                                          _translate("MainWindow", "     3층     "))
         self.btn1_4f.setText(_translate("MainWindow", "CT촬영실"))
         self.btn2_4f.setText(_translate("MainWindow", "비뇨기과"))
         self.btn3_4f.setText(_translate("MainWindow", "비상계단"))
@@ -1354,7 +1323,8 @@ class Ui_selDestination(QMainWindow):
         self.btn6_4f.setText(_translate("MainWindow", "치과"))
         self.btn7_4f.setText(_translate("MainWindow", "화장실"))
         self.btn8_4f.setText(_translate("MainWindow", "핵의학과"))
-        Ui_selDestination.tabs.setTabText(Ui_selDestination.tabs.indexOf(self.tab_4f), _translate("MainWindow", "     4층     "))
+        Ui_selDestination.tabs.setTabText(Ui_selDestination.tabs.indexOf(self.tab_4f),
+                                          _translate("MainWindow", "     4층     "))
         self.btn1_5f.setText(_translate("MainWindow", "CT촬영실"))
         self.btn2_5f.setText(_translate("MainWindow", "비뇨기과"))
         self.btn3_5f.setText(_translate("MainWindow", "비상계단"))
@@ -1363,7 +1333,8 @@ class Ui_selDestination(QMainWindow):
         self.btn6_5f.setText(_translate("MainWindow", "치과"))
         self.btn7_5f.setText(_translate("MainWindow", "화장실"))
         self.btn8_5f.setText(_translate("MainWindow", "핵의학과"))
-        Ui_selDestination.tabs.setTabText(Ui_selDestination.tabs.indexOf(self.tab_5f), _translate("MainWindow", "     5층     "))
+        Ui_selDestination.tabs.setTabText(Ui_selDestination.tabs.indexOf(self.tab_5f),
+                                          _translate("MainWindow", "     5층     "))
         self.btn1_6f.setText(_translate("MainWindow", "CT촬영실"))
         self.btn2_6f.setText(_translate("MainWindow", "비뇨기과"))
         self.btn3_6f.setText(_translate("MainWindow", "비상계단"))
@@ -1372,20 +1343,14 @@ class Ui_selDestination(QMainWindow):
         self.btn6_6f.setText(_translate("MainWindow", "치과"))
         self.btn7_6f.setText(_translate("MainWindow", "화장실"))
         self.btn8_6f.setText(_translate("MainWindow", "핵의학과"))
-        Ui_selDestination.tabs.setTabText(Ui_selDestination.tabs.indexOf(self.tab_6f), _translate("MainWindow", "     6층     "))
+        Ui_selDestination.tabs.setTabText(Ui_selDestination.tabs.indexOf(self.tab_6f),
+                                          _translate("MainWindow", "     6층     "))
         Ui_selDestination.btn_start.setText(_translate("MainWindow", "주행시작"))
         Ui_selDestination.btn_emrCall.setText(_translate("MainWindow", "긴급호출"))
 
-
-if __name__ == "__main__":
-    # QApplication : 프로그램을 실행시켜주는 클래스
-    app = QApplication(sys.argv)
-
-    # WindowClass의 인스턴스 생성F
-    myWindow = Ui_selDestination()
-
-    # 프로그램 화면을 보여주는 코드
-    myWindow.show()
-
-    # 프로그램을 이벤트루프로 진입시키는(프로그램을 작동시키는) 코드
-    app.exec_()
+    # btn_list = [btn1_1f, btn2_1f, btn3_1f, btn4_1f, btn5_1f, btn6_1f, btn7_1f, btn8_1f,
+    #             btn1_2f, btn2_2f, btn3_2f, btn4_2f, btn5_2f, btn6_2f, btn7_2f, btn8_2f,
+    #             btn1_3f, btn2_3f, btn3_3f, btn4_3f, btn5_3f, btn6_3f, btn7_3f, btn8_3f,
+    #             btn1_4f, btn2_4f, btn3_4f, btn4_4f, btn5_4f, btn6_4f, btn7_4f, btn8_4f,
+    #             btn1_5f, btn2_5f, btn3_5f, btn4_5f, btn5_5f, btn6_5f, btn7_5f, btn8_5f,
+    #             btn1_6f, btn2_6f, btn3_6f, btn4_6f, btn5_6f, btn6_6f, btn7_6f, btn8_6f]

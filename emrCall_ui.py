@@ -10,7 +10,8 @@ import sys
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5.QtWidgets import QMainWindow
+import emrCall
 
 
 class Ui_EmrCall(QMainWindow):

@@ -3,19 +3,20 @@ import selDestination_ui
 des_x, des_y = 0, 0
 
 
-def assign_des(btn):
+def assign_des(btn, btn_list):
     print(btn.text())
-    global des_x, des_y # 외부에서 전역 변수를 사용하기 위해 global 선언
+    global des_x, des_y  # 외부에서 전역 변수를 사용하기 위해 global 선언
 
     # 모든 버튼의 styleSheet를 초기화하는 코드 필요
-    # for a in selDestination_ui.Ui_selDestination.btn_list:
-    #     a.setStyleSheet("""
-    #                     background-color: #cfe3ac;
-    #                     text-align: left;
-    #                     padding: 5px;
-    #                     padding-left: 20px;
-    #                     border: none;
-    # """)
+    for other_btn_name in btn_list:
+        other_btn = getattr(selDestination_ui.Ui_selDestination, other_btn_name)
+        other_btn.setStyleSheet("""
+                background-color: #cfe3ac;
+                text-align: left;
+                padding: 5px;
+                padding-left: 20px;
+                border: none;
+            """)
 
     # 클릭한 버튼의 배경색상 변경
     btn.setStyleSheet("""
@@ -61,13 +62,11 @@ def start_driving(btn):
     if btn.text() == "주행시작":
         btn.setText("정지")
         # 탭 비활성화
-        #selDestination_ui.tabs.setDisabled(True)
+        # selDestination_ui.tabs.setDisabled(True)
     elif btn.text() == "정지":
         btn.setText("주행시작")
         # 탭 활성화
-        #selDestination_ui.tabs.setEnabled(True)
+        # selDestination_ui.tabs.setEnabled(True)
     else:
         btn.setText("주행시작")
     # 지정좌표로 이동할 수 있는 py파일에 연결
-
-

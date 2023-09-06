@@ -1,6 +1,6 @@
 import os
 
-# cmd = "python $HOME/app/talker.py "
+# cmd = "python ~/app/talker.py "
 cmd = "python ./test.py "
 
 def move_straight(self):
