@@ -17,7 +17,7 @@ import emrCall
 class Ui_EmrCall(QMainWindow):
     # 변수 정의
     btn_home = None
-        
+
     def __init__(self):
         super().__init__()
         self.setupUi(self)
@@ -63,8 +63,8 @@ class Ui_EmrCall(QMainWindow):
         font.setWeight(75)
         Ui_EmrCall.btn_home.setFont(font)
         Ui_EmrCall.btn_home.setStyleSheet("margin-left: 20px;\n"
-                                    "background-color: #cfe3ac;\n"
-                                    "padding: 5px 0;")
+                                          "background-color: #cfe3ac;\n"
+                                          "padding: 5px 0;")
         Ui_EmrCall.btn_home.setObjectName("btn_home")
         self.layout_title.addWidget(Ui_EmrCall.btn_home)
         self.title = QtWidgets.QLabel(self.horizontalLayoutWidget)
@@ -93,8 +93,8 @@ class Ui_EmrCall(QMainWindow):
         font.setWeight(75)
         self.pushButton_6.setFont(font)
         self.pushButton_6.setStyleSheet("margin-left: 20px;\n"
-"background-color: #cfe3ac;\n"
-"padding: 10px 0;")
+                                        "background-color: #cfe3ac;\n"
+                                        "padding: 10px 0;")
         self.pushButton_6.setText("")
         self.pushButton_6.setFlat(True)
         self.pushButton_6.setObjectName("pushButton_6")
@@ -119,7 +119,7 @@ class Ui_EmrCall(QMainWindow):
         self.emr_light_img.setMinimumSize(QtCore.QSize(403, 345))
         self.emr_light_img.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.emr_light_img.setStyleSheet("background: url(./assets/emr_light.png);\n"
-"background-size: cover;")
+                                         "background-size: cover;")
         self.emr_light_img.setText("")
         self.emr_light_img.setObjectName("emr_light_img")
         self.layout_contents_inside.addWidget(self.emr_light_img)

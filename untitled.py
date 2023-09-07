@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-import sys
 
 # Form implementation generated from reading ui file 'untitled.ui'
 #
@@ -10,31 +9,96 @@ import sys
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QApplication, QMainWindow
 
 
-class Ui_MainWindow(QMainWindow):
-    def __init__(self):
-        super().__init__()
-        self.setupUi(self)
-
+class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(512, 300)
+        MainWindow.setStyleSheet("background-color: white;")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
+        self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
+        self.gridLayout.setObjectName("gridLayout")
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(0, 0, 54, 51))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.label.sizePolicy().hasHeightForWidth())
+        self.label.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setFamily("Malgun Gothic")
-        font.setPointSize(20)
+        font.setPointSize(23)
+        font.setBold(True)
+        font.setWeight(75)
         self.label.setFont(font)
-        self.label.setStyleSheet("text-align: center;")
+        self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
+        self.gridLayout.addWidget(self.label, 0, 1, 1, 1)
+        self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.pushButton_2.sizePolicy().hasHeightForWidth())
+        self.pushButton_2.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Malgun Gothic")
+        font.setPointSize(15)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_2.setFont(font)
+        self.pushButton_2.setStyleSheet("background-color: #cfe3ac;\n"
+"margin: 5px;\n"
+"padding: 5px;")
+        self.pushButton_2.setObjectName("pushButton_2")
+        self.gridLayout.addWidget(self.pushButton_2, 2, 1, 1, 1)
+        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.pushButton.sizePolicy().hasHeightForWidth())
+        self.pushButton.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Malgun Gothic")
+        font.setPointSize(15)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton.setFont(font)
+        self.pushButton.setStyleSheet("background-color: #cfe3ac;\n"
+"margin: 5px;\n"
+"padding: 5px;")
+        self.pushButton.setObjectName("pushButton")
+        self.gridLayout.addWidget(self.pushButton, 2, 0, 1, 1)
+        self.label_4 = QtWidgets.QLabel(self.centralwidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.label_4.sizePolicy().hasHeightForWidth())
+        self.label_4.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.label_4.setFont(font)
+        self.label_4.setStyleSheet("color: white;")
+        self.label_4.setObjectName("label_4")
+        self.gridLayout.addWidget(self.label_4, 4, 1, 1, 1)
+        self.pushButton_3 = QtWidgets.QPushButton(self.centralwidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.pushButton_3.sizePolicy().hasHeightForWidth())
+        self.pushButton_3.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Malgun Gothic")
+        font.setPointSize(15)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_3.setFont(font)
+        self.pushButton_3.setStyleSheet("background-color: #cfe3ac;\n"
+"margin: 5px;\n"
+"padding: 5px;")
+        self.pushButton_3.setObjectName("pushButton_3")
+        self.gridLayout.addWidget(self.pushButton_3, 2, 2, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
-        self.statusbar = QtWidgets.QStatusBar(MainWindow)
-        self.statusbar.setObjectName("statusbar")
-        MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -43,16 +107,7 @@ class Ui_MainWindow(QMainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label.setText(_translate("MainWindow", "홈"))
-
-if __name__ == "__main__":
-    # QApplication : 프로그램을 실행시켜주는 클래스
-    app = QApplication(sys.argv)
-
-    # WindowClass의 인스턴스 생성
-    myWindow = Ui_MainWindow()
-
-    # 프로그램 화면을 보여주는 코드
-    myWindow.show()
-
-    # 프로그램을 이벤트루프로 진입시키는(프로그램을 작동시키는) 코드
-    app.exec_()
+        self.pushButton_2.setText(_translate("MainWindow", "수동주행"))
+        self.pushButton.setText(_translate("MainWindow", "목적지 설정"))
+        self.label_4.setText(_translate("MainWindow", "TextLabel"))
+        self.pushButton_3.setText(_translate("MainWindow", "긴급호출"))
