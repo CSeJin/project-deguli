@@ -7,6 +7,7 @@ from PyQt5.uic.properties import QtCore
 import emrCall
 import manualDriving
 import manualDriving_ui, mainPage_ui, emrCall_ui, selDestination_ui
+import selDestination
 from selDestination import assign_des, start_driving
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import QTimer
@@ -182,6 +183,16 @@ class WindowClass(QMainWindow):
     def call_start_driving(self, btn):
         print("call_start_driving")
         start_driving(btn)
+
+        # 주행 시작 알림
+        text = "주행을 시작합니다."
+
+        # QTimer를 이용한 소리 지연.
+        def delayed_sound():
+            selDestination.text_to_speech(text)
+
+        # 1000 밀리초 (1초) 후에 delayed_sound 함수 호출
+        QTimer.singleShot(500, delayed_sound)
 
 
 if __name__ == "__main__":
