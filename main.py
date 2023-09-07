@@ -187,7 +187,7 @@ class WindowClass(QMainWindow):
         # 주행 시작 알림
         text = "주행을 시작합니다."
 
-        # QTimer를 이용한 소리 지연
+        # QTimer를 이용한 소리 지연.
         def delayed_sound():
             selDestination.text_to_speech(text)
 

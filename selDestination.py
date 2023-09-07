@@ -74,7 +74,7 @@ def start_driving(btn):
 
     # 지정좌표로 이동할 수 있는 py파일에 연결
 
-    # 주행 시작 알림
+    # 주행 시작 알림.
 def text_to_speech(text):
         engine = pyttsx3.init()
         engine.setProperty("rate", 140)

@@ -10,4 +10,4 @@ def text_to_speech(text):
     engine.runAndWait()
 
 
-# 주행 정지
+# 주행 정지.
