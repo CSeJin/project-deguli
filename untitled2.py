@@ -209,4 +209,4 @@ class Ui_MainWindow(object):
         self.pushButton_4.setText(_translate("MainWindow", "정지"))
         self.label_4.setText(_translate("MainWindow", "TextLabel"))
         self.btn_home.setText(_translate("MainWindow", " HOME "))
-import resource_rc
+

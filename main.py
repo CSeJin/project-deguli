@@ -44,8 +44,6 @@ class WindowClass(QMainWindow):
         self.btn4_1f = selDestination_ui.Ui_selDestination.btn4_1f  # 목적지설정 - 1층-4
         self.btn5_1f = selDestination_ui.Ui_selDestination.btn5_1f  # 목적지설정 - 1층-5
         self.btn6_1f = selDestination_ui.Ui_selDestination.btn6_1f  # 목적지설정 - 1층-6
-        self.btn7_1f = selDestination_ui.Ui_selDestination.btn7_1f  # 목적지설정 - 1층-7
-        self.btn8_1f = selDestination_ui.Ui_selDestination.btn8_1f  # 목적지설정 - 1층-8
         # # 2층
         # self.btn1_2f = selDestination_ui.Ui_selDestination.btn1_2f    # 목적지설정 - 1층-1
         # self.btn2_2f = selDestination_ui.Ui_selDestination.btn2_2f    # 목적지설정 - 1층-2
@@ -53,8 +51,6 @@ class WindowClass(QMainWindow):
         # self.btn4_2f = selDestination_ui.Ui_selDestination.btn4_2f    # 목적지설정 - 1층-4
         # self.btn5_2f = selDestination_ui.Ui_selDestination.btn5_2f    # 목적지설정 - 1층-5
         # self.btn6_2f = selDestination_ui.Ui_selDestination.btn6_2f    # 목적지설정 - 1층-6
-        # self.btn7_2f = selDestination_ui.Ui_selDestination.btn7_2f    # 목적지설정 - 1층-7
-        # self.btn8_2f = selDestination_ui.Ui_selDestination.btn8_2f    # 목적지설정 - 1층-8
         # #3층
         # self.btn1_3f = selDestination_ui.Ui_selDestination.btn1_3f    # 목적지설정 - 1층-1
         # self.btn2_3f = selDestination_ui.Ui_selDestination.btn2_3f    # 목적지설정 - 1층-2
@@ -62,8 +58,6 @@ class WindowClass(QMainWindow):
         # self.btn4_3f = selDestination_ui.Ui_selDestination.btn4_3f    # 목적지설정 - 1층-4
         # self.btn5_3f = selDestination_ui.Ui_selDestination.btn5_3f    # 목적지설정 - 1층-5
         # self.btn6_3f = selDestination_ui.Ui_selDestination.btn6_3f    # 목적지설정 - 1층-6
-        # self.btn7_3f = selDestination_ui.Ui_selDestination.btn7_3f    # 목적지설정 - 1층-7
-        # self.btn8_3f = selDestination_ui.Ui_selDestination.btn8_3f    # 목적지설정 - 1층-8
         # #4층
         # self.btn1_4f = selDestination_ui.Ui_selDestination.btn1_4f    # 목적지설정 - 1층-1
         # self.btn2_4f = selDestination_ui.Ui_selDestination.btn2_4f    # 목적지설정 - 1층-2
@@ -71,8 +65,6 @@ class WindowClass(QMainWindow):
         # self.btn4_4f = selDestination_ui.Ui_selDestination.btn4_4f    # 목적지설정 - 1층-4
         # self.btn5_4f = selDestination_ui.Ui_selDestination.btn5_4f    # 목적지설정 - 1층-5
         # self.btn6_4f = selDestination_ui.Ui_selDestination.btn6_4f    # 목적지설정 - 1층-6
-        # self.btn7_4f = selDestination_ui.Ui_selDestination.btn7_4f    # 목적지설정 - 1층-7
-        # self.btn8_4f = selDestination_ui.Ui_selDestination.btn8_4f    # 목적지설정 - 1층-8
         # #5층
         # self.btn1_5f = selDestination_ui.Ui_selDestination.btn1_5f    # 목적지설정 - 1층-1
         # self.btn2_5f = selDestination_ui.Ui_selDestination.btn2_5f    # 목적지설정 - 1층-2
@@ -80,8 +72,6 @@ class WindowClass(QMainWindow):
         # self.btn4_5f = selDestination_ui.Ui_selDestination.btn4_5f    # 목적지설정 - 1층-4
         # self.btn5_5f = selDestination_ui.Ui_selDestination.btn5_5f    # 목적지설정 - 1층-5
         # self.btn6_5f = selDestination_ui.Ui_selDestination.btn6_5f    # 목적지설정 - 1층-6
-        # self.btn7_5f = selDestination_ui.Ui_selDestination.btn7_5f    # 목적지설정 - 1층-7
-        # self.btn8_5f = selDestination_ui.Ui_selDestination.btn8_5f    # 목적지설정 - 1층-8
         # #6층
         # self.btn1_6f = selDestination_ui.Ui_selDestination.btn1_6f    # 목적지설정 - 1층-1
         # self.btn2_6f = selDestination_ui.Ui_selDestination.btn2_6f    # 목적지설정 - 1층-2
@@ -89,8 +79,6 @@ class WindowClass(QMainWindow):
         # self.btn4_6f = selDestination_ui.Ui_selDestination.btn4_6f    # 목적지설정 - 1층-4
         # self.btn5_6f = selDestination_ui.Ui_selDestination.btn5_6f    # 목적지설정 - 1층-5
         # self.btn6_6f = selDestination_ui.Ui_selDestination.btn6_6f    # 목적지설정 - 1층-6
-        # self.btn7_6f = selDestination_ui.Ui_selDestination.btn7_6f    # 목적지설정 - 1층-7
-        # self.btn8_6f = selDestination_ui.Ui_selDestination.btn8_6f    # 목적지설정 - 1층-8
         self.btn_start = selDestination_ui.Ui_selDestination.btn_start
         self.btn_emrCall_selDestination = selDestination_ui.Ui_selDestination.btn_emrCall
 
@@ -123,8 +111,6 @@ class WindowClass(QMainWindow):
         self.btn4_1f.clicked.connect(partial(self.call_assign_des, btn=self.btn4_1f, btn_list=self.btn_list))
         self.btn5_1f.clicked.connect(partial(self.call_assign_des, btn=self.btn5_1f, btn_list=self.btn_list))
         self.btn6_1f.clicked.connect(partial(self.call_assign_des, btn=self.btn6_1f, btn_list=self.btn_list))
-        self.btn7_1f.clicked.connect(partial(self.call_assign_des, btn=self.btn7_1f, btn_list=self.btn_list))
-        self.btn8_1f.clicked.connect(partial(self.call_assign_des, btn=self.btn8_1f, btn_list=self.btn_list))
         self.btn_start.clicked.connect(lambda: self.call_start_driving(self.btn_start))
         self.btn_emrCall_selDestination.clicked.connect(self.show_emrCall)
         # manualDriving_ui ------

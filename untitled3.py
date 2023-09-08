@@ -134,4 +134,4 @@ class Ui_MainWindow(object):
         self.label_2.setText(_translate("MainWindow", "TextLabel"))
         self.btn_home.setText(_translate("MainWindow", " HOME "))
         self.emr_label.setText(_translate("MainWindow", "관리자 호출 중"))
-import resource_rc
+
