@@ -1,3 +1,5 @@
+import time
+
 import pyttsx3
 
 import selDestination_ui
@@ -60,12 +62,23 @@ def assign_des(btn, btn_list):
 def start_driving(btn):
     global des_x, des_y
     print(des_x, des_y)
-    # 클릭 시 버튼 텍스트 전환
+    
     if btn.text() == "주행시작":
+        # tts(음성안내)
+        text="주행을 시작합니다."
+        text_to_speech(text)
+        time.sleep(1)
+        # 클릭 시 버튼 텍스트 전환
         btn.setText("정지")
+
         # 탭 비활성화
         # selDestination_ui.tabs.setDisabled(True)
     elif btn.text() == "정지":
+        # tts(음성안내)
+        text = "주행을 종료합니다."
+        text_to_speech(text)
+        time.sleep(1)
+        # 클릭 시 버튼 텍스트 전환
         btn.setText("주행시작")
         # 탭 활성화
         # selDestination_ui.tabs.setEnabled(True)

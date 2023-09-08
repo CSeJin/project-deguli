@@ -5,16 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f19df95d-63fa-477f-9adc-39f7db9304cd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emrCall_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/emrCall_ui.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manualDriving_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/manualDriving_ui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/selDestination.py" beforeDir="false" afterPath="$PROJECT_DIR$/selDestination.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/selDestination_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/selDestination_ui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled1.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled1.ui" beforeDir="false" afterPath="$PROJECT_DIR$/untitled1.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled2.py" beforeDir="false" afterPath="$PROJECT_DIR$/untitled2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled3.py" beforeDir="false" afterPath="$PROJECT_DIR$/untitled3.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -84,7 +84,7 @@ class WindowClass(QMainWindow):
 
         # 버튼 변수를 문자열 형태로 리스트에 추가
         self.btn_list = []
-        for i in range(1, 9):
+        for i in range(1, 7):
             var_name = f"btn{i}_1f"
             self.btn_list.append(var_name)
         # manualDriving_ui ------
@@ -169,16 +169,6 @@ class WindowClass(QMainWindow):
     def call_start_driving(self, btn):
         print("call_start_driving")
         start_driving(btn)
-
-        # 주행 시작 알림
-        text = "주행을 시작합니다."
-
-        # QTimer를 이용한 소리 지연.
-        def delayed_sound():
-            selDestination.text_to_speech(text)
-
-        # 1000 밀리초 (1초) 후에 delayed_sound 함수 호출
-        QTimer.singleShot(500, delayed_sound)
 
 
 if __name__ == "__main__":
