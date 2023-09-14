@@ -36,7 +36,7 @@ def assign_des(btn, btn_list):
     
     # 목적지별 좌표를 저장할 publisher 전송
     if btn.text() == "CT촬영실":
-        msg = '1'
+        msg = '4'
         pub.publish(msg)
     elif btn.text() == "비뇨기과":
         msg = '2'
@@ -45,7 +45,7 @@ def assign_des(btn, btn_list):
         msg = '3'
         pub.publish(msg)
     elif btn.text() == "접수처":
-        msg = '4'
+        msg = '1'
         pub.publish(msg)
     elif btn.text() == "치과":
         des_x = 2
