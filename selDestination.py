@@ -5,11 +5,11 @@ import rospy
 from std_msgs.msg import String
 
 des_x, des_y = 0, 0
-
+msg = String()
 
 def assign_des(btn, btn_list):
     print(btn.text())
-    global des_x, des_y  # 외부에서 전역 변수를 사용하기 위해 global 선언
+    global des_x, des_y, msg  # 외부에서 전역 변수를 사용하기 위해 global 선언
 
     # 모든 버튼의 styleSheet를 초기화하는 코드 필요
     for other_btn_name in btn_list:
@@ -37,16 +37,16 @@ def assign_des(btn, btn_list):
     # 목적지별 좌표를 저장할 publisher 전송
     if btn.text() == "CT촬영실":
         msg = '4'
-        pub.publish(msg)
+        
     elif btn.text() == "비뇨기과":
         msg = '2'
-        pub.publish(msg)
+        
     elif btn.text() == "이비인후과":
         msg = '3'
-        pub.publish(msg)
+        
     elif btn.text() == "접수처":
         msg = '1'
-        pub.publish(msg)
+        
     elif btn.text() == "치과":
         des_x = 2
         des_y = 3
@@ -57,7 +57,7 @@ def assign_des(btn, btn_list):
 
 
 def start_driving(btn):
-    global des_x, des_y
+    global des_x, des_y, msg
     print(des_x, des_y)
     
     if btn.text() == "주행시작":
@@ -69,7 +69,6 @@ def start_driving(btn):
         btn.setText("정지")
         # navigation 시작 토픽 생성 및 전송
         pub = rospy.Publisher('start', String, queue_size=1)
-        msg = 'start'
         pub.publish(msg)
         # 탭 비활성화
         # selDestination_ui.tabs.setDisabled(True)
