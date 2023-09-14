@@ -9,7 +9,7 @@ cmd = "python ./test.py "
 # 노드 초기화
 rospy.init_node('manualDriving_publisher', anonymous=True)
 
-# 'hello' 토픽으로 메시지를 발행할 Publisher 생성
+# 'direction' 토픽으로 메시지를 발행할 Publisher 생성
 pub = rospy.Publisher('direction', String, queue_size=1)
 rate = rospy.Rate(1)
 msg = String()
