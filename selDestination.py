@@ -65,7 +65,7 @@ def start_driving(btn):
     
     if btn.text() == "주행시작":
         # tts(음성안내)
-        text="주행을 시작합니다."
+        text="목적지를 "+btn.text()+"로 설정합니다."
         text_to_speech(text)
         time.sleep(1)
         # 클릭 시 버튼 텍스트 전환

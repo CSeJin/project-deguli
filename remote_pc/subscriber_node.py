@@ -3,12 +3,15 @@ import rospy
 from std_msgs.msg import String
 import os
 
+
 def msg_callback(msg):
-  cmd = "python3 ~/app/manualDriving.py"
-  
+    cmd = "python3 ~/app/manualDriving.py " + str(msg)
+    os.system(cmd)
+
+
 if __name__ == '__main__':
-  rospy.init_node('manualDriving_subscriber')
-  sub = rospy.Subscriber('/direction', String, msg_callback, queue_size=1)
-  
-  rospy.spin()
-  
+    rospy.init_node('manualDriving_subscriber')
+    sub = rospy.Subscriber('/direction', String, msg_callback, queue_size=1)
+    
+    rospy.spin()
+
