@@ -5,7 +5,7 @@ import os
 
 
 def msg_callback(msg):
-    cmd = "python3 ~/app/manualDriving.py " + str(msg)
+    cmd = "python3 ~/app/manualDriving_to_openCR.py " + str(msg)
     os.system(cmd)
 
 
