@@ -37,16 +37,16 @@ def assign_des(btn, btn_list):
     # 목적지별 좌표를 저장할 publisher 전송
     if btn.text() == "CT촬영실":
         msg = '4'
-        
+        pub.publish(msg)
     elif btn.text() == "비뇨기과":
         msg = '2'
-        
+        pub.publish(msg)
     elif btn.text() == "이비인후과":
         msg = '3'
-        
+        pub.publish(msg)
     elif btn.text() == "접수처":
         msg = '1'
-        
+        pub.publish(msg)
     elif btn.text() == "치과":
         des_x = 2
         des_y = 3
@@ -61,17 +61,21 @@ def start_driving(btn):
     print(des_x, des_y)
     
     if btn.text() == "주행시작":
-        # tts(음성안내)
-        text="목적지를 "+btn.text()+"로 설정합니다."
-        text_to_speech(text)
-        time.sleep(1)
-        # 클릭 시 버튼 텍스트 전환
-        btn.setText("정지")
         # navigation 시작 토픽 생성 및 전송
         pub = rospy.Publisher('start', String, queue_size=1)
+        msg = 'start'
         pub.publish(msg)
         # 탭 비활성화
         # selDestination_ui.tabs.setDisabled(True)
+
+        #### pub 확인용으로 주석처리####
+        # tts(음성안내)
+        #text="목적지를 "+btn.text()+"로 설정합니다."
+        #text_to_speech(text)
+        #time.sleep(1)
+        # 클릭 시 버튼 텍스트 전환
+        #btn.setText("정지")
+
     elif btn.text() == "정지":
         # tts(음성안내)
         text = "주행을 종료합니다."
