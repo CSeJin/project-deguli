@@ -4,6 +4,8 @@ import selDestination_ui
 import rospy
 from std_msgs.msg import String
 
+#접수처 클릭 -> 주행 시작 클릭 -> 이동 테스트 성공
+
 des_x, des_y = 0, 0
 msg = String()
 
