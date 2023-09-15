@@ -9,9 +9,11 @@ def msg_callback(msg):
     os.system(cmd)
 
 
-if __name__ == '__main__':
-    rospy.init_node('manualDriving_subscriber')
-    sub = rospy.Subscriber('/direction', String, msg_callback, queue_size=1)
-    
-    rospy.spin()
+rospy.init_node('manualDriving_subscriber', anonymous=True)
+rate = rospy.Rate(2)
 
+if __name__ == '__main__':
+    while not rospy.is_shutdown():
+        sub = rospy.Subscriber('/direction', String, msg_callback, queue_size=1)
+        rate.sleep()
+    
