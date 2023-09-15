@@ -45,10 +45,6 @@ def getKey():
     return key
 
 
-def vels(target_linear_vel, target_angular_vel):
-    return "currently:\tlinear vel %s\t angular vel %s " % (target_linear_vel, target_angular_vel)
-
-
 def makeSimpleProfile(output, input, slop):
     if input > output:
         output = min(input, output + slop)
@@ -105,15 +101,19 @@ if __name__ == "__main__":
         
         try:
             while not rospy.is_shutdown():
-                if sys.argv[2] == 'w':
-                    linear_vel = 1.2
-                elif sys.argv[2] == 'x':
-                    linear_vel = -1.2
-                elif sys.argv[2] == 'd':
+                if sys.argv[1] == 'w':
+                    linear_vel = 0.9
+                    angular_vel = 0
+                elif sys.argv[1] == 'x':
+                    linear_vel = -0.9
+                    angular_vel = 0
+                elif sys.argv[1] == 'd':
+                    linear_vel = 0
                     angular_vel = 0.5
-                elif sys.argv[2] == 'a':
+                elif sys.argv[1] == 'a':
+                    linear_vel = 0
                     angular_vel = -0.5
-                elif sys.argv[2] == 's':
+                elif sys.argv[1] == 's':
                     linear_vel = 0
                     angular_vel = 0
                 
