@@ -10,39 +10,10 @@ else:
 BURGER_MAX_LIN_VEL = 0.22
 BURGER_MAX_ANG_VEL = 2.84
 
-WAFFLE_MAX_LIN_VEL = 0.26
-WAFFLE_MAX_ANG_VEL = 1.82
-
-LIN_VEL_STEP_SIZE = 0.01
-ANG_VEL_STEP_SIZE = 0.1
 
 e = """
 Communications Failed
 """
-
-
-def getKey():
-    if os.name == 'nt':
-        timeout = 0.1
-        startTime = time.time()
-        while (1):
-            if msvcrt.kbhit():
-                if sys.version_info[0] >= 3:
-                    return msvcrt.getch().decode()
-                else:
-                    return msvcrt.getch()
-            elif time.time() - startTime > timeout:
-                return ''
-    
-    tty.setraw(sys.stdin.fileno())
-    rlist, _, _ = select.select([sys.stdin], [], [], 0.1)
-    if rlist:
-        key = sys.stdin.read(1)
-    else:
-        key = ''
-    
-    termios.tcsetattr(sys.stdin, termios.TCSADRAIN, settings)
-    return key
 
 
 def makeSimpleProfile(output, input, slop):
@@ -54,39 +25,6 @@ def makeSimpleProfile(output, input, slop):
         output = input
     
     return output
-
-
-def constrain(input, low, high):
-    if input < low:
-        input = low
-    elif input > high:
-        input = high
-    else:
-        input = input
-    
-    return input
-
-
-def checkLinearLimitVelocity(vel):
-    if turtlebot3_model == "burger":
-        vel = constrain(vel, -BURGER_MAX_LIN_VEL, BURGER_MAX_LIN_VEL)
-    elif turtlebot3_model == "waffle" or turtlebot3_model == "waffle_pi":
-        vel = constrain(vel, -WAFFLE_MAX_LIN_VEL, WAFFLE_MAX_LIN_VEL)
-    else:
-        vel = constrain(vel, -BURGER_MAX_LIN_VEL, BURGER_MAX_LIN_VEL)
-    
-    return vel
-
-
-def checkAngularLimitVelocity(vel):
-    if turtlebot3_model == "burger":
-        vel = constrain(vel, -BURGER_MAX_ANG_VEL, BURGER_MAX_ANG_VEL)
-    elif turtlebot3_model == "waffle" or turtlebot3_model == "waffle_pi":
-        vel = constrain(vel, -WAFFLE_MAX_ANG_VEL, WAFFLE_MAX_ANG_VEL)
-    else:
-        vel = constrain(vel, -BURGER_MAX_ANG_VEL, BURGER_MAX_ANG_VEL)
-    
-    return vel
 
 
 if __name__ == "__main__":

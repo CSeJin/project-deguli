@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f19df95d-63fa-477f-9adc-39f7db9304cd" name="Changes" comment="" />
+    <list default="true" id="f19df95d-63fa-477f-9adc-39f7db9304cd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/remote_pc/manualDriving_to_openCR.py" beforeDir="false" afterPath="$PROJECT_DIR$/remote_pc/manualDriving_to_openCR.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
