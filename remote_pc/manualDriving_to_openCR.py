@@ -22,22 +22,27 @@ def direction_callback(msg):
     
     try:
         if msg.data == 'w':
-            linear_vel = 0.15
+            rate.sleep()
+            linear_vel = 0.10
             angular_vel = 0
             print(msg.data+", linear_vel: "+str(linear_vel))
         elif msg.data == 'x':
-            linear_vel = -0.15
+            rate.sleep()
+            linear_vel = -0.10
             angular_vel = 0
             print(msg.data+", linear_vel: "+str(linear_vel))
         elif msg.data == 'd':
+            rate.sleep()
             linear_vel = 0
-            angular_vel = 0.06
+            angular_vel = 0.10
             print(msg.data+", angular_vel: "+str(angular_vel))
         elif msg.data == 'a':
+            rate.sleep()
             linear_vel = 0
-            angular_vel = -0.06
+            angular_vel = -0.10
             print(msg.data+", angular_vel: "+str(angular_vel))
         elif msg.data == 's':
+            rate.sleep()
             linear_vel = 0
             angular_vel = 0
             print(msg.data)
@@ -68,7 +73,6 @@ if __name__ == "__main__":
         while not rospy.is_shutdown():
             # direction 토픽 subscribe
             sub = rospy.Subscriber('/direction', String, direction_callback, queue_size=1)
-            rate.sleep()
     
     except KeyboardInterrupt:
         print(e)
