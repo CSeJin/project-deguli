@@ -4,11 +4,6 @@ import selDestination_ui
 import rospy
 from std_msgs.msg import String
 
-<<<<<<< HEAD
-# 접수처 클릭 -> 주행 시작 클릭 -> 이동 테스트 성공
-=======
-#접수처 클릭 -> 주행 시작 클릭 -> 이동 테스트 성공
->>>>>>> 290806230a3d1d24ec8c44ba259e27b182052d88
 
 des_x, des_y = 0, 0
 msg = String()
@@ -74,7 +69,6 @@ def start_driving(btn):
         pub.publish(msg)
         # 탭 비활성화
         # selDestination_ui.tabs.setDisabled(True)
-<<<<<<< HEAD
         
         #### pub 확인용으로 주석처리####
         # tts(음성안내)
@@ -83,8 +77,7 @@ def start_driving(btn):
         # time.sleep(1)
         # 클릭 시 버튼 텍스트 전환
         # btn.setText("정지")
-    
-=======
+
 
         #### pub 확인용으로 주석처리####
         # tts(음성안내)
@@ -94,7 +87,6 @@ def start_driving(btn):
         # 클릭 시 버튼 텍스트 전환
         #btn.setText("정지")
 
->>>>>>> 290806230a3d1d24ec8c44ba259e27b182052d88
     elif btn.text() == "정지":
         # tts(음성안내)
         text = "주행을 종료합니다."
