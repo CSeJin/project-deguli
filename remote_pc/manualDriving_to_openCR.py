@@ -1,86 +1,65 @@
+#!/usr/bin/env python
+
 import rospy
 from geometry_msgs.msg import Twist
 from std_msgs.msg import String
-import sys, select, os
 
-if os.name == 'nt':
-    import msvcrt, time
-else:
-    import tty, termios
+rospy.init_node('turtlebot_controller', anonymous=True)
 
-BURGER_MAX_LIN_VEL = 0.22
-BURGER_MAX_ANG_VEL = 2.84
+cmd_vel_pub = rospy.Publisher('/cmd_vel', Twist, queue_size=10)
+move_cmd = Twist()
+current_command = ''  # 현재 명령을 저장할 변수
 
-e = """
-Communications Failed
-"""
+def msg_callback(msg):
+    global current_command
 
-# 플래그 초기화
-command_received = False
-linear_vel = 0
-angular_vel = 0
+    if msg.data == 'w':
+        # 전진 명령
+        current_command = 'w'
+    elif msg.data == 'a':
+        # 좌회전 명령
+        current_command = 'a'
+    elif msg.data == 'd':
+        # 우회전 명령
+        current_command = 'd'
+    elif msg.data == 'x':
+        # 후진 명령
+        current_command = 'x'
+    elif msg.data == 's':
+        # 정지 명령
+        current_command = 's'
 
+def control_robot():
+    rate = rospy.Rate(10)  # 10Hz로 루프 실행
 
-def direction_callback(msg):
-    global command_received, linear_vel, angular_vel
+    while not rospy.is_shutdown():
+        if current_command == 'w':
+            # 전진
+            move_cmd.linear.x = 0.05
+            move_cmd.angular.z = 0.0
+        elif current_command == 'a':
+            # 좌회전
+            move_cmd.linear.x = 0.0
+            move_cmd.angular.z = 0.3
+        elif current_command == 'd':
+            # 우회전
+            move_cmd.linear.x = 0.0
+            move_cmd.angular.z = -0.3
+        elif current_command == 'x':
+            # 후진
+            move_cmd.linear.x = -0.05
+            move_cmd.angular.z = 0.0
+        elif current_command == 's':
+            # 정지
+            move_cmd.linear.x = 0.0
+            move_cmd.angular.z = 0.0
+
+        cmd_vel_pub.publish(move_cmd)
+        rate.sleep()
+
+if __name__ == '__main__':
     try:
-        if msg.data == 'w':
-            linear_vel = 0.07
-            angular_vel = 0
-            command_received = True
-            print(msg.data + ", linear_vel: " + str(linear_vel))
-        elif msg.data == 'x':
-            linear_vel = -0.07
-            angular_vel = 0
-            command_received = True
-            print(msg.data + ", linear_vel: " + str(linear_vel))
-        elif msg.data == 'd':
-            linear_vel = 0
-            angular_vel = 0.10
-            command_received = True
-            print(msg.data + ", angular_vel: " + str(angular_vel))
-        elif msg.data == 'a':
-            linear_vel = 0
-            angular_vel = -0.10
-            command_received = True
-            print(msg.data + ", angular_vel: " + str(angular_vel))
-        elif msg.data == 's':
-            linear_vel = 0
-            angular_vel = 0
-            command_received = True
-            print(msg.data)
-        else:
-            print(e)
-    
-    except KeyboardInterrupt:
-        print(e + ": pub to openCR")
-
-
-if __name__ == "__main__":
-    if os.name != 'nt':
-        settings = termios.tcgetattr(sys.stdin)
-    
-    rospy.init_node('turtlebot3_teleop', anonymous=True)
-    rate = rospy.Rate(10)
-    
-    try:
-        while not rospy.is_shutdown():
-            if command_received:
-                # to_openCR: openCR로 주행 명령 publishing
-                pub = rospy.Publisher('cmd_vel', Twist, queue_size=10)
-                
-                twist = Twist()
-                twist.linear.x = linear_vel
-                twist.angular.z = angular_vel
-                pub.publish(twist)
-                
-                # 플래그 초기화
-                command_received = False
-            
-            rate.sleep()
-    
-    except KeyboardInterrupt:
-        print(e)
-    
-    if os.name != 'nt':
-        termios.tcsetattr(sys.stdin, termios.TCSADRAIN, settings)
+        rospy.Subscriber('/direction', String, msg_callback, queue_size=1)
+        control_robot()
+    except rospy.ROSInterruptException:
+        pass
