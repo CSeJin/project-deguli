@@ -11,16 +11,16 @@ else:
 BURGER_MAX_LIN_VEL = 0.22
 BURGER_MAX_ANG_VEL = 2.84
 
-
 e = """
 Communications Failed
 """
+
 
 def getKey():
     if os.name == 'nt':
         timeout = 0.1
         startTime = time.time()
-        while(1):
+        while (1):
             if msvcrt.kbhit():
                 if sys.version_info[0] >= 3:
                     return msvcrt.getch().decode()
@@ -28,13 +28,14 @@ def getKey():
                     return msvcrt.getch()
             elif time.time() - startTime > timeout:
                 return ''
-
+    
     tty.setraw(sys.stdin.fileno())
     rlist, _, _ = select.select([sys.stdin], [], [], 0.1)
     if rlist:
         key = sys.stdin.read(1)
     else:
         key = ''
+
 
 def direction_callback(msg):
     try:
@@ -65,9 +66,9 @@ def direction_callback(msg):
         twist.linear.x = linear_vel
         twist.angular.z = angular_vel
         pub.publish(twist)
-        
+    
     except KeyboardInterrupt:
-        print(e+": pub to openCR")
+        print(e + ": pub to openCR")
     
     finally:
         twist = Twist()
@@ -94,7 +95,7 @@ if __name__ == "__main__":
             # direction 토픽 subscribe
             sub = rospy.Subscriber('/direction', String, direction_callback, queue_size=1)
             rate.sleep()
-
+    
     except KeyboardInterrupt:
         print(e)
     
