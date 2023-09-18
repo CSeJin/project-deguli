@@ -41,5 +41,5 @@ def turn_right(self):
 
 def stop_run(self):
     # publishing
-    msg = 's'
+    self.msg = 's'
     pub.publish(msg)
