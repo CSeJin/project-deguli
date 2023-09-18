@@ -19,43 +19,43 @@ Communications Failed
 def direction_callback(msg):
     linear_vel = 0
     angular_vel = 0
+
+    rate = rospy.Rate(1)
     
     try:
-        if msg.data == 'w':
+        while not rospy.is_shutdown():  # 무한 루프 시작
+            if msg.data == 'w':
+                linear_vel = 0.10
+                angular_vel = 0
+                print(msg.data+", linear_vel: "+str(linear_vel))
+            elif msg.data == 'x':
+                linear_vel = -0.10
+                angular_vel = 0
+                print(msg.data+", linear_vel: "+str(linear_vel))
+            elif msg.data == 'd':
+                linear_vel = 0
+                angular_vel = 0.10
+                print(msg.data+", angular_vel: "+str(angular_vel))
+            elif msg.data == 'a':
+                linear_vel = 0
+                angular_vel = -0.10
+                print(msg.data+", angular_vel: "+str(angular_vel))
+            elif msg.data == 's':
+                linear_vel = 0
+                angular_vel = 0
+                print(msg.data)
+            else:
+                print(e)
+            
+            # to_openCR: openCR로 주행 명령 publishing
+            pub = rospy.Publisher('cmd_vel', Twist, queue_size=10)
+    
+            twist = Twist()
+            twist.linear.x = linear_vel
+            twist.angular.z = angular_vel
+            pub.publish(twist)
+            
             rate.sleep()
-            linear_vel = 0.10
-            angular_vel = 0
-            print(msg.data+", linear_vel: "+str(linear_vel))
-        elif msg.data == 'x':
-            rate.sleep()
-            linear_vel = -0.10
-            angular_vel = 0
-            print(msg.data+", linear_vel: "+str(linear_vel))
-        elif msg.data == 'd':
-            rate.sleep()
-            linear_vel = 0
-            angular_vel = 0.10
-            print(msg.data+", angular_vel: "+str(angular_vel))
-        elif msg.data == 'a':
-            rate.sleep()
-            linear_vel = 0
-            angular_vel = -0.10
-            print(msg.data+", angular_vel: "+str(angular_vel))
-        elif msg.data == 's':
-            rate.sleep()
-            linear_vel = 0
-            angular_vel = 0
-            print(msg.data)
-        else:
-            print(e)
-        
-        # to_openCR: openCR로 주행 명령 publishing
-        pub = rospy.Publisher('cmd_vel', Twist, queue_size=10)
-
-        twist = Twist()
-        twist.linear.x = linear_vel
-        twist.angular.z = angular_vel
-        pub.publish(twist)
     
     except KeyboardInterrupt:
         print(e + ": pub to openCR")
@@ -67,7 +67,6 @@ if __name__ == "__main__":
     
     # from_raspberryPi: raspberryPi로부터 이동 명령 subscribe
     rospy.init_node('turtlebot3_teleop', anonymous=True)
-    rate = rospy.Rate(1)
     
     try:
         while not rospy.is_shutdown():
