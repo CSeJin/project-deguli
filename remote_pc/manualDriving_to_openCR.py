@@ -16,17 +16,6 @@ Communications Failed
 """
 
 
-def makeSimpleProfile(output, input, slop):
-    if input > output:
-        output = min(input, output + slop)
-    elif input < output:
-        output = max(input, output - slop)
-    else:
-        output = input
-    
-    return output
-
-
 if __name__ == "__main__":
     if os.name != 'nt':
         settings = termios.tcgetattr(sys.stdin)
@@ -39,10 +28,10 @@ if __name__ == "__main__":
     try:
         while not rospy.is_shutdown():
             if sys.argv[1] == 'w':
-                linear_vel = 0.22
+                linear_vel = 0.15
                 angular_vel = 0
             elif sys.argv[1] == 'x':
-                linear_vel = -0.22
+                linear_vel = -0.15
                 angular_vel = 0
             elif sys.argv[1] == 'd':
                 linear_vel = 0

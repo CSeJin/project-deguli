@@ -422,14 +422,34 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         Ui_selDestination.btn6_2f.setFont(font)
         Ui_selDestination.btn6_2f.setStyleSheet("""
+                        background-color: #cfe3ac;
+                        text-align: left;
+                        padding: 5px;
+                        padding-left: 20px;
+                        border: none;
+                    """)
+        Ui_selDestination.btn6_2f.setObjectName("btn6_2f")
+        self.verticalLayout_2.addWidget(Ui_selDestination.btn6_2f)
+        Ui_selDestination.btn7_2f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_2)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(Ui_selDestination.btn7_2f.sizePolicy().hasHeightForWidth())
+        Ui_selDestination.btn7_2f.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Malgun Gothic")
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        Ui_selDestination.btn7_2f.setFont(font)
+        Ui_selDestination.btn7_2f.setStyleSheet("""
                 background-color: #cfe3ac;
                 text-align: left;
                 padding: 5px;
                 padding-left: 20px;
                 border: none;
             """)
-        Ui_selDestination.btn6_2f.setObjectName("btn6_2f")
-        self.verticalLayout_2.addWidget(Ui_selDestination.btn6_2f)
+        Ui_selDestination.btn7_2f.setObjectName("btn7_2f")
         self.scrollArea_2.setWidget(self.scrollAreaWidgetContents_2)
         self.gridLayout_4.addWidget(self.scrollArea_2, 0, 1, 1, 1)
         Ui_selDestination.tabs.addTab(self.tab_2f, "")
@@ -561,27 +581,6 @@ class Ui_selDestination(QMainWindow):
             """)
         Ui_selDestination.btn5_3f.setObjectName("btn5_3f")
         self.verticalLayout_3.addWidget(Ui_selDestination.btn5_3f)
-        Ui_selDestination.btn6_3f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_3)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(Ui_selDestination.btn6_3f.sizePolicy().hasHeightForWidth())
-        Ui_selDestination.btn6_3f.setSizePolicy(sizePolicy)
-        font = QtGui.QFont()
-        font.setFamily("Malgun Gothic")
-        font.setPointSize(10)
-        font.setBold(True)
-        font.setWeight(75)
-        Ui_selDestination.btn6_3f.setFont(font)
-        Ui_selDestination.btn6_3f.setStyleSheet("""
-                background-color: #cfe3ac;
-                text-align: left;
-                padding: 5px;
-                padding-left: 20px;
-                border: none;
-            """)
-        Ui_selDestination.btn6_3f.setObjectName("btn6_3f")
-        self.verticalLayout_3.addWidget(Ui_selDestination.btn6_3f)
         self.scrollArea_3.setWidget(self.scrollAreaWidgetContents_3)
         self.gridLayout_5.addWidget(self.scrollArea_3, 0, 1, 1, 1)
         Ui_selDestination.tabs.addTab(self.tab_3f, "")
@@ -692,48 +691,7 @@ class Ui_selDestination(QMainWindow):
             """)
         Ui_selDestination.btn4_4f.setObjectName("btn4_4f")
         self.verticalLayout_4.addWidget(Ui_selDestination.btn4_4f)
-        Ui_selDestination.btn5_4f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_4)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(Ui_selDestination.btn5_4f.sizePolicy().hasHeightForWidth())
-        Ui_selDestination.btn5_4f.setSizePolicy(sizePolicy)
-        font = QtGui.QFont()
-        font.setFamily("Malgun Gothic")
-        font.setPointSize(10)
-        font.setBold(True)
-        font.setWeight(75)
-        Ui_selDestination.btn5_4f.setFont(font)
-        Ui_selDestination.btn5_4f.setStyleSheet("""
-                background-color: #cfe3ac;
-                text-align: left;
-                padding: 5px;
-                padding-left: 20px;
-                border: none;
-            """)
-        Ui_selDestination.btn5_4f.setObjectName("btn5_4f")
-        self.verticalLayout_4.addWidget(Ui_selDestination.btn5_4f)
-        Ui_selDestination.btn6_4f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_4)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(Ui_selDestination.btn6_4f.sizePolicy().hasHeightForWidth())
-        Ui_selDestination.btn6_4f.setSizePolicy(sizePolicy)
-        font = QtGui.QFont()
-        font.setFamily("Malgun Gothic")
-        font.setPointSize(10)
-        font.setBold(True)
-        font.setWeight(75)
-        Ui_selDestination.btn6_4f.setFont(font)
-        Ui_selDestination.btn6_4f.setStyleSheet("""
-                background-color: #cfe3ac;
-                text-align: left;
-                padding: 5px;
-                padding-left: 20px;
-                border: none;
-            """)
-        Ui_selDestination.btn6_4f.setObjectName("btn6_4f")
-        self.verticalLayout_4.addWidget(Ui_selDestination.btn6_4f)
+        
         self.scrollArea_4.setWidget(self.scrollAreaWidgetContents_4)
         self.gridLayout_6.addWidget(self.scrollArea_4, 0, 1, 1, 1)
         Ui_selDestination.tabs.addTab(self.tab_4f, "")
@@ -886,6 +844,48 @@ class Ui_selDestination(QMainWindow):
             """)
         Ui_selDestination.btn6_5f.setObjectName("btn6_5f")
         self.verticalLayout_5.addWidget(Ui_selDestination.btn6_5f)
+        Ui_selDestination.btn7_5f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_5)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(Ui_selDestination.btn7_5f.sizePolicy().hasHeightForWidth())
+        Ui_selDestination.btn7_5f.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Malgun Gothic")
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        Ui_selDestination.btn7_5f.setFont(font)
+        Ui_selDestination.btn7_5f.setStyleSheet("""
+                background-color: #cfe3ac;
+                text-align: left;
+                padding: 5px;
+                padding-left: 20px;
+                border: none;
+            """)
+        Ui_selDestination.btn7_5f.setObjectName("btn7_5f")
+        self.verticalLayout_5.addWidget(Ui_selDestination.btn7_5f)
+        Ui_selDestination.btn8_5f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_5)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(Ui_selDestination.btn8_5f.sizePolicy().hasHeightForWidth())
+        Ui_selDestination.btn8_5f.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Malgun Gothic")
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        Ui_selDestination.btn8_5f.setFont(font)
+        Ui_selDestination.btn8_5f.setStyleSheet("""
+                background-color: #cfe3ac;
+                text-align: left;
+                padding: 5px;
+                padding-left: 20px;
+                border: none;
+            """)
+        Ui_selDestination.btn8_5f.setObjectName("btn8_5f")
+        self.verticalLayout_5.addWidget(Ui_selDestination.btn8_5f)
         self.scrollArea_5.setWidget(self.scrollAreaWidgetContents_5)
         self.gridLayout_7.addWidget(self.scrollArea_5, 0, 1, 1, 1)
         Ui_selDestination.tabs.addTab(self.tab_5f, "")
@@ -1098,43 +1098,43 @@ class Ui_selDestination(QMainWindow):
         Ui_selDestination.btn6_1f.setText(_translate("MainWindow", "화장실"))
         Ui_selDestination.tabs.setTabText(Ui_selDestination.tabs.indexOf(self.tab_1f),
                                           _translate("MainWindow", "     1층     "))
-        Ui_selDestination.btn1_2f.setText(_translate("MainWindow", "CT촬영실"))
-        Ui_selDestination.btn2_2f.setText(_translate("MainWindow", "비뇨기과"))
-        Ui_selDestination.btn3_2f.setText(_translate("MainWindow", "이비인후과"))
-        Ui_selDestination.btn4_2f.setText(_translate("MainWindow", "접수처"))
-        Ui_selDestination.btn5_2f.setText(_translate("MainWindow", "치과"))
-        Ui_selDestination.btn6_2f.setText(_translate("MainWindow", "화장실"))
+        Ui_selDestination.btn1_2f.setText(_translate("MainWindow", "PET센터"))
+        Ui_selDestination.btn2_2f.setText(_translate("MainWindow", "골다공증 검사실"))
+        Ui_selDestination.btn3_2f.setText(_translate("MainWindow", "산부인과"))
+        Ui_selDestination.btn4_2f.setText(_translate("MainWindow", "초음파실"))
+        Ui_selDestination.btn5_2f.setText(_translate("MainWindow", "체외충격파 쇄설실"))
+        Ui_selDestination.btn6_2f.setText(_translate("MainWindow", "핵의학과"))
+        Ui_selDestination.btn7_2f.setText(_translate("MainWindow", "화장실"))
         Ui_selDestination.tabs.setTabText(Ui_selDestination.tabs.indexOf(self.tab_2f),
                                           _translate("MainWindow", "     2층     "))
-        Ui_selDestination.btn1_3f.setText(_translate("MainWindow", "CT촬영실"))
-        Ui_selDestination.btn2_3f.setText(_translate("MainWindow", "비뇨기과"))
-        Ui_selDestination.btn3_3f.setText(_translate("MainWindow", "이비인후과"))
-        Ui_selDestination.btn4_3f.setText(_translate("MainWindow", "접수처"))
-        Ui_selDestination.btn5_3f.setText(_translate("MainWindow", "치과"))
-        Ui_selDestination.btn6_3f.setText(_translate("MainWindow", "화장실"))
+        Ui_selDestination.btn1_3f.setText(_translate("MainWindow", "암센터 상담실"))
+        Ui_selDestination.btn2_3f.setText(_translate("MainWindow", "영상의학과"))
+        Ui_selDestination.btn3_3f.setText(_translate("MainWindow", "응급의료센터"))
+        Ui_selDestination.btn4_3f.setText(_translate("MainWindow", "정형외과"))
+        Ui_selDestination.btn5_3f.setText(_translate("MainWindow", "화장실"))
         Ui_selDestination.tabs.setTabText(Ui_selDestination.tabs.indexOf(self.tab_3f),
                                           _translate("MainWindow", "     3층     "))
-        Ui_selDestination.btn1_4f.setText(_translate("MainWindow", "CT촬영실"))
-        Ui_selDestination.btn2_4f.setText(_translate("MainWindow", "비뇨기과"))
-        Ui_selDestination.btn3_4f.setText(_translate("MainWindow", "이비인후과"))
-        Ui_selDestination.btn4_4f.setText(_translate("MainWindow", "접수처"))
-        Ui_selDestination.btn5_4f.setText(_translate("MainWindow", "치과"))
-        Ui_selDestination.btn6_4f.setText(_translate("MainWindow", "화장실"))
+        Ui_selDestination.btn1_4f.setText(_translate("MainWindow", "검진검사실"))
+        Ui_selDestination.btn2_4f.setText(_translate("MainWindow", "국제진료센터"))
+        Ui_selDestination.btn3_4f.setText(_translate("MainWindow", "종합검진센터"))
+        Ui_selDestination.btn4_4f.setText(_translate("MainWindow", "화장실"))
         Ui_selDestination.tabs.setTabText(Ui_selDestination.tabs.indexOf(self.tab_4f),
                                           _translate("MainWindow", "     4층     "))
-        Ui_selDestination.btn1_5f.setText(_translate("MainWindow", "CT촬영실"))
-        Ui_selDestination.btn2_5f.setText(_translate("MainWindow", "비뇨기과"))
-        Ui_selDestination.btn3_5f.setText(_translate("MainWindow", "이비인후과"))
-        Ui_selDestination.btn4_5f.setText(_translate("MainWindow", "접수처"))
-        Ui_selDestination.btn5_5f.setText(_translate("MainWindow", "치과"))
-        Ui_selDestination.btn6_5f.setText(_translate("MainWindow", "화장실"))
+        Ui_selDestination.btn1_5f.setText(_translate("MainWindow", "가정의학과"))
+        Ui_selDestination.btn2_5f.setText(_translate("MainWindow", "뇌혈류검사실"))
+        Ui_selDestination.btn3_5f.setText(_translate("MainWindow", "맞춤형비만치료센터"))
+        Ui_selDestination.btn4_5f.setText(_translate("MainWindow", "심장내과"))
+        Ui_selDestination.btn5_5f.setText(_translate("MainWindow", "암센터"))
+        Ui_selDestination.btn6_5f.setText(_translate("MainWindow", "호흡기알레르기내과"))
+        Ui_selDestination.btn7_5f.setText(_translate("MainWindow", "호흡기알레르기검진센터"))
+        Ui_selDestination.btn8_5f.setText(_translate("MainWindow", "흉부외과"))
         Ui_selDestination.tabs.setTabText(Ui_selDestination.tabs.indexOf(self.tab_5f),
                                           _translate("MainWindow", "     5층     "))
-        Ui_selDestination.btn1_6f.setText(_translate("MainWindow", "CT촬영실"))
-        Ui_selDestination.btn2_6f.setText(_translate("MainWindow", "비뇨기과"))
-        Ui_selDestination.btn3_6f.setText(_translate("MainWindow", "이비인후과"))
-        Ui_selDestination.btn4_6f.setText(_translate("MainWindow", "접수처"))
-        Ui_selDestination.btn5_6f.setText(_translate("MainWindow", "치과"))
+        Ui_selDestination.btn1_6f.setText(_translate("MainWindow", "당뇨상담실"))
+        Ui_selDestination.btn2_6f.setText(_translate("MainWindow", "복약지도실"))
+        Ui_selDestination.btn3_6f.setText(_translate("MainWindow", "신장내과"))
+        Ui_selDestination.btn4_6f.setText(_translate("MainWindow", "성형외과"))
+        Ui_selDestination.btn5_6f.setText(_translate("MainWindow", "피부과"))
         Ui_selDestination.btn6_6f.setText(_translate("MainWindow", "화장실"))
         Ui_selDestination.tabs.setTabText(Ui_selDestination.tabs.indexOf(self.tab_6f),
                                           _translate("MainWindow", "     6층     "))
