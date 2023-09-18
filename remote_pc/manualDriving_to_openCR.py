@@ -15,11 +15,32 @@ e = """
 Communications Failed
 """
 
+def getKey():
+    if os.name == 'nt':
+        timeout = 0.1
+        startTime = time.time()
+        while(1):
+            if msvcrt.kbhit():
+                if sys.version_info[0] >= 3:
+                    return msvcrt.getch().decode()
+                else:
+                    return msvcrt.getch()
+            elif time.time() - startTime > timeout:
+                return ''
+
+    tty.setraw(sys.stdin.fileno())
+    rlist, _, _ = select.select([sys.stdin], [], [], 0.1)
+    if rlist:
+        key = sys.stdin.read(1)
+    else:
+        key = ''
+
 
 if __name__ == "__main__":
     if os.name != 'nt':
         settings = termios.tcgetattr(sys.stdin)
     
+    # to_openCR: openCR로 주행 명령 publishing
     rospy.init_node('turtlebot3_teleop')
     pub = rospy.Publisher('cmd_vel', Twist, queue_size=10)
     
@@ -27,6 +48,8 @@ if __name__ == "__main__":
     
     try:
         while not rospy.is_shutdown():
+            key = getKey()
+            
             if sys.argv[1] == 'w':
                 linear_vel = 0.15
                 angular_vel = 0
@@ -35,13 +58,15 @@ if __name__ == "__main__":
                 angular_vel = 0
             elif sys.argv[1] == 'd':
                 linear_vel = 0
-                angular_vel = 1.5
+                angular_vel = 0.06
             elif sys.argv[1] == 'a':
                 linear_vel = 0
-                angular_vel = -1.5
+                angular_vel = -0.06
             elif sys.argv[1] == 's':
                 linear_vel = 0
                 angular_vel = 0
+            elif key == '\x03':
+                break
             
             twist = Twist()
             twist.linear.x = linear_vel
@@ -49,7 +74,7 @@ if __name__ == "__main__":
             pub.publish(twist)
     
     except KeyboardInterrupt:
-        pass
+        print(e)
     
     finally:
         twist = Twist()

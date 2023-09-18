@@ -10,7 +10,7 @@ def msg_callback(msg):
 
 
 rospy.init_node('manualDriving_subscriber', anonymous=True)
-rate = rospy.Rate(2)
+rate = rospy.Rate(1)
 
 if __name__ == '__main__':
     while not rospy.is_shutdown():
