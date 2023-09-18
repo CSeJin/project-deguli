@@ -90,46 +90,45 @@ def checkAngularLimitVelocity(vel):
 
 
 if __name__ == "__main__":
-    if __name__ == "__main__":
-        if os.name != 'nt':
-            settings = termios.tcgetattr(sys.stdin)
-        
-        rospy.init_node('turtlebot3_teleop')
-        pub = rospy.Publisher('cmd_vel', Twist, queue_size=10)
-        
-        turtlebot3_model = rospy.get_param("model", "burger")
-        
-        try:
-            while not rospy.is_shutdown():
-                if sys.argv[1] == 'w':
-                    linear_vel = 0.9
-                    angular_vel = 0
-                elif sys.argv[1] == 'x':
-                    linear_vel = -0.9
-                    angular_vel = 0
-                elif sys.argv[1] == 'd':
-                    linear_vel = 0
-                    angular_vel = 0.5
-                elif sys.argv[1] == 'a':
-                    linear_vel = 0
-                    angular_vel = -0.5
-                elif sys.argv[1] == 's':
-                    linear_vel = 0
-                    angular_vel = 0
-                
-                twist = Twist()
-                twist.linear.x = linear_vel
-                twist.angular.z = angular_vel
-                pub.publish(twist)
-        
-        except KeyboardInterrupt:
-            pass
-        
-        finally:
+    if os.name != 'nt':
+        settings = termios.tcgetattr(sys.stdin)
+    
+    rospy.init_node('turtlebot3_teleop')
+    pub = rospy.Publisher('cmd_vel', Twist, queue_size=10)
+    
+    turtlebot3_model = rospy.get_param("model", "burger")
+    
+    try:
+        while not rospy.is_shutdown():
+            if sys.argv[1] == 'w':
+                linear_vel = 0.22
+                angular_vel = 0
+            elif sys.argv[1] == 'x':
+                linear_vel = -0.22
+                angular_vel = 0
+            elif sys.argv[1] == 'd':
+                linear_vel = 0
+                angular_vel = 1.5
+            elif sys.argv[1] == 'a':
+                linear_vel = 0
+                angular_vel = -1.5
+            elif sys.argv[1] == 's':
+                linear_vel = 0
+                angular_vel = 0
+            
             twist = Twist()
-            twist.linear.x = 0.0
-            twist.angular.z = 0.0
+            twist.linear.x = linear_vel
+            twist.angular.z = angular_vel
             pub.publish(twist)
-        
-        if os.name != 'nt':
-            termios.tcsetattr(sys.stdin, termios.TCSADRAIN, settings)
+    
+    except KeyboardInterrupt:
+        pass
+    
+    finally:
+        twist = Twist()
+        twist.linear.x = 0.0
+        twist.angular.z = 0.0
+        pub.publish(twist)
+    
+    if os.name != 'nt':
+        termios.tcsetattr(sys.stdin, termios.TCSADRAIN, settings)

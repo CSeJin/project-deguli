@@ -17,25 +17,29 @@ msg = String()
 
 def move_straight(self):
     # publishing
-    msg.data = 'w'
+    self.msg = 'w'
     pub.publish(msg)
+
 
 def turn_left(self):
     # publishing
-    msg.data = 'a'
+    self.msg = 'a'
     pub.publish(msg)
+
 
 def move_back(self):
     # publishing
-    msg.data = 'x'
+    self.msg = 'x'
     pub.publish(msg)
-    
+
+
 def turn_right(self):
     # publishing
-    msg.data = 'd'
+    self.msg = 'd'
     pub.publish(msg)
+
 
 def stop_run(self):
     # publishing
-    msg.data = 's'
+    msg = 's'
     pub.publish(msg)
