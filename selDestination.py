@@ -63,6 +63,9 @@ def start_driving(btn):
     global des_x, des_y, msg, msg_tts
     print(des_x, des_y)
     
+    # tts(음성안내) publishing
+    pub_tts = rospy.Publisher('tts', String, queue_size=1)
+    
     if btn.text() == "주행시작":
         # navigation 시작 토픽 생성 및 전송
         pub = rospy.Publisher('start', String, queue_size=1)
@@ -72,21 +75,16 @@ def start_driving(btn):
         # selDestination_ui.tabs.setDisabled(True)
         
         # tts(음성안내) publishing
-        pub_tts = rospy.Publisher('tts', String, queue_size=1)
         pub_tts.publish(msg)
         
         # 클릭 시 버튼 텍스트 전환
         # btn.setText("정지")
     
     elif btn.text() == "정지":
-        # tts(음성안내)
-        text = "주행을 종료합니다."
-        text_to_speech(text)
-        time.sleep(1)
-        # 클릭 시 버튼 텍스트 전환
-        btn.setText("주행시작")
-        # 탭 활성화
-        # selDestination_ui.tabs.setEnabled(True)
+        # tts(음성안내) publishing
+        msg = 'end'
+        pub_tts.publish(msg)
+        
     else:
         btn.setText("주행시작")
     

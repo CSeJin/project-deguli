@@ -21,6 +21,8 @@ def call_text_to_speech(msg):
     elif msg.data == '3':
         des = '이비인후과'
         text = "목적지를 " + str(des) + "로 설정합니다."
+    elif msg.data == 'end':
+        text = "목적지에 도착했습니다."
     else:
         text = "목적지를 설정해주세요."
     print(text)
