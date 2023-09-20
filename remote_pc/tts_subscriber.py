@@ -23,6 +23,8 @@ def call_text_to_speech(msg):
         text = "목적지를 " + str(des) + "로 설정합니다."
     elif msg.data == 'end':
         text = "목적지에 도착했습니다."
+    elif msg.data == 'emr':
+        text = "위급상황입니다. 위급상황입니다."
     else:
         text = "목적지를 설정해주세요."
     print(text)

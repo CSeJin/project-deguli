@@ -152,15 +152,16 @@ class WindowClass(QMainWindow):
         self.stacked_widget.setCurrentIndex(3)
         self.current_page_index = 3
 
-        if self.current_page_index == 3:
-            text = "위급상황입니다."
-
-            # QTimer를 이용한 소리 지연
-            def delayed_sound():
-                emrCall.text_to_speech(text)
-
-            # 1000 밀리초 (1초) 후에 delayed_sound 함수 호출
-            QTimer.singleShot(500, delayed_sound)
+        emrCall.emr()
+        # if self.current_page_index == 3:
+        #     text = "위급상황입니다."
+        #
+        #     # QTimer를 이용한 소리 지연
+        #     def delayed_sound():
+        #         emrCall.text_to_speech(text)
+        #
+        #     # 1000 밀리초 (1초) 후에 delayed_sound 함수 호출
+        #     QTimer.singleShot(500, delayed_sound)
 
     def call_assign_des(self, btn, btn_list):
         print("call_assign_des")
