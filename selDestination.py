@@ -56,10 +56,11 @@ def assign_des(btn, btn_list):
         des_x = 3
         des_y = 1
     print(msg)
+    msg_text=btn.text()
 
 
 def start_driving(btn):
-    global des_x, des_y, msg
+    global des_x, des_y, msg, msg_tts
     print(des_x, des_y)
     
     if btn.text() == "주행시작":
@@ -71,12 +72,9 @@ def start_driving(btn):
         # selDestination_ui.tabs.setDisabled(True)
         
         #### pub 확인용으로 주석처리####
-        # tts(음성안내)
-        # text="목적지를 "+btn.text()+"로 설정합니다."
-        # text_to_speech(text)
-        # time.sleep(1)
-        # 클릭 시 버튼 텍스트 전환
-        # btn.setText("정지")
+        # tts(음성안내) publishing
+        pub_tts = rospy.Publisher('tts', String, queue_size=1)
+        pub_tts.publish(msg_tts)
 
 
         #### pub 확인용으로 주석처리####
