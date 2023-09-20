@@ -4,9 +4,9 @@ import selDestination_ui
 import rospy
 from std_msgs.msg import String
 
-
 des_x, des_y = 0, 0
 msg = String()
+msg_tts = String()
 
 
 def assign_des(btn, btn_list):
@@ -40,7 +40,7 @@ def assign_des(btn, btn_list):
     if btn.text() == "CT촬영실":
         msg = '2'
         pub.publish(msg)
-    elif btn.text() == "비뇨기과":
+    elif btn.text() == "응급의료센터":
         msg = '1'
         pub.publish(msg)
     elif btn.text() == "이비인후과":
@@ -56,7 +56,7 @@ def assign_des(btn, btn_list):
         des_x = 3
         des_y = 1
     print(msg)
-    msg_text=btn.text()
+    # msg_tts = btn.text()
 
 
 def start_driving(btn):
@@ -71,20 +71,13 @@ def start_driving(btn):
         # 탭 비활성화
         # selDestination_ui.tabs.setDisabled(True)
         
-        #### pub 확인용으로 주석처리####
         # tts(음성안내) publishing
         pub_tts = rospy.Publisher('tts', String, queue_size=1)
-        pub_tts.publish(msg_tts)
-
-
-        #### pub 확인용으로 주석처리####
-        # tts(음성안내)
-        #text="목적지를 "+btn.text()+"로 설정합니다."
-        #text_to_speech(text)
-        #time.sleep(1)
+        pub_tts.publish(msg)
+        
         # 클릭 시 버튼 텍스트 전환
-        #btn.setText("정지")
-
+        # btn.setText("정지")
+    
     elif btn.text() == "정지":
         # tts(음성안내)
         text = "주행을 종료합니다."
