@@ -2,11 +2,13 @@ import pyttsx3
 import rospy
 from std_msgs.msg import String
 
+
 def text_to_speech(text):
     engine = pyttsx3.init()
     engine.setProperty("rate", 150)
     engine.say(text)
     engine.runAndWait()
+
 
 def call_text_to_speech(msg):
     if msg.data == '0':
@@ -34,5 +36,5 @@ def call_text_to_speech(msg):
 rospy.init_node('tts_subscriber', anonymous=True)
 
 if __name__ == '__main__':
-        rospy.Subscriber('/tts', String, call_text_to_speech, queue_size=1)
-        rospy.spin()
+    sub = rospy.Subscriber('/tts', String, call_text_to_speech, queue_size=1)
+    rospy.spin()
