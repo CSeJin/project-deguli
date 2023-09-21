@@ -126,7 +126,8 @@ class Ui_selDestination(QMainWindow):
         sizePolicy.setHeightForWidth(self.map_1f.sizePolicy().hasHeightForWidth())
         self.map_1f.setSizePolicy(sizePolicy)
         self.map_1f.setPixmap(QPixmap("./assets/map_1f.svg"))
-        self.map_1f.pixmap.scaledToWidth(160)
+        self.map_1f.setScaledContents(True)  # QLabel의 크기에 이미지를 맞추도록 설정
+        self.map_1f.setFixedSize(160, self.map_1f.pixmap().height() * 160 / self.map_1f.pixmap().width())  # 원하는 너비로 설정
         self.map_1f.setText("")
         self.map_1f.setObjectName("map_1f")
         self.gridLayout_2.addWidget(self.map_1f, 0, 0, 1, 1)
@@ -901,8 +902,7 @@ class Ui_selDestination(QMainWindow):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.map_6f.sizePolicy().hasHeightForWidth())
         self.map_6f.setSizePolicy(sizePolicy)
-        self.map_6f.setStyleSheet("""background: url(./assets/map_6f.svg);
-                                    background-size: contain;""")
+        self.map_6f.setStyleSheet("background: url(./assets/map_6f.svg)")
         self.map_6f.setText("")
         self.map_6f.setObjectName("map_6f")
         self.gridLayout_8.addWidget(self.map_6f, 0, 0, 1, 1)
