@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="assets">
+    <file>assets/map_1f.svg</file>
     <file>assets/emr_light.svg</file>
     <file>assets/arrow_down.svg</file>
     <file>assets/arrow_left.svg</file>

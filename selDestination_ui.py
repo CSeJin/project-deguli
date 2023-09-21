@@ -10,6 +10,7 @@ import sys
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import QMainWindow
 
 
@@ -124,7 +125,8 @@ class Ui_selDestination(QMainWindow):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.map_1f.sizePolicy().hasHeightForWidth())
         self.map_1f.setSizePolicy(sizePolicy)
-        self.map_1f.setStyleSheet("background: url(./assets/map_1f.svg)")
+        self.map_1f.setPixmap(QPixmap("./assets/map_1f.svg"))
+        self.map_1f.pixmap.scaledToWidth(160)
         self.map_1f.setText("")
         self.map_1f.setObjectName("map_1f")
         self.gridLayout_2.addWidget(self.map_1f, 0, 0, 1, 1)
