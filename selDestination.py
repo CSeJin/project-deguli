@@ -69,13 +69,14 @@ def start_driving(btn):
     if btn.text() == "주행시작":
         # navigation 시작 토픽 생성 및 전송
         pub = rospy.Publisher('start', String, queue_size=1)
+        # tts(음성안내) publishing
+        pub_tts.publish(msg)
+        
         msg = 'start'
         pub.publish(msg)
         # 탭 비활성화
         # selDestination_ui.tabs.setDisabled(True)
         
-        # tts(음성안내) publishing
-        pub_tts.publish(msg)
         
         # 클릭 시 버튼 텍스트 전환
         # btn.setText("정지")
@@ -92,9 +93,3 @@ def start_driving(btn):
     
     # 주행 시작 알림.
 
-
-def text_to_speech(text):
-    engine = pyttsx3.init()
-    engine.setProperty("rate", 140)
-    engine.say(text)
-    engine.runAndWait()
