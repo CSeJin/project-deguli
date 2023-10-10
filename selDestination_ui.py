@@ -128,10 +128,12 @@ class Ui_selDestination(QMainWindow):
         self.map_1f.setPixmap(QPixmap("./assets/map_1f.svg"))
         self.map_1f.setScaledContents(True)  # QLabel의 크기에 이미지를 맞추도록 설정
         # QPixmap이 설정되었을 때에만 크기 조정
-        if not self.map_1f.pixmap().isNull():
+        try:
             self.map_1f.setScaledContents(True)  # QLabel의 크기에 이미지를 맞추도록 설정
             self.map_1f.setFixedSize(160,
                                      self.map_1f.pixmap().height() * 160 / self.map_1f.pixmap().width())  # 원하는 너비로 설정
+        except:
+        
         self.map_1f.setText("")
         self.map_1f.setObjectName("map_1f")
         self.gridLayout_2.addWidget(self.map_1f, 0, 0, 1, 1)
@@ -296,9 +298,11 @@ class Ui_selDestination(QMainWindow):
         self.map_2f.setPixmap(QPixmap("./assets/map_2f.svg"))
         self.map_2f.setScaledContents(True)  # QLabel의 크기에 이미지를 맞추도록 설정
         # QPixmap이 설정되었을 때에만 크기 조정
-        if not self.map_2f.pixmap().isNull():
+        try:
             self.map_2f.setScaledContents(True)  # QLabel의 크기에 이미지를 맞추도록 설정
             self.map_2f.setFixedSize(160, self.map_2f.pixmap().height() * 160 / self.map_2f.pixmap().width())  # 원하는 너비로 설정
+        except:
+        
         self.map_2f.setText("")
         self.map_2f.setObjectName("map_2f")
         self.gridLayout_4.addWidget(self.map_2f, 0, 0, 1, 1)
@@ -478,10 +482,12 @@ class Ui_selDestination(QMainWindow):
         self.map_3f.setPixmap(QPixmap("./assets/map_3f.svg"))
         self.map_3f.setScaledContents(True)  # QLabel의 크기에 이미지를 맞추도록 설정
         # QPixmap이 설정되었을 때에만 크기 조정
-        if not self.map_3f.pixmap().isNull():
+        try:
             self.map_3f.setScaledContents(True)  # QLabel의 크기에 이미지를 맞추도록 설정
             self.map_3f.setFixedSize(160,
                                      self.map_3f.pixmap().height() * 160 / self.map_3f.pixmap().width())  # 원하는 너비로 설정
+        except:
+        
         self.map_3f.setText("")
         self.map_3f.setObjectName("map_3f")
         self.gridLayout_5.addWidget(self.map_3f, 0, 0, 1, 1)
@@ -615,10 +621,12 @@ class Ui_selDestination(QMainWindow):
         self.map_4f.setPixmap(QPixmap("./assets/map_4f.svg"))
         self.map_4f.setScaledContents(True)  # QLabel의 크기에 이미지를 맞추도록 설정
         # QPixmap이 설정되었을 때에만 크기 조정
-        if not self.map_4f.pixmap().isNull():
+        try:
             self.map_4f.setScaledContents(True)  # QLabel의 크기에 이미지를 맞추도록 설정
             self.map_4f.setFixedSize(160,
                                      self.map_4f.pixmap().height() * 160 / self.map_4f.pixmap().width())  # 원하는 너비로 설정
+        except:
+        
         self.map_4f.setText("")
         self.map_4f.setObjectName("map_4f")
         self.gridLayout_6.addWidget(self.map_4f, 0, 0, 1, 1)
@@ -732,10 +740,12 @@ class Ui_selDestination(QMainWindow):
         self.map_5f.setPixmap(QPixmap("./assets/map_5f.svg"))
         self.map_5f.setScaledContents(True)  # QLabel의 크기에 이미지를 맞추도록 설정
         # QPixmap이 설정되었을 때에만 크기 조정
-        if not self.map_5f.pixmap().isNull():
+        try:
             self.map_5f.setScaledContents(True)  # QLabel의 크기에 이미지를 맞추도록 설정
             self.map_5f.setFixedSize(160,
                                      self.map_5f.pixmap().height() * 160 / self.map_5f.pixmap().width())  # 원하는 너비로 설정
+        except:
+        
         self.map_5f.setText("")
         self.map_5f.setObjectName("map_5f")
         self.gridLayout_7.addWidget(self.map_5f, 0, 0, 1, 1)
@@ -932,10 +942,12 @@ class Ui_selDestination(QMainWindow):
         self.map_6f.setPixmap(QPixmap("./assets/map_6f.svg"))
         self.map_6f.setScaledContents(True)  # QLabel의 크기에 이미지를 맞추도록 설정
         # QPixmap이 설정되었을 때에만 크기 조정
-        if not self.map_6f.pixmap().isNull():
+        try:
             self.map_6f.setScaledContents(True)  # QLabel의 크기에 이미지를 맞추도록 설정
             self.map_6f.setFixedSize(160,
                                      self.map_6f.pixmap().height() * 160 / self.map_6f.pixmap().width())  # 원하는 너비로 설정
+        except:
+        
         self.map_6f.setText("")
         self.map_6f.setObjectName("map_6f")
         self.gridLayout_8.addWidget(self.map_6f, 0, 0, 1, 1)

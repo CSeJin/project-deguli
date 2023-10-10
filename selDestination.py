@@ -5,10 +5,12 @@ import rospy
 from std_msgs.msg import String
 
 des = String()
+tts_des = ''
 
 
 def assign_des(btn, btn_list):
     print(btn.text())
+    global tts_des
     
     # 모든 버튼의 styleSheet를 초기화하는 코드 필요
     for other_btn_name in btn_list:
@@ -53,11 +55,11 @@ def assign_des(btn, btn_list):
         des = '5'
         pub.publish(des)
     print(des)
+    tts_des = btn.text()
 
 
 def start_driving(btn):
-    global des
-    print(des)
+    global des, tts_des
     
     if btn.text() == "주행시작":
         # navigation 시작 토픽 생성 및 전송
@@ -80,6 +82,7 @@ def start_driving(btn):
         elif des.data == '5':
             tts_des='화장실'
         text_to_speech("목적지를 " + tts_des + "로 설정합니다.")
+        print(tts_des)
         # 클릭 시 버튼 텍스트 전환
         btn.setText("정지")
     
