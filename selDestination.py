@@ -10,7 +10,7 @@ tts_des = ''
 
 def assign_des(btn, btn_list):
     print(btn.text())
-    global tts_des
+    global des, tts_des
     
     # 모든 버튼의 styleSheet를 초기화하는 코드 필요
     for other_btn_name in btn_list:
@@ -60,11 +60,12 @@ def assign_des(btn, btn_list):
 
 def start_driving(btn):
     global des, tts_des
+    msg = String()
     
     if btn.text() == "주행시작":
         # navigation 시작 토픽 생성 및 전송
         pub = rospy.Publisher('start', String, queue_size=1)
-        msg = 'start'
+        msg.data = 'start'
         pub.publish(msg)
         # 탭 비활성화
         # selDestination_ui.tabs.setDisabled(True)
@@ -84,10 +85,10 @@ def start_driving(btn):
         text_to_speech("목적지를 " + tts_des + "로 설정합니다.")
         print(tts_des)
         # 클릭 시 버튼 텍스트 전환
-        btn.setText("정지")
+        #btn.setText("정지")
     
     elif btn.text() == "정지":
-        msg = 'end'
+        msg.data = 'end'
         text_to_speech("목적지에 도착했습니다.")
         # 정지 버튼 눌렸을 때 subscribe
     else:

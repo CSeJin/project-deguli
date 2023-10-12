@@ -11,20 +11,19 @@ import sys
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QPixmap
-from PyQt5.QtWidgets import QMainWindow
+from PyQt5.QtWidgets import QMainWindow, QApplication
 
 
 class Ui_selDestination(QMainWindow):
     # 변수 정의
     btn_home = None
     tabs = None
-    btn_emrCall = None
     btn_start = None
-
+    
     def __init__(self):
         super().__init__()
         self.setupUi(self)
-
+    
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(512, 300)
@@ -125,15 +124,12 @@ class Ui_selDestination(QMainWindow):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.map_1f.sizePolicy().hasHeightForWidth())
         self.map_1f.setSizePolicy(sizePolicy)
-        self.map_1f.setPixmap(QPixmap("./assets/map_1f.svg"))
+        self.map_pixmap = QPixmap("./assets/map_1f.svg")
         self.map_1f.setScaledContents(True)  # QLabel의 크기에 이미지를 맞추도록 설정
         # QPixmap이 설정되었을 때에만 크기 조정
-        try:
-            self.map_1f.setScaledContents(True)  # QLabel의 크기에 이미지를 맞추도록 설정
-            self.map_1f.setFixedSize(160,
-                                     self.map_1f.pixmap().height() * 160 / self.map_1f.pixmap().width())  # 원하는 너비로 설정
-        except:
-            pass
+        if not self.map_pixmap.isNull():
+            self.map_1f.setPixmap(self.map_pixmap)
+            self.map_1f.setFixedSize(160, int(self.map_1f.pixmap().height() * 160 / self.map_1f.pixmap().width()))
         self.map_1f.setText("")
         self.map_1f.setObjectName("map_1f")
         self.gridLayout_2.addWidget(self.map_1f, 0, 0, 1, 1)
@@ -295,14 +291,12 @@ class Ui_selDestination(QMainWindow):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.map_2f.sizePolicy().hasHeightForWidth())
         self.map_2f.setSizePolicy(sizePolicy)
-        self.map_2f.setPixmap(QPixmap("./assets/map_2f.svg"))
+        self.map_pixmap = QPixmap("./assets/map_2f.svg")
         self.map_2f.setScaledContents(True)  # QLabel의 크기에 이미지를 맞추도록 설정
         # QPixmap이 설정되었을 때에만 크기 조정
-        try:
-            self.map_2f.setScaledContents(True)  # QLabel의 크기에 이미지를 맞추도록 설정
-            self.map_2f.setFixedSize(160, self.map_2f.pixmap().height() * 160 / self.map_2f.pixmap().width())  # 원하는 너비로 설정
-        except:
-            pass
+        if not self.map_pixmap.isNull():
+            self.map_2f.setPixmap(self.map_pixmap)
+            self.map_2f.setFixedSize(160, int(self.map_2f.pixmap().height() * 160 / self.map_2f.pixmap().width()))
         self.map_2f.setText("")
         self.map_2f.setObjectName("map_2f")
         self.gridLayout_4.addWidget(self.map_2f, 0, 0, 1, 1)
@@ -479,15 +473,12 @@ class Ui_selDestination(QMainWindow):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.map_3f.sizePolicy().hasHeightForWidth())
         self.map_3f.setSizePolicy(sizePolicy)
-        self.map_3f.setPixmap(QPixmap("./assets/map_3f.svg"))
+        self.map_pixmap = QPixmap("./assets/map_3f.svg")
         self.map_3f.setScaledContents(True)  # QLabel의 크기에 이미지를 맞추도록 설정
         # QPixmap이 설정되었을 때에만 크기 조정
-        try:
-            self.map_3f.setScaledContents(True)  # QLabel의 크기에 이미지를 맞추도록 설정
-            self.map_3f.setFixedSize(160,
-                                     self.map_3f.pixmap().height() * 160 / self.map_3f.pixmap().width())  # 원하는 너비로 설정
-        except:
-            pass
+        if not self.map_pixmap.isNull():
+            self.map_3f.setPixmap(self.map_pixmap)
+            self.map_3f.setFixedSize(160, int(self.map_3f.pixmap().height() * 160 / self.map_3f.pixmap().width()))
         self.map_3f.setText("")
         self.map_3f.setObjectName("map_3f")
         self.gridLayout_5.addWidget(self.map_3f, 0, 0, 1, 1)
@@ -618,15 +609,13 @@ class Ui_selDestination(QMainWindow):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.map_4f.sizePolicy().hasHeightForWidth())
         self.map_4f.setSizePolicy(sizePolicy)
-        self.map_4f.setPixmap(QPixmap("./assets/map_4f.svg"))
+        self.map_pixmap = QPixmap("./assets/map_4f.svg")
         self.map_4f.setScaledContents(True)  # QLabel의 크기에 이미지를 맞추도록 설정
         # QPixmap이 설정되었을 때에만 크기 조정
-        try:
-            self.map_4f.setScaledContents(True)  # QLabel의 크기에 이미지를 맞추도록 설정
-            self.map_4f.setFixedSize(160,
-                                     self.map_4f.pixmap().height() * 160 / self.map_4f.pixmap().width())  # 원하는 너비로 설정
-        except:
-            pass
+        if not self.map_pixmap.isNull():
+            self.map_4f.setPixmap(self.map_pixmap)
+            self.map_4f.setFixedSize(160, int(self.map_4f.pixmap().height() * 160 / self.map_4f.pixmap().width()))
+        
         self.map_4f.setText("")
         self.map_4f.setObjectName("map_4f")
         self.gridLayout_6.addWidget(self.map_4f, 0, 0, 1, 1)
@@ -737,15 +726,13 @@ class Ui_selDestination(QMainWindow):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.map_5f.sizePolicy().hasHeightForWidth())
         self.map_5f.setSizePolicy(sizePolicy)
-        self.map_5f.setPixmap(QPixmap("./assets/map_5f.svg"))
+        self.map_pixmap = QPixmap("./assets/map_5f.svg")
         self.map_5f.setScaledContents(True)  # QLabel의 크기에 이미지를 맞추도록 설정
         # QPixmap이 설정되었을 때에만 크기 조정
-        try:
-            self.map_5f.setScaledContents(True)  # QLabel의 크기에 이미지를 맞추도록 설정
-            self.map_5f.setFixedSize(160,
-                                     self.map_5f.pixmap().height() * 160 / self.map_5f.pixmap().width())  # 원하는 너비로 설정
-        except:
-            pass
+        if not self.map_pixmap.isNull():
+            self.map_5f.setPixmap(self.map_pixmap)
+            self.map_5f.setFixedSize(160, int(self.map_5f.pixmap().height() * 160 / self.map_5f.pixmap().width()))
+        
         self.map_5f.setText("")
         self.map_5f.setObjectName("map_5f")
         self.gridLayout_7.addWidget(self.map_5f, 0, 0, 1, 1)
@@ -939,14 +926,12 @@ class Ui_selDestination(QMainWindow):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.map_6f.sizePolicy().hasHeightForWidth())
         self.map_6f.setSizePolicy(sizePolicy)
-        self.map_6f.setPixmap(QPixmap("./assets/map_6f.svg"))
+        self.map_pixmap = QPixmap("./assets/map_6f.svg")
         self.map_6f.setScaledContents(True)  # QLabel의 크기에 이미지를 맞추도록 설정
         # QPixmap이 설정되었을 때에만 크기 조정
-        try:
-            self.map_6f.setScaledContents(True)  # QLabel의 크기에 이미지를 맞추도록 설정
-            self.map_6f.setFixedSize(160,
-                                     self.map_6f.pixmap().height() * 160 / self.map_6f.pixmap().width())  # 원하는 너비로 설정
-        except:
+        if not self.map_pixmap.isNull():
+            self.map_6f.setPixmap(self.map_pixmap)
+            self.map_6f.setFixedSize(160, int(self.map_6f.pixmap().height() * 160 / self.map_6f.pixmap().width()))
         
         self.map_6f.setText("")
         self.map_6f.setObjectName("map_6f")
@@ -973,9 +958,9 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         Ui_selDestination.btn1_6f.setFont(font)
         Ui_selDestination.btn1_6f.setStyleSheet("background-color: #cfe3ac;\n"
-                                                  "padding: 2px;\n"
-                                                  "text-align: left;\n"
-                                                  "border: none;")
+                                                "padding: 2px;\n"
+                                                "text-align: left;\n"
+                                                "border: none;")
         Ui_selDestination.btn1_6f.setObjectName("btn1_6f")
         self.verticalLayout_6.addWidget(Ui_selDestination.btn1_6f)
         Ui_selDestination.btn2_6f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_6)
@@ -991,9 +976,9 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         Ui_selDestination.btn2_6f.setFont(font)
         Ui_selDestination.btn2_6f.setStyleSheet("background-color: #cfe3ac;\n"
-                                                  "padding: 2px;\n"
-                                                  "text-align: left;\n"
-                                                  "border: none;")
+                                                "padding: 2px;\n"
+                                                "text-align: left;\n"
+                                                "border: none;")
         Ui_selDestination.btn2_6f.setObjectName("btn2_6f")
         self.verticalLayout_6.addWidget(Ui_selDestination.btn2_6f)
         Ui_selDestination.btn3_6f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_6)
@@ -1009,9 +994,9 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         Ui_selDestination.btn3_6f.setFont(font)
         Ui_selDestination.btn3_6f.setStyleSheet("background-color: #cfe3ac;\n"
-                                                   "padding: 2px;\n"
-                                                   "text-align: left;\n"
-                                                   "border: none;")
+                                                "padding: 2px;\n"
+                                                "text-align: left;\n"
+                                                "border: none;")
         Ui_selDestination.btn3_6f.setObjectName("btn3_6f")
         self.verticalLayout_6.addWidget(Ui_selDestination.btn3_6f)
         Ui_selDestination.btn4_6f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_6)
@@ -1189,3 +1174,5 @@ class Ui_selDestination(QMainWindow):
         self.title.setText(_translate("MainWindow", "목적지 설정"))
         Ui_selDestination.btn_start.setText(_translate("MainWindow", "주행시작"))
         self.label_2.setText(_translate("MainWindow", "TextLabel"))
+
+
