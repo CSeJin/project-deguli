@@ -104,7 +104,7 @@ class Ui_MainPage(QMainWindow):
         font.setBold(True)
         font.setWeight(75)
         Ui_MainPage.btn_emrCall.setFont(font)
-        Ui_MainPage.btn_emrCall.setStyleSheet("background-color: #cfe3ac;\n"
+        Ui_MainPage.btn_emrCall.setStyleSheet("background-color: #ed6339;\n"
                                               "margin: 5px;\n"
                                               "padding: 5px;")
         Ui_MainPage.btn_emrCall.setObjectName("btn_emrCall")

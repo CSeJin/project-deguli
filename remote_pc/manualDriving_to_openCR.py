@@ -1,135 +1,65 @@
+#!/usr/bin/env python
+
 import rospy
 from geometry_msgs.msg import Twist
-import sys, select, os
+from std_msgs.msg import String
 
-if os.name == 'nt':
-    import msvcrt, time
-else:
-    import tty, termios
+rospy.init_node('turtlebot_controller', anonymous=True)
 
-BURGER_MAX_LIN_VEL = 0.22
-BURGER_MAX_ANG_VEL = 2.84
+cmd_vel_pub = rospy.Publisher('/cmd_vel', Twist, queue_size=10)
+move_cmd = Twist()
+current_command = ''  # 현재 명령을 저장할 변수
 
-WAFFLE_MAX_LIN_VEL = 0.26
-WAFFLE_MAX_ANG_VEL = 1.82
+def msg_callback(msg):
+    global current_command
 
-LIN_VEL_STEP_SIZE = 0.01
-ANG_VEL_STEP_SIZE = 0.1
+    if msg.data == 'w':
+        # 전진 명령
+        current_command = 'w'
+    elif msg.data == 'a':
+        # 좌회전 명령
+        current_command = 'a'
+    elif msg.data == 'd':
+        # 우회전 명령
+        current_command = 'd'
+    elif msg.data == 'x':
+        # 후진 명령
+        current_command = 'x'
+    elif msg.data == 's':
+        # 정지 명령
+        current_command = 's'
 
-e = """
-Communications Failed
-"""
+def control_robot():
+    rate = rospy.Rate(10)  # 10Hz로 루프 실행
 
+    while not rospy.is_shutdown():
+        if current_command == 'w':
+            # 전진
+            move_cmd.linear.x = 0.09
+            move_cmd.angular.z = 0.0
+        elif current_command == 'a':
+            # 좌회전
+            move_cmd.linear.x = 0.0
+            move_cmd.angular.z = -0.6
+        elif current_command == 'd':
+            # 우회전
+            move_cmd.linear.x = 0.0
+            move_cmd.angular.z = 0.6
+        elif current_command == 'x':
+            # 후진
+            move_cmd.linear.x = -0.09
+            move_cmd.angular.z = 0.0
+        elif current_command == 's':
+            # 정지
+            move_cmd.linear.x = 0.0
+            move_cmd.angular.z = 0.0
 
-def getKey():
-    if os.name == 'nt':
-        timeout = 0.1
-        startTime = time.time()
-        while (1):
-            if msvcrt.kbhit():
-                if sys.version_info[0] >= 3:
-                    return msvcrt.getch().decode()
-                else:
-                    return msvcrt.getch()
-            elif time.time() - startTime > timeout:
-                return ''
-    
-    tty.setraw(sys.stdin.fileno())
-    rlist, _, _ = select.select([sys.stdin], [], [], 0.1)
-    if rlist:
-        key = sys.stdin.read(1)
-    else:
-        key = ''
-    
-    termios.tcsetattr(sys.stdin, termios.TCSADRAIN, settings)
-    return key
+        cmd_vel_pub.publish(move_cmd)
+        rate.sleep()
 
-
-def makeSimpleProfile(output, input, slop):
-    if input > output:
-        output = min(input, output + slop)
-    elif input < output:
-        output = max(input, output - slop)
-    else:
-        output = input
-    
-    return output
-
-
-def constrain(input, low, high):
-    if input < low:
-        input = low
-    elif input > high:
-        input = high
-    else:
-        input = input
-    
-    return input
-
-
-def checkLinearLimitVelocity(vel):
-    if turtlebot3_model == "burger":
-        vel = constrain(vel, -BURGER_MAX_LIN_VEL, BURGER_MAX_LIN_VEL)
-    elif turtlebot3_model == "waffle" or turtlebot3_model == "waffle_pi":
-        vel = constrain(vel, -WAFFLE_MAX_LIN_VEL, WAFFLE_MAX_LIN_VEL)
-    else:
-        vel = constrain(vel, -BURGER_MAX_LIN_VEL, BURGER_MAX_LIN_VEL)
-    
-    return vel
-
-
-def checkAngularLimitVelocity(vel):
-    if turtlebot3_model == "burger":
-        vel = constrain(vel, -BURGER_MAX_ANG_VEL, BURGER_MAX_ANG_VEL)
-    elif turtlebot3_model == "waffle" or turtlebot3_model == "waffle_pi":
-        vel = constrain(vel, -WAFFLE_MAX_ANG_VEL, WAFFLE_MAX_ANG_VEL)
-    else:
-        vel = constrain(vel, -BURGER_MAX_ANG_VEL, BURGER_MAX_ANG_VEL)
-    
-    return vel
-
-
-if __name__ == "__main__":
-    if __name__ == "__main__":
-        if os.name != 'nt':
-            settings = termios.tcgetattr(sys.stdin)
-        
-        rospy.init_node('turtlebot3_teleop')
-        pub = rospy.Publisher('cmd_vel', Twist, queue_size=10)
-        
-        turtlebot3_model = rospy.get_param("model", "burger")
-        
-        try:
-            while not rospy.is_shutdown():
-                if sys.argv[1] == 'w':
-                    linear_vel = 0.9
-                    angular_vel = 0
-                elif sys.argv[1] == 'x':
-                    linear_vel = -0.9
-                    angular_vel = 0
-                elif sys.argv[1] == 'd':
-                    linear_vel = 0
-                    angular_vel = 0.5
-                elif sys.argv[1] == 'a':
-                    linear_vel = 0
-                    angular_vel = -0.5
-                elif sys.argv[1] == 's':
-                    linear_vel = 0
-                    angular_vel = 0
-                
-                twist = Twist()
-                twist.linear.x = linear_vel
-                twist.angular.z = angular_vel
-                pub.publish(twist)
-        
-        except KeyboardInterrupt:
-            pass
-        
-        finally:
-            twist = Twist()
-            twist.linear.x = 0.0
-            twist.angular.z = 0.0
-            pub.publish(twist)
-        
-        if os.name != 'nt':
-            termios.tcsetattr(sys.stdin, termios.TCSADRAIN, settings)
+if __name__ == '__main__':
+    try:
+        rospy.Subscriber('/direction', String, msg_callback, queue_size=1)
+        control_robot()
+    except rospy.ROSInterruptException:
+        pass

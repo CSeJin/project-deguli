@@ -10,20 +10,20 @@ import sys
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QMainWindow
+from PyQt5.QtGui import QPixmap
+from PyQt5.QtWidgets import QMainWindow, QApplication
 
 
 class Ui_selDestination(QMainWindow):
     # 변수 정의
     btn_home = None
     tabs = None
-    btn_emrCall = None
     btn_start = None
-
+    
     def __init__(self):
         super().__init__()
         self.setupUi(self)
-
+    
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(512, 300)
@@ -124,7 +124,12 @@ class Ui_selDestination(QMainWindow):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.map_1f.sizePolicy().hasHeightForWidth())
         self.map_1f.setSizePolicy(sizePolicy)
-        self.map_1f.setStyleSheet("background: url(./assets/map_2f.jpg)")
+        self.map_pixmap = QPixmap("./assets/map_1f.svg")
+        self.map_1f.setScaledContents(True)  # QLabel의 크기에 이미지를 맞추도록 설정
+        # QPixmap이 설정되었을 때에만 크기 조정
+        if not self.map_pixmap.isNull():
+            self.map_1f.setPixmap(self.map_pixmap)
+            self.map_1f.setFixedSize(160, int(self.map_1f.pixmap().height() * 160 / self.map_1f.pixmap().width()))
         self.map_1f.setText("")
         self.map_1f.setObjectName("map_1f")
         self.gridLayout_2.addWidget(self.map_1f, 0, 0, 1, 1)
@@ -286,7 +291,12 @@ class Ui_selDestination(QMainWindow):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.map_2f.sizePolicy().hasHeightForWidth())
         self.map_2f.setSizePolicy(sizePolicy)
-        self.map_2f.setStyleSheet("background: url(./assets/map_2f.jpg)")
+        self.map_pixmap = QPixmap("./assets/map_2f.svg")
+        self.map_2f.setScaledContents(True)  # QLabel의 크기에 이미지를 맞추도록 설정
+        # QPixmap이 설정되었을 때에만 크기 조정
+        if not self.map_pixmap.isNull():
+            self.map_2f.setPixmap(self.map_pixmap)
+            self.map_2f.setFixedSize(160, int(self.map_2f.pixmap().height() * 160 / self.map_2f.pixmap().width()))
         self.map_2f.setText("")
         self.map_2f.setObjectName("map_2f")
         self.gridLayout_4.addWidget(self.map_2f, 0, 0, 1, 1)
@@ -422,14 +432,34 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         Ui_selDestination.btn6_2f.setFont(font)
         Ui_selDestination.btn6_2f.setStyleSheet("""
+                        background-color: #cfe3ac;
+                        text-align: left;
+                        padding: 5px;
+                        padding-left: 20px;
+                        border: none;
+                    """)
+        Ui_selDestination.btn6_2f.setObjectName("btn6_2f")
+        self.verticalLayout_2.addWidget(Ui_selDestination.btn6_2f)
+        Ui_selDestination.btn7_2f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_2)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(Ui_selDestination.btn7_2f.sizePolicy().hasHeightForWidth())
+        Ui_selDestination.btn7_2f.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Malgun Gothic")
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        Ui_selDestination.btn7_2f.setFont(font)
+        Ui_selDestination.btn7_2f.setStyleSheet("""
                 background-color: #cfe3ac;
                 text-align: left;
                 padding: 5px;
                 padding-left: 20px;
                 border: none;
             """)
-        Ui_selDestination.btn6_2f.setObjectName("btn6_2f")
-        self.verticalLayout_2.addWidget(Ui_selDestination.btn6_2f)
+        Ui_selDestination.btn7_2f.setObjectName("btn7_2f")
         self.scrollArea_2.setWidget(self.scrollAreaWidgetContents_2)
         self.gridLayout_4.addWidget(self.scrollArea_2, 0, 1, 1, 1)
         Ui_selDestination.tabs.addTab(self.tab_2f, "")
@@ -443,7 +473,12 @@ class Ui_selDestination(QMainWindow):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.map_3f.sizePolicy().hasHeightForWidth())
         self.map_3f.setSizePolicy(sizePolicy)
-        self.map_3f.setStyleSheet("background: url(./assets/map_3f.jpg)")
+        self.map_pixmap = QPixmap("./assets/map_3f.svg")
+        self.map_3f.setScaledContents(True)  # QLabel의 크기에 이미지를 맞추도록 설정
+        # QPixmap이 설정되었을 때에만 크기 조정
+        if not self.map_pixmap.isNull():
+            self.map_3f.setPixmap(self.map_pixmap)
+            self.map_3f.setFixedSize(160, int(self.map_3f.pixmap().height() * 160 / self.map_3f.pixmap().width()))
         self.map_3f.setText("")
         self.map_3f.setObjectName("map_3f")
         self.gridLayout_5.addWidget(self.map_3f, 0, 0, 1, 1)
@@ -561,27 +596,6 @@ class Ui_selDestination(QMainWindow):
             """)
         Ui_selDestination.btn5_3f.setObjectName("btn5_3f")
         self.verticalLayout_3.addWidget(Ui_selDestination.btn5_3f)
-        Ui_selDestination.btn6_3f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_3)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(Ui_selDestination.btn6_3f.sizePolicy().hasHeightForWidth())
-        Ui_selDestination.btn6_3f.setSizePolicy(sizePolicy)
-        font = QtGui.QFont()
-        font.setFamily("Malgun Gothic")
-        font.setPointSize(10)
-        font.setBold(True)
-        font.setWeight(75)
-        Ui_selDestination.btn6_3f.setFont(font)
-        Ui_selDestination.btn6_3f.setStyleSheet("""
-                background-color: #cfe3ac;
-                text-align: left;
-                padding: 5px;
-                padding-left: 20px;
-                border: none;
-            """)
-        Ui_selDestination.btn6_3f.setObjectName("btn6_3f")
-        self.verticalLayout_3.addWidget(Ui_selDestination.btn6_3f)
         self.scrollArea_3.setWidget(self.scrollAreaWidgetContents_3)
         self.gridLayout_5.addWidget(self.scrollArea_3, 0, 1, 1, 1)
         Ui_selDestination.tabs.addTab(self.tab_3f, "")
@@ -595,7 +609,13 @@ class Ui_selDestination(QMainWindow):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.map_4f.sizePolicy().hasHeightForWidth())
         self.map_4f.setSizePolicy(sizePolicy)
-        self.map_4f.setStyleSheet("background: url(./assets/map_2f.jpg)")
+        self.map_pixmap = QPixmap("./assets/map_4f.svg")
+        self.map_4f.setScaledContents(True)  # QLabel의 크기에 이미지를 맞추도록 설정
+        # QPixmap이 설정되었을 때에만 크기 조정
+        if not self.map_pixmap.isNull():
+            self.map_4f.setPixmap(self.map_pixmap)
+            self.map_4f.setFixedSize(160, int(self.map_4f.pixmap().height() * 160 / self.map_4f.pixmap().width()))
+        
         self.map_4f.setText("")
         self.map_4f.setObjectName("map_4f")
         self.gridLayout_6.addWidget(self.map_4f, 0, 0, 1, 1)
@@ -692,48 +712,7 @@ class Ui_selDestination(QMainWindow):
             """)
         Ui_selDestination.btn4_4f.setObjectName("btn4_4f")
         self.verticalLayout_4.addWidget(Ui_selDestination.btn4_4f)
-        Ui_selDestination.btn5_4f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_4)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(Ui_selDestination.btn5_4f.sizePolicy().hasHeightForWidth())
-        Ui_selDestination.btn5_4f.setSizePolicy(sizePolicy)
-        font = QtGui.QFont()
-        font.setFamily("Malgun Gothic")
-        font.setPointSize(10)
-        font.setBold(True)
-        font.setWeight(75)
-        Ui_selDestination.btn5_4f.setFont(font)
-        Ui_selDestination.btn5_4f.setStyleSheet("""
-                background-color: #cfe3ac;
-                text-align: left;
-                padding: 5px;
-                padding-left: 20px;
-                border: none;
-            """)
-        Ui_selDestination.btn5_4f.setObjectName("btn5_4f")
-        self.verticalLayout_4.addWidget(Ui_selDestination.btn5_4f)
-        Ui_selDestination.btn6_4f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_4)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(Ui_selDestination.btn6_4f.sizePolicy().hasHeightForWidth())
-        Ui_selDestination.btn6_4f.setSizePolicy(sizePolicy)
-        font = QtGui.QFont()
-        font.setFamily("Malgun Gothic")
-        font.setPointSize(10)
-        font.setBold(True)
-        font.setWeight(75)
-        Ui_selDestination.btn6_4f.setFont(font)
-        Ui_selDestination.btn6_4f.setStyleSheet("""
-                background-color: #cfe3ac;
-                text-align: left;
-                padding: 5px;
-                padding-left: 20px;
-                border: none;
-            """)
-        Ui_selDestination.btn6_4f.setObjectName("btn6_4f")
-        self.verticalLayout_4.addWidget(Ui_selDestination.btn6_4f)
+        
         self.scrollArea_4.setWidget(self.scrollAreaWidgetContents_4)
         self.gridLayout_6.addWidget(self.scrollArea_4, 0, 1, 1, 1)
         Ui_selDestination.tabs.addTab(self.tab_4f, "")
@@ -747,7 +726,13 @@ class Ui_selDestination(QMainWindow):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.map_5f.sizePolicy().hasHeightForWidth())
         self.map_5f.setSizePolicy(sizePolicy)
-        self.map_5f.setStyleSheet("background: url(./assets/map_5f.jpg)")
+        self.map_pixmap = QPixmap("./assets/map_5f.svg")
+        self.map_5f.setScaledContents(True)  # QLabel의 크기에 이미지를 맞추도록 설정
+        # QPixmap이 설정되었을 때에만 크기 조정
+        if not self.map_pixmap.isNull():
+            self.map_5f.setPixmap(self.map_pixmap)
+            self.map_5f.setFixedSize(160, int(self.map_5f.pixmap().height() * 160 / self.map_5f.pixmap().width()))
+        
         self.map_5f.setText("")
         self.map_5f.setObjectName("map_5f")
         self.gridLayout_7.addWidget(self.map_5f, 0, 0, 1, 1)
@@ -886,6 +871,48 @@ class Ui_selDestination(QMainWindow):
             """)
         Ui_selDestination.btn6_5f.setObjectName("btn6_5f")
         self.verticalLayout_5.addWidget(Ui_selDestination.btn6_5f)
+        Ui_selDestination.btn7_5f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_5)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(Ui_selDestination.btn7_5f.sizePolicy().hasHeightForWidth())
+        Ui_selDestination.btn7_5f.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Malgun Gothic")
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        Ui_selDestination.btn7_5f.setFont(font)
+        Ui_selDestination.btn7_5f.setStyleSheet("""
+                background-color: #cfe3ac;
+                text-align: left;
+                padding: 5px;
+                padding-left: 20px;
+                border: none;
+            """)
+        Ui_selDestination.btn7_5f.setObjectName("btn7_5f")
+        self.verticalLayout_5.addWidget(Ui_selDestination.btn7_5f)
+        Ui_selDestination.btn8_5f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_5)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(Ui_selDestination.btn8_5f.sizePolicy().hasHeightForWidth())
+        Ui_selDestination.btn8_5f.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Malgun Gothic")
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        Ui_selDestination.btn8_5f.setFont(font)
+        Ui_selDestination.btn8_5f.setStyleSheet("""
+                background-color: #cfe3ac;
+                text-align: left;
+                padding: 5px;
+                padding-left: 20px;
+                border: none;
+            """)
+        Ui_selDestination.btn8_5f.setObjectName("btn8_5f")
+        self.verticalLayout_5.addWidget(Ui_selDestination.btn8_5f)
         self.scrollArea_5.setWidget(self.scrollAreaWidgetContents_5)
         self.gridLayout_7.addWidget(self.scrollArea_5, 0, 1, 1, 1)
         Ui_selDestination.tabs.addTab(self.tab_5f, "")
@@ -899,7 +926,13 @@ class Ui_selDestination(QMainWindow):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.map_6f.sizePolicy().hasHeightForWidth())
         self.map_6f.setSizePolicy(sizePolicy)
-        self.map_6f.setStyleSheet("background: url(./assets/map_6f.jpg)")
+        self.map_pixmap = QPixmap("./assets/map_6f.svg")
+        self.map_6f.setScaledContents(True)  # QLabel의 크기에 이미지를 맞추도록 설정
+        # QPixmap이 설정되었을 때에만 크기 조정
+        if not self.map_pixmap.isNull():
+            self.map_6f.setPixmap(self.map_pixmap)
+            self.map_6f.setFixedSize(160, int(self.map_6f.pixmap().height() * 160 / self.map_6f.pixmap().width()))
+        
         self.map_6f.setText("")
         self.map_6f.setObjectName("map_6f")
         self.gridLayout_8.addWidget(self.map_6f, 0, 0, 1, 1)
@@ -925,9 +958,9 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         Ui_selDestination.btn1_6f.setFont(font)
         Ui_selDestination.btn1_6f.setStyleSheet("background-color: #cfe3ac;\n"
-                                                  "padding: 2px;\n"
-                                                  "text-align: left;\n"
-                                                  "border: none;")
+                                                "padding: 2px;\n"
+                                                "text-align: left;\n"
+                                                "border: none;")
         Ui_selDestination.btn1_6f.setObjectName("btn1_6f")
         self.verticalLayout_6.addWidget(Ui_selDestination.btn1_6f)
         Ui_selDestination.btn2_6f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_6)
@@ -943,9 +976,9 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         Ui_selDestination.btn2_6f.setFont(font)
         Ui_selDestination.btn2_6f.setStyleSheet("background-color: #cfe3ac;\n"
-                                                  "padding: 2px;\n"
-                                                  "text-align: left;\n"
-                                                  "border: none;")
+                                                "padding: 2px;\n"
+                                                "text-align: left;\n"
+                                                "border: none;")
         Ui_selDestination.btn2_6f.setObjectName("btn2_6f")
         self.verticalLayout_6.addWidget(Ui_selDestination.btn2_6f)
         Ui_selDestination.btn3_6f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_6)
@@ -961,9 +994,9 @@ class Ui_selDestination(QMainWindow):
         font.setWeight(75)
         Ui_selDestination.btn3_6f.setFont(font)
         Ui_selDestination.btn3_6f.setStyleSheet("background-color: #cfe3ac;\n"
-                                                   "padding: 2px;\n"
-                                                   "text-align: left;\n"
-                                                   "border: none;")
+                                                "padding: 2px;\n"
+                                                "text-align: left;\n"
+                                                "border: none;")
         Ui_selDestination.btn3_6f.setObjectName("btn3_6f")
         self.verticalLayout_6.addWidget(Ui_selDestination.btn3_6f)
         Ui_selDestination.btn4_6f = QtWidgets.QPushButton(self.scrollAreaWidgetContents_6)
@@ -1091,53 +1124,55 @@ class Ui_selDestination(QMainWindow):
         self.label_4.setText(_translate("MainWindow", "TextLabel"))
         Ui_selDestination.btn_emrCall.setText(_translate("MainWindow", "긴급호출"))
         Ui_selDestination.btn1_1f.setText(_translate("MainWindow", "CT촬영실"))
-        Ui_selDestination.btn2_1f.setText(_translate("MainWindow", "비뇨기과"))
+        Ui_selDestination.btn2_1f.setText(_translate("MainWindow", "응급의료센터"))
         Ui_selDestination.btn3_1f.setText(_translate("MainWindow", "이비인후과"))
         Ui_selDestination.btn4_1f.setText(_translate("MainWindow", "접수처"))
         Ui_selDestination.btn5_1f.setText(_translate("MainWindow", "치과"))
         Ui_selDestination.btn6_1f.setText(_translate("MainWindow", "화장실"))
         Ui_selDestination.tabs.setTabText(Ui_selDestination.tabs.indexOf(self.tab_1f),
                                           _translate("MainWindow", "     1층     "))
-        Ui_selDestination.btn1_2f.setText(_translate("MainWindow", "CT촬영실"))
-        Ui_selDestination.btn2_2f.setText(_translate("MainWindow", "비뇨기과"))
-        Ui_selDestination.btn3_2f.setText(_translate("MainWindow", "이비인후과"))
-        Ui_selDestination.btn4_2f.setText(_translate("MainWindow", "접수처"))
-        Ui_selDestination.btn5_2f.setText(_translate("MainWindow", "치과"))
-        Ui_selDestination.btn6_2f.setText(_translate("MainWindow", "화장실"))
+        Ui_selDestination.btn1_2f.setText(_translate("MainWindow", "PET센터"))
+        Ui_selDestination.btn2_2f.setText(_translate("MainWindow", "골다공증 검사실"))
+        Ui_selDestination.btn3_2f.setText(_translate("MainWindow", "산부인과"))
+        Ui_selDestination.btn4_2f.setText(_translate("MainWindow", "초음파실"))
+        Ui_selDestination.btn5_2f.setText(_translate("MainWindow", "체외충격파 쇄설실"))
+        Ui_selDestination.btn6_2f.setText(_translate("MainWindow", "핵의학과"))
+        Ui_selDestination.btn7_2f.setText(_translate("MainWindow", "화장실"))
         Ui_selDestination.tabs.setTabText(Ui_selDestination.tabs.indexOf(self.tab_2f),
                                           _translate("MainWindow", "     2층     "))
-        Ui_selDestination.btn1_3f.setText(_translate("MainWindow", "CT촬영실"))
-        Ui_selDestination.btn2_3f.setText(_translate("MainWindow", "비뇨기과"))
-        Ui_selDestination.btn3_3f.setText(_translate("MainWindow", "이비인후과"))
-        Ui_selDestination.btn4_3f.setText(_translate("MainWindow", "접수처"))
-        Ui_selDestination.btn5_3f.setText(_translate("MainWindow", "치과"))
-        Ui_selDestination.btn6_3f.setText(_translate("MainWindow", "화장실"))
+        Ui_selDestination.btn1_3f.setText(_translate("MainWindow", "암센터 상담실"))
+        Ui_selDestination.btn2_3f.setText(_translate("MainWindow", "영상의학과"))
+        Ui_selDestination.btn3_3f.setText(_translate("MainWindow", "응급의료센터"))
+        Ui_selDestination.btn4_3f.setText(_translate("MainWindow", "정형외과"))
+        Ui_selDestination.btn5_3f.setText(_translate("MainWindow", "화장실"))
         Ui_selDestination.tabs.setTabText(Ui_selDestination.tabs.indexOf(self.tab_3f),
                                           _translate("MainWindow", "     3층     "))
-        Ui_selDestination.btn1_4f.setText(_translate("MainWindow", "CT촬영실"))
-        Ui_selDestination.btn2_4f.setText(_translate("MainWindow", "비뇨기과"))
-        Ui_selDestination.btn3_4f.setText(_translate("MainWindow", "이비인후과"))
-        Ui_selDestination.btn4_4f.setText(_translate("MainWindow", "접수처"))
-        Ui_selDestination.btn5_4f.setText(_translate("MainWindow", "치과"))
-        Ui_selDestination.btn6_4f.setText(_translate("MainWindow", "화장실"))
+        Ui_selDestination.btn1_4f.setText(_translate("MainWindow", "검진검사실"))
+        Ui_selDestination.btn2_4f.setText(_translate("MainWindow", "국제진료센터"))
+        Ui_selDestination.btn3_4f.setText(_translate("MainWindow", "종합검진센터"))
+        Ui_selDestination.btn4_4f.setText(_translate("MainWindow", "화장실"))
         Ui_selDestination.tabs.setTabText(Ui_selDestination.tabs.indexOf(self.tab_4f),
                                           _translate("MainWindow", "     4층     "))
-        Ui_selDestination.btn1_5f.setText(_translate("MainWindow", "CT촬영실"))
-        Ui_selDestination.btn2_5f.setText(_translate("MainWindow", "비뇨기과"))
-        Ui_selDestination.btn3_5f.setText(_translate("MainWindow", "이비인후과"))
-        Ui_selDestination.btn4_5f.setText(_translate("MainWindow", "접수처"))
-        Ui_selDestination.btn5_5f.setText(_translate("MainWindow", "치과"))
-        Ui_selDestination.btn6_5f.setText(_translate("MainWindow", "화장실"))
+        Ui_selDestination.btn1_5f.setText(_translate("MainWindow", "가정의학과"))
+        Ui_selDestination.btn2_5f.setText(_translate("MainWindow", "뇌혈류검사실"))
+        Ui_selDestination.btn3_5f.setText(_translate("MainWindow", "맞춤형비만치료센터"))
+        Ui_selDestination.btn4_5f.setText(_translate("MainWindow", "심장내과"))
+        Ui_selDestination.btn5_5f.setText(_translate("MainWindow", "암센터"))
+        Ui_selDestination.btn6_5f.setText(_translate("MainWindow", "호흡기알레르기내과"))
+        Ui_selDestination.btn7_5f.setText(_translate("MainWindow", "호흡기알레르기검진센터"))
+        Ui_selDestination.btn8_5f.setText(_translate("MainWindow", "흉부외과"))
         Ui_selDestination.tabs.setTabText(Ui_selDestination.tabs.indexOf(self.tab_5f),
                                           _translate("MainWindow", "     5층     "))
-        Ui_selDestination.btn1_6f.setText(_translate("MainWindow", "CT촬영실"))
-        Ui_selDestination.btn2_6f.setText(_translate("MainWindow", "비뇨기과"))
-        Ui_selDestination.btn3_6f.setText(_translate("MainWindow", "이비인후과"))
-        Ui_selDestination.btn4_6f.setText(_translate("MainWindow", "접수처"))
-        Ui_selDestination.btn5_6f.setText(_translate("MainWindow", "치과"))
+        Ui_selDestination.btn1_6f.setText(_translate("MainWindow", "당뇨상담실"))
+        Ui_selDestination.btn2_6f.setText(_translate("MainWindow", "복약지도실"))
+        Ui_selDestination.btn3_6f.setText(_translate("MainWindow", "신장내과"))
+        Ui_selDestination.btn4_6f.setText(_translate("MainWindow", "성형외과"))
+        Ui_selDestination.btn5_6f.setText(_translate("MainWindow", "피부과"))
         Ui_selDestination.btn6_6f.setText(_translate("MainWindow", "화장실"))
         Ui_selDestination.tabs.setTabText(Ui_selDestination.tabs.indexOf(self.tab_6f),
                                           _translate("MainWindow", "     6층     "))
         self.title.setText(_translate("MainWindow", "목적지 설정"))
         Ui_selDestination.btn_start.setText(_translate("MainWindow", "주행시작"))
         self.label_2.setText(_translate("MainWindow", "TextLabel"))
+
+
