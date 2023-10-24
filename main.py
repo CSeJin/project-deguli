@@ -2,14 +2,14 @@ import sys
 import time
 from functools import partial
 
-
+import control
 import emrCall
 import manualDriving
 import manualDriving_ui, mainPage_ui, emrCall_ui, selDestination_ui
 import loading
 from selDestination import assign_des, start_driving
 from PyQt5.QtWidgets import *
-from PyQt5.QtCore import Qt
+from PyQt5.QtCore import Qt, QTimer
 
 
 # 화면을 띄우는데 사용되는 Class 선언
@@ -164,6 +164,11 @@ class WindowClass(QMainWindow):
     def keyPressEvent(self, event):
         if event.key() == Qt.Key_1:
             loading.show_loading_dialog(self)  # loading.py의 메서드를 호출합니다.
+    
+    def call_position(self):
+        self.timer = QTimer(self)
+        self.timer.timeout.connect(control.check_position)
+        self.timer.start(5000)  # milliseconds
 
 
 if __name__ == "__main__":
