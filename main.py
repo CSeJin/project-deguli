@@ -2,15 +2,14 @@ import sys
 import time
 from functools import partial
 
-from PyQt5.uic.properties import QtCore
 
 import emrCall
 import manualDriving
 import manualDriving_ui, mainPage_ui, emrCall_ui, selDestination_ui
-import selDestination
+import loading
 from selDestination import assign_des, start_driving
 from PyQt5.QtWidgets import *
-from PyQt5.QtCore import QTimer
+from PyQt5.QtCore import Qt
 
 
 # 화면을 띄우는데 사용되는 Class 선언
@@ -161,6 +160,10 @@ class WindowClass(QMainWindow):
     def call_start_driving(self, btn):
         print("call_start_driving")
         start_driving(btn)
+        
+    def keyPressEvent(self, event):
+        if event.key() == Qt.Key_1:
+            loading.show_loading_dialog(self)  # loading.py의 메서드를 호출합니다.
 
 
 if __name__ == "__main__":
