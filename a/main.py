@@ -1,16 +1,13 @@
 import sys
-import time
-from functools import partial
-
-from PyQt5.uic.properties import QtCore
 
 import emrCall
 import manualDriving
 import manualDriving_ui, mainPage_ui, emrCall_ui, selDestination_ui
-import selDestination
-from selDestination import assign_des, start_driving
+import loading
+from selDestination import assign_des
 from PyQt5.QtWidgets import *
-from PyQt5.QtCore import QTimer
+from PyQt5.QtCore import Qt
+import keyboard
 
 
 # 화면을 띄우는데 사용되는 Class 선언
@@ -105,21 +102,9 @@ class WindowClass(QMainWindow):
         self.btn_emrCall.clicked.connect(self.show_emrCall)
         # selDestination_ui ------
         self.btn_home_selDestination.clicked.connect(self.show_mainPage)
-        self.btn1_1f.clicked.connect(partial(self.call_assign_des, btn=self.btn1_1f, btn_list=self.btn_list))
-        self.btn2_1f.clicked.connect(partial(self.call_assign_des, btn=self.btn2_1f, btn_list=self.btn_list))
-        self.btn3_1f.clicked.connect(partial(self.call_assign_des, btn=self.btn3_1f, btn_list=self.btn_list))
-        self.btn4_1f.clicked.connect(partial(self.call_assign_des, btn=self.btn4_1f, btn_list=self.btn_list))
-        self.btn5_1f.clicked.connect(partial(self.call_assign_des, btn=self.btn5_1f, btn_list=self.btn_list))
-        self.btn6_1f.clicked.connect(partial(self.call_assign_des, btn=self.btn6_1f, btn_list=self.btn_list))
-        self.btn_start.clicked.connect(lambda: self.call_start_driving(self.btn_start))
         self.btn_emrCall_selDestination.clicked.connect(self.show_emrCall)
         # manualDriving_ui ------
         self.btn_home_manualDriving.clicked.connect(self.show_mainPage)
-        self.btn_up.clicked.connect(manualDriving.move_straight)
-        self.btn_left.clicked.connect(manualDriving.turn_left)
-        self.btn_down.clicked.connect(manualDriving.move_back)
-        self.btn_right.clicked.connect(manualDriving.turn_right)
-        self.btn_stop.clicked.connect(manualDriving.stop_run)
         self.btn_emrCall_manualDriving.clicked.connect(self.show_emrCall)
         # emrCall_ui ------
         self.btn_home_emrCall.clicked.connect(self.show_mainPage)
@@ -158,9 +143,9 @@ class WindowClass(QMainWindow):
         print("call_assign_des")
         assign_des(btn, btn_list)
 
-    def call_start_driving(self, btn):
-        print("call_start_driving")
-        start_driving(btn)
+    def keyPressEvent(self, event):
+        if event.key() == Qt.Key_1:
+            loading.show_loading_dialog(self)  # loading.py의 메서드를 호출합니다.
 
 
 if __name__ == "__main__":
