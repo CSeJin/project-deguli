@@ -1,3 +1,5 @@
+import threading
+
 import tf
 import paho.mqtt.client as mqtt
 
@@ -43,3 +45,10 @@ def send_position(x, y):
     
     # Client 종료
     client.disconnect()
+
+def call_position(self):
+    check_position()
+    threading.Timer(5.0, call_position).start()
+    
+if __name__ == "__main__":
+    call_position()

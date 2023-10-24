@@ -164,11 +164,6 @@ class WindowClass(QMainWindow):
     def keyPressEvent(self, event):
         if event.key() == Qt.Key_1:
             loading.show_loading_dialog(self)  # loading.py의 메서드를 호출합니다.
-    
-    def call_position(self):
-        self.timer = QTimer(self)
-        self.timer.timeout.connect(control.check_position)
-        self.timer.start(5000)  # milliseconds
 
 
 if __name__ == "__main__":
