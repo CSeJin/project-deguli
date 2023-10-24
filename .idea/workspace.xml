@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f19df95d-63fa-477f-9adc-39f7db9304cd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/a/mqtt_s.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mqtt_s.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/control.py" beforeDir="false" afterPath="$PROJECT_DIR$/control.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a/loading.py" beforeDir="false" afterPath="$PROJECT_DIR$/a/loading.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/a/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loading.py" beforeDir="false" afterPath="$PROJECT_DIR$/loading.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,16 +42,17 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/_gitlab_workspace/application",
+    "last_opened_file_path": "C:/_gitlab_workspace/application/a",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\_gitlab_workspace\application" />
       <recent name="C:\_gitlab_workspace\application\a" />
+      <recent name="C:\_gitlab_workspace\application" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\_gitlab_workspace\application" />
       <recent name="C:\_gitlab_workspace\application\a" />
     </key>
   </component>

@@ -44,32 +44,17 @@ class LoadingDialog(QDialog):
         LoadingDialog.setSizePolicy(sizePolicy)
 
 
-class Worker(QThread):
-    finished = pyqtSignal()
-    
-    def run(self):
-        # 여기에 수행할 작업을 넣으세요
-        time.sleep(5)  # 예를 들면 5초 동안의 작업을 시뮬레이션
-        # 작업이 끝나면 시그널을 보냅니다.
-        self.finished.emit()
+# class Worker(QThread):
+#     finished = pyqtSignal()
+#
+#     def run(self):
+#         while True:
+#             if massage.payload =="stop":
+#                 break
+#
+#         # 작업이 끝나면 시그널을 보냅니다.
+#         self.finished.emit()
 
-
-# class MainWindow(QMainWindow):
-#     def __init__(self):
-#         super(MainWindow, self).__init__()
-#         self.worker = None
-#         self.setWindowTitle("로딩 테스트")
-#         self.setGeometry(200, 200, 300, 200)
-#
-#         self.btn_home = QPushButton("Home", self)
-#         self.btn_home.setGeometry(100, 75, 100, 50)
-#         self.btn_home.clicked.connect(self.show_loading_dialog)
-#
-#         self.loading_dialog = None  # loading_dialog를 MainWindow 객체의 속성으로 설정
-#
-#         self.timer = QTimer(self)
-#         self.timer.timeout.connect(self.handle_timeout)
-#         self.timer.start(30000)  # 30초 타임아웃
 
 def show_loading_dialog(window):
     loading_dialog = LoadingDialog(window)
@@ -81,9 +66,9 @@ def show_loading_dialog(window):
     window.setEnabled(False)
     
     # Worker 쓰레드를 생성하여 작업 시작
-    worker = Worker()
-    worker.finished.connect(lambda: hide_loading_dialog(loading_dialog, window))
-    worker.run()
+    # worker = Worker()
+    # worker.finished.connect(lambda: hide_loading_dialog(loading_dialog, window))
+    # worker.run()
 
 
 # 이전 코드에서 수정된 부분
@@ -98,8 +83,3 @@ def handle_timeout(self):
     print("제어 요청이 거부되었습니다")
     self.hide_loading_dialog()
 
-# if __name__ == '__main__':
-#     app = QApplication(sys.argv)
-#     mainWin = MainWindow()
-#     mainWin.show()
-#     sys.exit(app.exec_())

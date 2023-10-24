@@ -1,13 +1,11 @@
 import sys
 
 import emrCall
-import manualDriving
 import manualDriving_ui, mainPage_ui, emrCall_ui, selDestination_ui
 import loading
 from selDestination import assign_des
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import Qt
-import keyboard
 
 
 # 화면을 띄우는데 사용되는 Class 선언
@@ -142,10 +140,12 @@ class WindowClass(QMainWindow):
     def call_assign_des(self, btn, btn_list):
         print("call_assign_des")
         assign_des(btn, btn_list)
-
-    def keyPressEvent(self, event):
-        if event.key() == Qt.Key_1:
-            loading.show_loading_dialog(self)  # loading.py의 메서드를 호출합니다.
+    
+    def show_loading(self):
+        loading.show_load_dialog()
+    
+    def hide_loading(self):
+        loading.hide_loading_dialog()
 
 
 if __name__ == "__main__":
