@@ -54,23 +54,6 @@ class Worker(QThread):
         self.finished.emit()
 
 
-# class MainWindow(QMainWindow):
-#     def __init__(self):
-#         super(MainWindow, self).__init__()
-#         self.worker = None
-#         self.setWindowTitle("로딩 테스트")
-#         self.setGeometry(200, 200, 300, 200)
-#
-#         self.btn_home = QPushButton("Home", self)
-#         self.btn_home.setGeometry(100, 75, 100, 50)
-#         self.btn_home.clicked.connect(self.show_loading_dialog)
-#
-#         self.loading_dialog = None  # loading_dialog를 MainWindow 객체의 속성으로 설정
-#
-#         self.timer = QTimer(self)
-#         self.timer.timeout.connect(self.handle_timeout)
-#         self.timer.start(30000)  # 30초 타임아웃
-
 def show_loading_dialog(window):
     loading_dialog = LoadingDialog(window)
     loading_dialog.setWindowModality(Qt.ApplicationModal)

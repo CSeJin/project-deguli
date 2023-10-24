@@ -1,9 +1,18 @@
+# -*- coding: utf-8 -*-
+
 import threading
+import rospy
 import tf
 import paho.mqtt.client as mqtt
 
+# 노드 초기화
+rospy.init_node('control_position', anonymous=False)
+
 x = 0
 y = 0
+
+# 변수 초기화
+tf_listener = tf.TransformListener()
 
 
 def check_position():
@@ -37,7 +46,6 @@ def send_position(x, y):
         
         # 메시지 생성
         message = u"{}, {}".format(x, y)
-
         
         # publish 확인
         def on_publish(client, userdata, mid):
@@ -46,7 +54,7 @@ def send_position(x, y):
         # publish callback 함수 등록
         client.on_publish = on_publish
         
-        # QoS 2로 publish
+        # QoS 0로 publish
         client.publish(topic, message, qos=0)
         
         # Client 종료
@@ -56,10 +64,13 @@ def send_position(x, y):
 
 
 def call_position():
-    check_position()
-    threading.Timer(5.0, call_position).start()
+    try:
+        while True:
+            check_position()
+            threading.Timer(3.0, call_position).start()
+    except KeyboardInterrupt:
+        print("Ctrl+C 입력이 감지되어 프로그램을 종료합니다.")
 
 
 if __name__ == "__main__":
-    tf_listener = tf.TransformListener()  # ROS에 종속된 부분이므로 적절한 환경에서 실행되어야 합니다.
     call_position()
