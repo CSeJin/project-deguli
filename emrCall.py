@@ -3,6 +3,7 @@ import rospy
 import pyttsx3
 from PyQt5.QtCore import QTimer
 from std_msgs.msg import String
+import paho.mqtt.client as mqtt
 
 # 노드 초기화
 rospy.init_node('manualDriving_publisher', anonymous=True)
@@ -20,6 +21,38 @@ def emr_tts():
     pub_stop = rospy.Publisher('direction', String, queue_size=1)
     msg_stop = String('s')
     pub_stop.publish(msg_stop)
+
+
+# 관제측에 제어 요청
+def emr_mqtt():
+    try:
+        # Client 생성
+        client = mqtt.Client()
+        
+        # Client 연결
+        client.connect('223.195.194.41', 1883, 60)
+        # client.connect('broker.hivemq.com', 1883)
+        # 192.168.100.88
+        # Topic 설정
+        topic = "Emergency"
+        
+        # 메시지 생성
+        message = "r"
+        
+        # publish 확인
+        def on_publish(client, userdata, mid):
+            print("Publish success")
+        
+        # publish callback 함수 등록
+        client.on_publish = on_publish
+        
+        # QoS 0로 publish
+        client.publish(topic, message, qos=0)
+        # Client 종료
+        client.disconnect()
+    except Exception as e:
+        print(e)
+
 
 # QTimer를 이용한 소리 지연
 def delayed_sound():

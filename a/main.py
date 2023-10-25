@@ -134,8 +134,10 @@ class WindowClass(QMainWindow):
         # 인덱스 전환
         self.stacked_widget.setCurrentIndex(3)
         self.current_page_index = 3
-
+        
+        # tts & mqtt 호출
         emrCall.delayed_sound()
+        emrCall.emr_mqtt()
 
     def call_assign_des(self, btn, btn_list):
         print("call_assign_des")

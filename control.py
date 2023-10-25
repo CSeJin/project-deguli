@@ -60,7 +60,7 @@ def send_position(x, y):
         # Client 종료
         client.disconnect()
     except Exception as e:
-        print("오류 발생:", e)
+        print(e)
 
 
 def call_position():
