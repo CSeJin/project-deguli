@@ -142,10 +142,10 @@ class WindowClass(QMainWindow):
         assign_des(btn, btn_list)
     
     def show_loading(self):
-        loading.show_load_dialog()
+        loading.show_load_dialog(self)
     
     def hide_loading(self):
-        loading.hide_loading_dialog()
+        loading.hide_loading_dialog(self)
 
 
 if __name__ == "__main__":
