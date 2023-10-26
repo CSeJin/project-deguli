@@ -2,8 +2,9 @@
 import rospy
 import pyttsx3
 from PyQt5.QtCore import QTimer
-from std_msgs.msg import String
 import paho.mqtt.client as mqtt
+
+import manualDriving
 
 # 노드 초기화
 rospy.init_node('manualDriving_publisher', anonymous=True)
@@ -18,9 +19,10 @@ def emr_tts():
     
     # 주행 정지
     # 'direction' 토픽으로 메시지를 발행할 Publisher 생성
-    pub_stop = rospy.Publisher('direction', String, queue_size=1)
-    msg_stop = String('s')
-    pub_stop.publish(msg_stop)
+    # pub_stop = rospy.Publisher('direction', String, queue_size=1)
+    # msg_stop = String('s')
+    # pub_stop.publish(msg_stop)
+    manualDriving.stop_run()
 
 
 # 관제측에 제어 요청
