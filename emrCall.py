@@ -7,7 +7,7 @@ import paho.mqtt.client as mqtt
 import manualDriving
 
 # 노드 초기화
-rospy.init_node('manualDriving_publisher', anonymous=True)
+# rospy.init_node('manualDriving_publisher', anonymous=True)
 
 
 def emr_tts():

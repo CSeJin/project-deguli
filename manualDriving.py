@@ -1,10 +1,5 @@
-import os
 import rospy
 from std_msgs.msg import String
-import time
-
-# cmd = "python ~/app/talker.py "
-cmd = "python ./test.py "
 
 # 노드 초기화
 rospy.init_node('manualDriving_publisher', anonymous=True)
