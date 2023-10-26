@@ -1,5 +1,4 @@
 import sys
-import time
 from functools import partial
 
 import tf_publishing
@@ -7,10 +6,48 @@ import emrCall
 import manualDriving
 import manualDriving_ui, mainPage_ui, emrCall_ui, selDestination_ui
 import loading
+import paho.mqtt.client as mqtt
 from selDestination import assign_des, start_driving
 from PyQt5.QtWidgets import *
-from PyQt5.QtCore import Qt, QTimer
+from PyQt5.QtCore import Qt, QTimer, QThread, pyqtSignal
 
+
+class MqttThread(QThread):
+    message_received = pyqtSignal(bytes)
+    
+    def run(self):
+        try:
+            # Broker 주소와 포트 설정
+            broker_address = "223.195.194.41"
+            broker_port = 1883
+            
+            # Client 생성
+            client = mqtt.Client()
+            
+            # Client 연결
+            client.connect(broker_address, broker_port)
+            # client.connect('broker.hivemq.com', 1883)
+            print("a")
+            
+            # Topic 설정
+            topic = "alarm"
+            
+            # Callback 함수 설정
+            def on_message(client, userdata, message):
+                print(message.topic, message.payload)
+                self.message_received.emit(message.payload)
+            
+            # Callback 함수 등록
+            client.on_message = on_message
+            
+            # Subscribe
+            client.subscribe(topic)
+            
+            # 메시지 수신 대기
+            while True:
+                client.loop()
+        except Exception as e:
+            print(e)
 
 # 화면을 띄우는데 사용되는 Class 선언
 class WindowClass(QMainWindow):
@@ -122,6 +159,8 @@ class WindowClass(QMainWindow):
         self.btn_emrCall_manualDriving.clicked.connect(self.show_emrCall)
         # emrCall_ui ------
         self.btn_home_emrCall.clicked.connect(self.show_mainPage)
+    
+        self.mqtt_subscriber()
 
     def show_mainPage(self):
         # selDestination 페이지로 전환
@@ -163,13 +202,49 @@ class WindowClass(QMainWindow):
         print("call_start_driving")
         start_driving(btn)
         
-    def keyPressEvent(self, event):
-        if event.key() == Qt.Key_1:
-            loading.show_loading_dialog(self)  # loading.py의 메서드를 호출합니다.
+    #  test: 1 누르면 모달창 보이기
+    # def keyPressEvent(self, event):
+    #     if event.key() == Qt.Key_1:
+    #         loading.show_loading_dialog(self)  # loading.py의 메서드를 호출합니다.
+    
+    
+    # mqtt 관제 제어 시작/종료 수신
+    def mqtt_subscriber(self):
+        self.mqtt_thread = MqttThread()
+        self.mqtt_thread.message_received.connect(self.handle_message)
+        self.mqtt_thread.start()
+    
+    def handle_message(self, payload):
+        if payload == b"start":  # byte로 비교
+            self.show_loading_dialog()  # self를 사용하여 호출
+            self.loading_flag = True
+        elif payload == b"stop":  # byte로 비교
+            if self.loading_flag:
+                self.hide_loading_dialog()  # self를 사용하여 호출
+                self.loading_flag = False
+    
+    def show_loading_dialog(self):
+        global loading_dialog
+        print("2")
+        loading_dialog = loading.LoadingDialog(self)
+        loading_dialog.setWindowModality(Qt.ApplicationModal)
+        loading_dialog.show()
+        QApplication.processEvents()
+        
+        # 메인 윈도우 비활성화
+        self.setEnabled(False)
+    
+    # 이전 코드에서 수정된 부분
+    def hide_loading_dialog(self):
+        global loading_dialog
+        loading_dialog.close()
+        loading_dialog.deleteLater()  # 참조 삭제
+        # 메인 윈도우 다시 활성화
+        self.setEnabled(True)
     
     def call_position(self):
         self.timer = QTimer(self)
-        self.timer.timeout.connect(control.check_position)
+        self.timer.timeout.connect(tf_publishing.check_position)
         self.timer.start(5000)  # milliseconds
 
 if __name__ == "__main__":
@@ -183,4 +258,4 @@ if __name__ == "__main__":
     myWindow.show()
 
     # 프로그램을 이벤트루프로 진입시키는(프로그램을 작동시키는) 코드
-    app.exec_()
+    sys.exit(app.exec_())

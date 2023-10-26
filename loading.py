@@ -28,7 +28,7 @@ class LoadingDialog(QDialog):
     
     def setupUi(self, LoadingDialog):
         font = QtGui.QFont()
-        font.setFamily("Malgun Gothic")
+        font.setFamily("Arial")
         font.setPointSize(10)
         font.setBold(True)
         font.setWeight(75)
