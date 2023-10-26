@@ -28,7 +28,7 @@ class LoadingDialog(QDialog):
     
     def setupUi(self, LoadingDialog):
         font = QtGui.QFont()
-        font.setFamily("Malgun Gothic")
+        font.setFamily("Arial")
         font.setPointSize(10)
         font.setBold(True)
         font.setWeight(75)
@@ -56,7 +56,9 @@ class LoadingDialog(QDialog):
 #         self.finished.emit()
 
 
+
 def show_loading_dialog(window):
+    print("2")
     loading_dialog = LoadingDialog(window)
     loading_dialog.setWindowModality(Qt.ApplicationModal)
     loading_dialog.show()

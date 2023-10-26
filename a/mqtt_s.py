@@ -18,19 +18,18 @@ print("a")
 # Topic 설정
 topic = "alarm"
 
+
 # Callback 함수 설정
 def on_message(client, userdata, message):
     print(message.topic, message.payload)
-    if message.payload == "start":
+    if message.payload == b"start":
         main.show_loading()
-    elif message.payload == "stop":
+    elif message.payload == b"stop":
         main.hide_loading()
-    
+
 
 # Callback 함수 등록
 client.on_message = on_message
-
-
 
 # Subscribe
 client.subscribe(topic)
