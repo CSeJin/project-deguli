@@ -194,8 +194,11 @@ class WindowClass(QMainWindow):
     def handle_message(self, payload):
         if payload == b"start":  # byte로 비교
             self.show_loading_dialog()  # self를 사용하여 호출
+            self.loading_flag = True
         elif payload == b"stop":  # byte로 비교
-            self.hide_loading_dialog()  # self를 사용하여 호출
+            if self.loading_flag:
+                self.hide_loading_dialog()  # self를 사용하여 호출
+                self.loading_flag = False
     
     def show_loading_dialog(self):
         global loading_dialog
