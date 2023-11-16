@@ -192,6 +192,7 @@ class WindowClass(QMainWindow):
         
         # tts & mqtt 호출
         emrCall.delayed_sound()
+        manualDriving.stop_run()
         emrCall.emr_mqtt()
 
     def call_assign_des(self, btn, btn_list):

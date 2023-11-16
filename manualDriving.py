@@ -2,7 +2,7 @@ import rospy
 from std_msgs.msg import String
 
 # 노드 초기화
-rospy.init_node('manualDriving_publisher', anonymous=True)
+rospy.init_node('manualDriving_publisher', anonymous=False)
 
 # 'direction' 토픽으로 메시지를 발행할 Publisher 생성
 pub = rospy.Publisher('direction', String, queue_size=1)
