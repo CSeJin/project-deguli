@@ -19,11 +19,11 @@ def emr_tts():
     
     # 주행 정지
     # 노드 초기화
-    rospy.init_node('manualDriving_publisher', anonymous=False)
-    # 'direction' 토픽으로 메시지를 발행할 Publisher 생성
-    pub_stop = rospy.Publisher('direction', String, queue_size=1)
-    msg_stop = String('s')
-    pub_stop.publish(msg_stop)
+    # rospy.init_node('emrCall_publisher', anonymous=False)
+    # # 'direction' 토픽으로 메시지를 발행할 Publisher 생성
+    # pub_stop = rospy.Publisher('direction', String, queue_size=1)
+    # msg_stop = String('s')
+    # pub_stop.publish(msg_stop)
     manualDriving.stop_run()
 
 

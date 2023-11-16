@@ -1,10 +1,7 @@
-import sys
-import time
 from PyQt5.QtCore import Qt, QThread, pyqtSignal, QTimer
 from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QDialog, QVBoxLayout, QLabel
 from PyQt5 import QtGui, QtWidgets
 
-import a.main
 
 
 class LoadingDialog(QDialog):

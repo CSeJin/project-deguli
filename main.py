@@ -1,7 +1,6 @@
 import sys
 from functools import partial
 
-import tf_publishing
 import emrCall
 import manualDriving
 import manualDriving_ui, mainPage_ui, emrCall_ui, selDestination_ui
