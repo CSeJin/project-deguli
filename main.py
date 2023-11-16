@@ -17,7 +17,7 @@ class MqttThread(QThread):
     def run(self):
         try:
             # Broker 주소와 포트 설정
-            broker_address = "223.195.194.41"
+            broker_address = "172.18.77.109"
             broker_port = 1883
             
             # Client 생성
@@ -150,11 +150,11 @@ class WindowClass(QMainWindow):
         self.btn_emrCall_selDestination.clicked.connect(self.show_emrCall)
         # manualDriving_ui ------
         self.btn_home_manualDriving.clicked.connect(self.show_mainPage)
-        self.btn_up.clicked.connect(manualDriving.move_straight)
-        self.btn_left.clicked.connect(manualDriving.turn_left)
-        self.btn_down.clicked.connect(manualDriving.move_back)
-        self.btn_right.clicked.connect(manualDriving.turn_right)
-        self.btn_stop.clicked.connect(manualDriving.stop_run)
+        self.btn_up.clicked.connect(manualDriving.Pub.move_straight)
+        self.btn_left.clicked.connect(manualDriving.Pub.turn_left)
+        self.btn_down.clicked.connect(manualDriving.Pub.move_back)
+        self.btn_right.clicked.connect(manualDriving.Pub.turn_right)
+        self.btn_stop.clicked.connect(manualDriving.Pub.stop_run)
         self.btn_emrCall_manualDriving.clicked.connect(self.show_emrCall)
         # emrCall_ui ------
         self.btn_home_emrCall.clicked.connect(self.show_mainPage)

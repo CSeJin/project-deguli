@@ -24,7 +24,8 @@ def emr_tts():
     # pub_stop = rospy.Publisher('direction', String, queue_size=1)
     # msg_stop = String('s')
     # pub_stop.publish(msg_stop)
-    manualDriving.stop_run()
+    pub = manualDriving.Pub()
+    pub.stop_run()
 
 
 # 관제측에 제어 요청
@@ -34,7 +35,7 @@ def emr_mqtt():
         client = mqtt.Client()
         
         # Client 연결
-        client.connect('223.195.194.41', 1883, 60)
+        client.connect('172.18.77.109', 1883, 60)
         # client.connect('broker.hivemq.com', 1883)
         # 192.168.100.88
         # Topic 설정
