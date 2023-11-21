@@ -85,7 +85,15 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
+<<<<<<< HEAD
+<<<<<<< HEAD
+          <line>202</line>
+=======
           <line>200</line>
+>>>>>>> 38091e02095242c5ead3ce1af876de3e99acef7f
+=======
+          <line>200</line>
+>>>>>>> 38091e02095242c5ead3ce1af876de3e99acef7f
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>

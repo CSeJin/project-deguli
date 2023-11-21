@@ -149,12 +149,16 @@ class WindowClass(QMainWindow):
         self.btn_start.clicked.connect(lambda: self.call_start_driving(self.btn_start))
         self.btn_emrCall_selDestination.clicked.connect(self.show_emrCall)
         # manualDriving_ui ------
+        # 수동주행 객체 생성
+        sudong_pub = manualDriving.sudong_pub()
         self.btn_home_manualDriving.clicked.connect(self.show_mainPage)
-        self.btn_up.clicked.connect(manualDriving.Pub.move_straight)
-        self.btn_left.clicked.connect(manualDriving.Pub.turn_left)
-        self.btn_down.clicked.connect(manualDriving.Pub.move_back)
-        self.btn_right.clicked.connect(manualDriving.Pub.turn_right)
-        self.btn_stop.clicked.connect(manualDriving.Pub.stop_run)
+
+        self.btn_up.clicked.connect(sudong_pub.move_straight)
+        self.btn_left.clicked.connect(sudong_pub.turn_left)
+        self.btn_down.clicked.connect(sudong_pub.move_back)
+        self.btn_right.clicked.connect(sudong_pub.turn_right)
+        self.btn_stop.clicked.connect(sudong_pub.stop_run)
+
         self.btn_emrCall_manualDriving.clicked.connect(self.show_emrCall)
         # emrCall_ui ------
         self.btn_home_emrCall.clicked.connect(self.show_mainPage)
@@ -242,10 +246,10 @@ class WindowClass(QMainWindow):
         # 메인 윈도우 다시 활성화
         self.setEnabled(True)
     
-    def call_position(self):
-        self.timer = QTimer(self)
-        self.timer.timeout.connect(tf_publishing.check_position)
-        self.timer.start(5000)  # milliseconds
+    # def call_position(self):
+    #     self.timer = QTimer(self)
+    #     self.timer.timeout.connect(tf_publishing.check_position)
+    #     self.timer.start(5000)  # milliseconds
 
 if __name__ == "__main__":
     # QApplication : 프로그램을 실행시켜주는 클래스

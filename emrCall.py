@@ -6,9 +6,6 @@ import paho.mqtt.client as mqtt
 
 import manualDriving
 
-# 노드 초기화
-# rospy.init_node('manualDriving_publisher', anonymous=True)
-
 
 def emr_tts():
     # tts: 위급상황 알림
@@ -24,7 +21,11 @@ def emr_tts():
     # pub_stop = rospy.Publisher('direction', String, queue_size=1)
     # msg_stop = String('s')
     # pub_stop.publish(msg_stop)
+<<<<<<< HEAD
+    pub = manualDriving.sudong_pub()
+=======
     pub = manualDriving.Pub()
+>>>>>>> 38091e02095242c5ead3ce1af876de3e99acef7f
     pub.stop_run()
 
 
