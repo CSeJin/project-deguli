@@ -38,4 +38,15 @@ IDE: pycharm
 ## 🦼 파일설명
 ### runOnLaptop
 > 노트북 환경에서 테스트용
-- 
+### runOnTurtlebot3
+- emrCall.py: 긴급호출 관련 메서드 관리 - tts, 관제 알림
+- emrCall_ui.py: 긴급호출 페이지 ui
+- loading.py: 관제 측에서 모터 제어 시 화면 비활성화를 위한 메서드 관리
+- main.py: 어플리케이션의 동작 및 실행 관리
+- mainPage_ui.py: 메인화면 페이지 ui
+- manualDriving.py: 수동주행 관련 메서드 관리 - 모터 제어
+- manualDriving_ui.py: 수동주행 페이지 ui
+- selDestination.py: 자율주행 관련 메서드 관리 - 목적지, 서버 publishing
+- selDestination_ui.py: 자율주행 페이지 ui
+
+
