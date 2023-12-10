@@ -4,12 +4,20 @@
 
 turtlebot3를 annotation하여 프로젝트 진행
 
-<b> 역할: 수동주행 및 사용자 ui 구현 </b>
+<p align="center">
+  <img src="https://github.com/CSeJin/project-deguli/assets/127668461/af2bb245-4b4f-4ab4-8e85-63efba25dc3e" width="500">
+</p>
+
+> **분류:** 팀 프로젝트
+>
+> **역할:** 수동주행 및 사용자 ui 구현
+>
+> **프로젝트 기간 기간:** 2023.04.01 ~ 2023.11.22
 
 </br>
 
 ## 🦼 기술스택
-python3, ROS1
+python2, python3, ROS1
 
 ui: pyqt5
 IDE: pycharm
@@ -48,5 +56,7 @@ IDE: pycharm
 - manualDriving_ui.py: 수동주행 페이지 ui
 - selDestination.py: 자율주행 관련 메서드 관리 - 목적지, 서버 publishing
 - selDestination_ui.py: 자율주행 페이지 ui
-
+### 기타
+- sudong.py: 서버에서 수동주행 버튼값 subscribe 및 주행명령
+- tf_publishing: 3초마다 관제 측에 현재 위치 값 전송(python2)
 
