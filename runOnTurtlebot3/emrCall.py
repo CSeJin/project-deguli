@@ -8,7 +8,7 @@ import manualDriving
 
 
 def emr_tts():
-    # tts: 위급상황 알림
+    # tts: 위급상황 알림.
     engine = pyttsx3.init()
     engine.setProperty("rate", 150)
     engine.say("위급상황입니다. 위급상황입니다.")
