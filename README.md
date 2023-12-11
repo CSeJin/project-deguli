@@ -14,7 +14,7 @@
 turtlebot3를 annotation하여 프로젝트 진행
 
 <p align="center">
-  <img src="https://github.com/CSeJin/project-deguli/assets/127668461/af2bb245-4b4f-4ab4-8e85-63efba25dc3e" width="500">
+  <img src="https://github.com/CSeJin/project-deguli/assets/127668461/ffe45046-fdb7-4d96-a670-878121b4e515" width="400"> | <img src="https://github.com/CSeJin/project-deguli/assets/127668461/af2bb245-4b4f-4ab4-8e85-63efba25dc3e" width="400">
 </p>
 
 > **분류:** 팀 프로젝트
