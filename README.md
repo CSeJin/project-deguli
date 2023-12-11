@@ -1,12 +1,12 @@
 # 데굴이:자율주행 휠체어 로봇
 ## 🦼 목차
-> [프로젝트 소개](#🦼-프로젝트-소개)
+> [프로젝트 소개](#-프로젝트-소개)
 > 
-> [기술스택](#🦼-기술스택)
+> [기술스택](#-기술스택)
 > 
-> [기능(어플리케이션)](#🦼-기능(어플리케이션))
+> [기능(어플리케이션)](#-기능(어플리케이션))
 > 
-> [파일설명](#🦼-파일설명)
+> [파일설명](#-파일설명)
 
 ## 🦼 프로젝트 소개
 병원 내 휠체어 이용 환자의 이동성 및 인력효율 개선을 위한 자율주행 휠체어 로봇 프로젝트
@@ -40,17 +40,19 @@ IDE: pycharm
 - 목적지 선택 및 주행 시작 클릭 시 tts로 음성안내 및 서버로 목적지 publishing
 - 서버에서 최적 경로를 연산하여 모터 제어 명령을 subscribe
 
-<img src="https://github.com/CSeJin/project-deguli/assets/127668461/cc5306e1-e8b8-4806-b4aa-d1e274e137a4" width="400"> | (gif 첨부)
+<img src="https://github.com/CSeJin/project-deguli/assets/127668461/cc5306e1-e8b8-4806-b4aa-d1e274e137a4" width="400"> | <img src="https://github.com/CSeJin/project-deguli/assets/127668461/e76b9b5b-8946-4e1b-bca1-a53b16c3f485" width="400">
 
 > 목적지 설정 클릭 -> 목적지 선택 -> 주행 시작 클릭
 ### 수동주행
 - ui에서 버튼 클릭 시 해당 방향으로 주행하도록 모터에 명령
   
-<img src="https://github.com/CSeJin/project-deguli/assets/127668461/4f247ae1-c6a7-4446-95ec-ff4fc10df8f8" width="400"> | (gif 첨부)
+<img src="https://github.com/CSeJin/project-deguli/assets/127668461/4f247ae1-c6a7-4446-95ec-ff4fc10df8f8" width="400"> | <img src="https://github.com/CSeJin/project-deguli/assets/127668461/fda586ae-8b93-4e1a-9065-7f09e41cf276" width="400">
 
 ### 긴급호출
 - 환자 위급상황 발생 시 해당 버튼을 클릭 -> 관제 측에 알림 전송 및 tts 음성안내
-(gif 첨부)
+
+<img src="https://github.com/CSeJin/project-deguli/assets/127668461/9b47b379-97f6-491b-881a-9b31f6300439" width="400">
+
 
 </br>
 
