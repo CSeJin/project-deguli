@@ -31,6 +31,7 @@ turtlebot3를 annotation하여 프로젝트 진행
 python2, python3, ROS1
 
 ui: pyqt5
+
 IDE: pycharm
 
 </br>
